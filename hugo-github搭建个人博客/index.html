@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Hugo&#43;Github搭建个人博客 - SYSUcarey</title>
+<meta property="og:title" content="Hugo&#43;Github搭建个人博客 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Hugo&#43;Github搭建个人博客</h1>
+    
+    <span class="article-date">2018-09-07</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="搭建环境">搭建环境：</h2>
+
+<ul>
+<li>Windows10</li>
+<li>Go环境</li>
+<li>Git（不必要）</li>
+</ul>
+
+<h2 id="流程步骤">流程步骤</h2>
+
+<ol>
+<li><strong>Hugo下载</strong></li>
+</ol>
+
+<p>下载网址：</p>
+
+<p><a href="https://github.com/gohugoio/hugo/releases/tag/v0.48">https://github.com/gohugoio/hugo/releases/tag/v0.48</a></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/fLFgiC0f96.png" alt="" /></p>
+
+<p>下载<code>hugo_0.48_Windows-64bit.zip</code></p>
+
+<p>解压缩后是一个二进制应用程序<code>hugo.exe</code></p>
+
+<ol>
+<li><strong>Hugo环境变量配置</strong></li>
+</ol>
+
+<p>创建以下目录：(将<code>hugo.exe</code>移到<code>\bin</code>目录下)</p>
+
+<p><code>F:\Hugo\bin\hugo.exe</code></p>
+
+<p>编辑系统环境变量，添加hugo.exe的环境变量：（用英语分号隔开）</p>
+
+<p><code>F:\Hugo\bin</code></p>
+
+<p>检验是否配好环境变量，<code>cmd</code>下输入<code>hugo version</code>：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/hB306h8B6a.png" alt="" /></p>
+
+<ol>
+<li>在<code>F:\Hugo</code>目录下运行<code>cmd</code>，执行<code>hugo new site blog</code>。</li>
+</ol>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/9C90cE59jh.png" alt="mark" /></p>
+
+<p>成功后，<code>hugo</code>会帮我们创建一个文件夹<code>F:\Hugo\blog</code>，里面有如下文件结构：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/A4IA5l3g2D.png" alt="mark" /></p>
+
+<ol>
+<li>选择喜好的主题模板</li>
+</ol>
+
+<p>主题选择下载网址：<a href="https://themes.gohugo.io/">Hugo Themes</a></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/5ffhl3j8Gm.png" alt="mark" /></p>
+
+<p>例如选择<code>Hyde</code>这个模板。</p>
+
+<p><img src="https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png" alt="Hyde screenshot" /></p>
+
+<p>下载地址：<a href="https://github.com/spf13/hyde.git">https://github.com/spf13/hyde.git</a></p>
+
+<p><code>Download</code>下载到目录<code>F:\Hugo\blog\themes</code></p>
+
+<p>（下载地址在Github上，可用Git直接拉，也可以手动下载包）。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/DlEG49gE6B.png" alt="mark" /></p>
+
+<ol>
+<li>修改模板网页</li>
+</ol>
+
+<p>根据<code>README.rd</code>修改模板网页后，在<code>F:\Hugo\blog</code>目录下<code>cmd</code>终端执行命令<code>hugo server --theme=hyde</code>：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/0kK4aBh3EI.png" alt="mark" /></p>
+
+<p>浏览器打开<code>http://localhost:1313</code>，可以查看模板运行效果：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/EL9CkH16Jf.png" alt="mark" /></p>
+
+<ol>
+<li>添加博客</li>
+</ol>
+
+<p>在<code>F:\Hugo\blog</code>目录下<code>cmd</code>终端执行命令<code>hugo new post/myFirstBlog.md</code>：
+   <img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/Kfgmc19Kf5.png" alt="mark" /></p>
+
+<p>编辑自己的博客，将<code>draft: true</code> 改为<code>draft: false</code>：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/ff02iHljJG.png" alt="mark" /></p>
+
+<p>再次<code>hugo server --theme=hyde</code>，查看效果：</p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E9%9A%8F%E7%AC%94">随笔</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/hugo">Hugo</a><a href="/tags/github">Github</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

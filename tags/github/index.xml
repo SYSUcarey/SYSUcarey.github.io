@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on SYSUcarey</title>
+    <link>https://sysucarey.github.io/tags/github/</link>
+    <description>Recent content in Github on SYSUcarey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Sep 2018 21:41:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://sysucarey.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo&#43;Github搭建个人博客</title>
+      <link>https://sysucarey.github.io/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 07 Sep 2018 21:41:22 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>搭建环境：  Windows10 Go环境 Git（不必要）  流程步骤  Hugo下载  下载网址：
+https://github.com/gohugoio/hugo/releases/tag/v0.48
+下载hugo_0.48_Windows-64bit.zip
+解压缩后是一个二进制应用程序hugo.exe
+ Hugo环境变量配置  创建以下目录：(将hugo.exe移到\bin目录下)
+F:\Hugo\bin\hugo.exe
+编辑系统环境变量，添加hugo.exe的环境变量：（用英语分号隔开）
+F:\Hugo\bin
+检验是否配好环境变量，cmd下输入hugo version：
+ 在F:\Hugo目录下运行cmd，执行hugo new site blog。  成功后，hugo会帮我们创建一个文件夹F:\Hugo\blog，里面有如下文件结构：
+ 选择喜好的主题模板  主题选择下载网址：Hugo Themes
+例如选择Hyde这个模板。
+下载地址：https://github.com/spf13/hyde.git
+Download下载到目录F:\Hugo\blog\themes
+（下载地址在Github上，可用Git直接拉，也可以手动下载包）。
+ 修改模板网页  根据README.rd修改模板网页后，在F:\Hugo\blog目录下cmd终端执行命令hugo server --theme=hyde：
+浏览器打开http://localhost:1313，可以查看模板运行效果：
+ 添加博客  在F:\Hugo\blog目录下cmd终端执行命令hugo new post/myFirstBlog.md： 编辑自己的博客，将draft: true 改为draft: false：
+再次hugo server --theme=hyde，查看效果：</description>
+    </item>
+    
+  </channel>
+</rss>
