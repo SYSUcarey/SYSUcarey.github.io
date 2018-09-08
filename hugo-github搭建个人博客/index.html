@@ -63,7 +63,6 @@
 
 <ul>
 <li>Windows10</li>
-<li>Go环境</li>
 <li>Git（不必要）</li>
 </ul>
 
@@ -117,42 +116,89 @@
 
 <p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/5ffhl3j8Gm.png" alt="mark" /></p>
 
-<p>例如选择<code>Hyde</code>这个模板。</p>
+<p>例如选择<code>hugo-natrium-theme</code>这个模板。</p>
 
-<p><img src="https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png" alt="Hyde screenshot" /></p>
-
-<p>下载地址：<a href="https://github.com/spf13/hyde.git">https://github.com/spf13/hyde.git</a></p>
+<p>下载地址：<a href="https://github.com/mobybit/hugo-natrium-theme">https://github.com/mobybit/hugo-natrium-theme</a></p>
 
 <p><code>Download</code>下载到目录<code>F:\Hugo\blog\themes</code></p>
 
 <p>（下载地址在Github上，可用Git直接拉，也可以手动下载包）。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/DlEG49gE6B.png" alt="mark" /></p>
+<p><code>Git</code>命令：<code>git clone https://github.com/mobybit/hugo-natrium-theme.git</code></p>
+
+<p>根据下载目录下的<code>README.rd</code>指示配置主题</p>
+
+<p>配置完成后</p>
+
+<p>在<code>F:\Hugo\blog</code>目录下<code>cmd</code>终端执行命令<code>hugo server --theme=hugo-natrium-theme</code>：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180908/J6G9mFI0F2.png" alt="mark" /></p>
+
+<p>浏览器打开<code>http://localhost:1313</code>，可以查看到模板运行效果：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180908/c9Lf5li3Fb.png" alt="mark" /></p>
 
 <ol>
-<li>修改模板网页</li>
+<li>个性化自己的博客</li>
 </ol>
 
-<p>根据<code>README.rd</code>修改模板网页后，在<code>F:\Hugo\blog</code>目录下<code>cmd</code>终端执行命令<code>hugo server --theme=hyde</code>：</p>
+<p>仔细阅读<code>README.rd</code>，修改模板网页，配置自己的私有博客。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/0kK4aBh3EI.png" alt="mark" /></p>
+<p>例如本例子的：</p>
 
-<p>浏览器打开<code>http://localhost:1313</code>，可以查看模板运行效果：</p>
+<ul>
+<li><p>修改个人图标：<code>F:\Hugo\blog\themes\hugo-natrium-theme\static\images\logo.png</code></p></li>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/EL9CkH16Jf.png" alt="mark" /></p>
+<li><p>新建博客：<code>hugo new post\blog.md</code></p></li>
+
+<li><p>修改About：<code>F:\Hugo\blog\content\page\about.md</code></p>
+
+<p>等等</p></li>
+</ul>
+
+<p>完成后，在<code>F:\Hugo\blog</code>目录下<code>cmd</code>终端再次执行命令<code>hugo server --theme=hugo-natrium-theme</code></p>
+
+<p>浏览器打开<code>http://localhost:1313</code>，可以查看运行效果：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180908/CGdGJJihJm.png" alt="mark" /></p>
 
 <ol>
-<li>添加博客</li>
+<li><strong>生成静态网页并推到GithubPages:</strong></li>
 </ol>
 
-<p>在<code>F:\Hugo\blog</code>目录下<code>cmd</code>终端执行命令<code>hugo new post/myFirstBlog.md</code>：
-   <img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/Kfgmc19Kf5.png" alt="mark" /></p>
+<p>首先创建自己的GithubPages，新建仓库repository，命名为<code>Username.github.io</code>，以自己为例:</p>
 
-<p>编辑自己的博客，将<code>draft: true</code> 改为<code>draft: false</code>：</p>
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180908/h21eGBhgLd.png" alt="mark" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/ff02iHljJG.png" alt="mark" /></p>
+<p>然后，用Hugo生成静态网页，站点目录下，<code>cmd</code>输入命令：</p>
 
-<p>再次<code>hugo server --theme=hyde</code>，查看效果：</p>
+<p><code>hugo --theme=hugo-natrium-theme --baseUrl=&quot;https://Username.github.io/&quot;</code></p>
+
+<p>(这里注意，<code>baseUrl</code>要在仓库<code>setting</code>里面查看，有可能跟仓库名不一样。如我自己的就从我以为的<code>https://SYSUcarey.github.io/</code>变成了<code>https://sysucarey.github.io/</code>)</p>
+
+<p>这个<code>hugo</code>命令执行完后，会生成一个<code>public</code>文件夹，将<code>public</code>文件夹内的所有文件推上仓库里就可以了。</p>
+
+<p>具体Git操作是：</p>
+
+<ul>
+<li><p><code>git init</code></p></li>
+
+<li><p><code>git add .</code></p></li>
+
+<li><p><code>git commit -m 'first commit'</code></p></li>
+
+<li><p><code>git remote add origin https://github.com/Username/Username.github.io.git</code></p></li>
+
+<li><p><code>git pull --rebase origin master</code></p></li>
+
+<li><p><code>git push -u origin master</code></p></li>
+</ul>
+
+<p>成功推上去合并版本后，查看<code>https://Username.github.io/</code>：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180908/CjL0aflGf7.png" alt="mark" /></p>
+
+<p>Hugo+Github的个人博客搭建成功。</p>
 
     </div>
  
