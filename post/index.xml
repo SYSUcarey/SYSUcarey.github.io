@@ -6,10 +6,37 @@
     <description>Recent content in Posts on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Sep 2018 21:41:22 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Sep 2018 20:30:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode16: 3 Sum Closet</title>
+      <link>https://sysucarey.github.io/leetcode16-3-sum-closet/</link>
+      <pubDate>Sun, 09 Sep 2018 20:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode16-3-sum-closet/</guid>
+      <description>题目： Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
+Example:
+Given array nums = [-1, 2, 1, -4], and target = 1. The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</description>
+    </item>
+    
+    <item>
+      <title>Windows10 下载安装Android Studio</title>
+      <link>https://sysucarey.github.io/windows10-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85android-studio/</link>
+      <pubDate>Sun, 09 Sep 2018 20:00:27 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/windows10-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85android-studio/</guid>
+      <description> Windows10 下载安装Android Studio 流程步骤：  Android Studio下载（需要VPN外网）  下载地址
+ Android Studio安装   SDK下载
+ 打开Android Studio内的SDK Manager   Android SDK-&amp;gt;SDK Platforms下勾选需要下载的SDK，OK。    出现的问题：  步骤3（SDK下载）时，在SDK Manager-&amp;gt;Android SDK-&amp;gt;SDK Platforms中不显示可供下载的SDK，无法进行SDK下载。  解决方法：更换host IP地址：
+ 登陆站长工具：http://ping.chinaz.com，输入dl.google.com
+ 选择Ping检测最快的节点：
+（例如图中的上海电信[203.208.41.72）
+ 在C:\Windows\System32\drivers\etc\hosts文件末尾添加一句：  203.208.41.164 dl.google.com，以管理员身份保存退出。
+ 重新打开Android Studio，SDK Manager-&amp;gt;Android SDK-&amp;gt;SDK Platforms内就可以显示可供下载的SDK版本了。   </description>
+    </item>
     
     <item>
       <title>Hugo&#43;Github搭建个人博客</title>

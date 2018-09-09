@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode16: 3 Sum Closet - SYSUcarey</title>
+<meta property="og:title" content="Leetcode16: 3 Sum Closet - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode16: 3 Sum Closet</h1>
+    
+    <span class="article-date">2018-09-09</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="题目">题目：</h2>
+
+<p>Given an array <code>nums</code> of n integers and an integer <code>target</code>, find three integers in <code>nums</code> such that the sum is closest to <code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>Given array nums = [-1, 2, 1, -4], and target = 1.
+
+The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+</code></pre>
+
+<hr />
+
+<h2 id="思考">思考：</h2>
+
+<ol>
+<li><p>首先一开始的想法，肯定是3个for循环遍历数组任意三个数的组合，复杂度O(n^3) ，效率想来肯定是太慢了，应该是无法通过测试。</p></li>
+
+<li><p>然后第二个想法，将数组排序之后，从小到大遍历一次邻近3个数的组合，事实上<code>3Sum Closest</code>选出来的3个数并不一定是大小邻近的，例如对情况<code>[-3,0,1,2]，target=1</code>，输出应该是0，按照这个错误的算法来输出的是3，想法太简单了。</p></li>
+
+<li><p>那么第三个想法，将Array排序后分成大于等于target的数组A和小于target的数组B。</p>
+
+<ul>
+<li><p>若A，B数组中有任一个数组是空的，那自然问题解决，A中取最小的三个（B中取最大的三个)</p></li>
+
+<li><p>若A，B里任一个数组的长度为1。不妨假设A中只有一个数a，那么问题转换成求B数组的<code>2Sum Closet</code>，B中两数和要最接近target-a。</p></li>
+
+<li><p>若A，B数组的长度都大于1，那么数组A和数组B中必定都至少有一个数被选中，这样才能保证是最接近target的，对称地讨论1+2模式和2+1模式：</p></li>
+</ul>
+
+<p>以A+B=1+2的模式为例，遍历数组A取一个数a，那么B数组要取两个数，其和要最接近target-a，问题同样转换为一个<code>2Sum Closet</code>。</p>
+
+<p>那么我们把一个<code>3Sum Closet</code>的问题转换成了一个<code>2Sum Closet</code>的问题。</p>
+
+<p>对于<code>2Sum Closet</code>，我们给定头尾指针指向排序数组最左边（最小）+最右边（最大）开始往中间逼近：</p>
+
+<ul>
+<li><p>若这两个数加起来小于target，左边指针往右移动，这总能保证新的两个数是更接近target的</p></li>
+
+<li><p>若这两个数加起来大于target，右边指针往左移动，这总能保证新的两个数是更接近target的</p></li>
+</ul>
+
+<p>所以，<code>2Sum Closet</code>的复杂度为O(n)，这样整个算法的复杂度是O(n^2)</p></li>
+
+<li><p>仔细再考虑想法3，其实核心在于将<code>3Sum Closest</code>变成了一个<code>2Sum Closest</code>的问题，那么开始的时候将Array数组分成两个数组的操作根本是不必要的，它的作用只是为了先确定一个数，而且分成两个数组后还出现了讨论的问题，增加了问题的复杂性。</p>
+
+<p>所以我们在数组排序完之后，先选出一个数<code>nums[i]</code>，假设数组的长度是<code>len</code>，然后在<code>nums[i+1]</code>~<code>nums[len-1]</code>的数中选出剩下的第二、三个数，这是个<code>2Sum Closest</code>的问题，用头尾指针<code>head</code>，<code>tail</code>来向中间逼近，复杂度O(n)</p>
+
+<p>最终这个算法的复杂度是O(n^2)</p></li>
+</ol>
+
+<hr />
+
+<h2 id="code-c">code(c++)</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    <span style="color:#6ab825;font-weight:bold">int</span> threeSumClosest(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#6ab825;font-weight:bold">int</span> target) {
+        <span style="color:#999;font-style:italic">//sorted
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">int</span> temp = <span style="color:#3677a9">0</span>;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; nums.size(); i++) {
+            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> j = <span style="color:#3677a9">0</span>; j &lt; nums.size() - i - <span style="color:#3677a9">1</span>; j++) {
+                <span style="color:#6ab825;font-weight:bold">if</span>(nums[j] &gt; nums[j+<span style="color:#3677a9">1</span>]) {
+                    temp = nums[j+<span style="color:#3677a9">1</span>];
+                    nums[j+<span style="color:#3677a9">1</span>] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+        }
+        <span style="color:#6ab825;font-weight:bold">int</span> min_sum = nums[<span style="color:#3677a9">0</span>] + nums[<span style="color:#3677a9">1</span>] + nums[<span style="color:#3677a9">2</span>];
+        <span style="color:#6ab825;font-weight:bold">int</span> head, tail;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; nums.size(); i++) {
+            head = i + <span style="color:#3677a9">1</span>;
+            tail = nums.size()-<span style="color:#3677a9">1</span>;
+            <span style="color:#6ab825;font-weight:bold">while</span> (head &lt; tail) {
+                temp = nums[i] + nums[head] + nums[tail];
+                <span style="color:#6ab825;font-weight:bold">if</span>(temp &gt; target) tail--;
+                <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#447fcf">if</span>(temp &lt; target) head++;
+                <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#447fcf">if</span>(temp == target) <span style="color:#6ab825;font-weight:bold">return</span> temp;
+                <span style="color:#6ab825;font-weight:bold">if</span>(abs(temp - target) &lt; abs(min_sum - target)) min_sum = temp;
+            }
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> min_sum;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

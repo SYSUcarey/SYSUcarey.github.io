@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Windows10 下载安装Android Studio - SYSUcarey</title>
+<meta property="og:title" content="Windows10 下载安装Android Studio - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Windows10 下载安装Android Studio</h1>
+    
+    <span class="article-date">2018-09-09</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="windows10-下载安装android-studio">Windows10 下载安装Android Studio</h1>
+
+<h2 id="流程步骤">流程步骤：</h2>
+
+<ol>
+<li><code>Android Studio</code>下载（需要VPN外网）</li>
+</ol>
+
+<p><a href="https://developer.android.google.cn/studio/">下载地址</a></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/e6EkDkd5gm.png" alt="mark" /></p>
+
+<ol>
+<li><code>Android Studio</code>安装</li>
+</ol>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/b788KFJf4L.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/BijflIk9J2.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/Ki9bmkJHLJ.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/C7aGAlJakK.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/k7I6B8cF3i.png" alt="mark" /></p>
+
+<ol>
+<li><p>SDK下载</p>
+
+<ul>
+<li>打开<code>Android Studio</code>内的<code>SDK Manager</code></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/KEehJkaAii.png" alt="mark" /></p>
+
+<ul>
+<li><code>Android SDK-&gt;SDK Platforms</code>下勾选需要下载的SDK，OK。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/67i51ii739.png" alt="mark" /></p></li>
+</ol>
+
+<hr />
+
+<h2 id="出现的问题">出现的问题：</h2>
+
+<ol>
+<li>步骤3（SDK下载）时，在<code>SDK Manager-&gt;Android SDK-&gt;SDK Platforms</code>中不显示可供下载的SDK，无法进行SDK下载。</li>
+</ol>
+
+<p><strong>解决方法：更换host IP地址：</strong></p>
+
+<ul>
+<li><p>登陆站长工具：<a href="http://ping.chinaz.com">http://ping.chinaz.com</a>，输入<code>dl.google.com</code></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/5GBKG78Cfe.png" alt="mark" /></p></li>
+
+<li><p>选择Ping检测最快的节点：</p>
+
+<p>（例如图中的上海电信<code>[203.208.41.72</code>）</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/bi8CFIjfFg.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/ajdl5111iE.png" alt="mark" /></p>
+
+<ul>
+<li>在<code>C:\Windows\System32\drivers\etc\hosts</code>文件末尾添加一句：</li>
+</ul>
+
+<p><code>203.208.41.164 dl.google.com</code>，以管理员身份保存退出。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/k76lgCh6l7.png" alt="mark" /></p>
+
+<ul>
+<li>重新打开<code>Android Studio</code>，<code>SDK Manager-&gt;Android SDK-&gt;SDK Platforms</code>内就可以显示可供下载的SDK版本了。</li>
+</ul></li>
+</ul>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E9%9A%8F%E7%AC%94">随笔</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android-studio">Android Studio</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
