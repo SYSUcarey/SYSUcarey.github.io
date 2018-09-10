@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Windows10 Android 开发环境配置 - SYSUcarey</title>
+<meta property="og:title" content="Windows10 Android 开发环境配置 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Windows10 Android 开发环境配置</h1>
+    
+    <span class="article-date">2018-09-10</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="下载安装android-和-sdk">下载安装Android 和 SDK：</h2>
+
+<h3 id="1-android-studio-下载">1. <code>Android Studio</code>下载</h3>
+
+<p>（需要VPN外网）</p>
+
+<p><a href="https://developer.android.google.cn/studio/">下载地址</a></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/e6EkDkd5gm.png" alt="mark" /></p>
+
+<h3 id="2-android-studio-安装">2. <code>Android Studio</code>安装</h3>
+
+<p>因空间占量比较大，<code>Android Studio</code>及其<code>SDK</code>都不建议安装在系统盘。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/b788KFJf4L.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/BijflIk9J2.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/Ki9bmkJHLJ.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/C7aGAlJakK.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/k7I6B8cF3i.png" alt="mark" /></p>
+
+<h3 id="3-sdk-tools-下载">3. <code>SDK tools</code>下载</h3>
+
+<p><code>Android Studio</code>下载完毕后初次打开，要加载SDK位置的时候，提示<code>SDK tool Directory is missing</code>，下载后双击运行.exe文件安装在目录<code>D:\Android_Studio_SDK</code>下。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/blbChJLLBm.png" alt="mark" />
+   <img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/hAjLhGBdC5.png" alt="mark" />
+   <img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/94iIBdBjJB.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/2048Ffd6Ah.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/fEcHjL95B4.png" alt="mark" /></p>
+
+<h3 id="4-sdk下载">4. SDK下载</h3>
+
+<ul>
+<li><p>打开<code>Android Studio</code>内的<code>SDK Manager</code></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/KEehJkaAii.png" alt="mark" /></p></li>
+
+<li><p><code>Android SDK-&gt;SDK Platforms</code>下勾选需要下载的SDK，OK。</p>
+
+<p>在<code>SDK Manager-&gt;Android SDK-&gt;SDK Platforms</code>中如果不显示可供下载的SDK，无法进行SDK下载，参考<strong>遇到的问题1</strong>中提到的换host的方法解决。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/67i51ii739.png" alt="mark" /></p></li>
+</ul>
+
+<hr />
+
+<h2 id="进行第一个android-项目">进行第一个Android 项目</h2>
+
+<h3 id="1-新建项目">1. 新建项目</h3>
+
+<ul>
+<li><code>start a new Android Studio project</code></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/IJIcKigmJk.png" alt="mark" /></p>
+
+<ul>
+<li>给项目命名<code>Hello Android</code></li>
+</ul>
+
+<p>设定工作台路径<code>D:\AndroidStudioProjects</code>。</p>
+
+<p><code>Company domain</code>是公司域名，对应的倒过来的java包名。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/322fhJE0eH.png" alt="mark" /></p>
+
+<ul>
+<li>选择<code>Phone and Tablet</code></li>
+</ul>
+
+<p>选择适合的API（SDK）版本，这里我选择<code>API24：Android7.0</code></p>
+
+<p>真机运行项目的时候需要手机的Android不低于选择的API(SDK)</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/2L713GdAK0.png" alt="mark" /></p>
+
+<ul>
+<li>选择<code>Empty Activity</code>模板创建项目</li>
+</ul>
+
+<p>项目会自动生成一个Java（Activity）文件和一个XML布局文件</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/I0cad5mHd9.png" alt="mark" /></p>
+
+<ul>
+<li>Next完成项目创建，Finish</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/E55jg0Gb6d.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/A3cel2EFJF.png" alt="mark" /></p>
+
+<h3 id="2-下载安装对应版本build-tools">2. 下载安装对应版本Build-Tools</h3>
+
+<ul>
+<li>创建Android项目成功后，报错<code>Failed to find Build Tools revision 27.0.3</code></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/jH1fjK17HH.png" alt="mark" /></p>
+
+<p>根据提示，进行下载安装<code>SDK Build-Tools 27.0.3</code></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/mcC0J9Ai4D.png" alt="mark" /></p>
+
+<p>等待<code>Build Sync</code>，期间要下载对应的依赖包，时间大约15分钟</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/BILBjl7g5h.png" alt="mark" /></p>
+
+<p>Build: completed successfully</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/BC4afL08DB.png" alt="mark" /></p>
+
+<h3 id="3-coding-for-hello-world">3. Coding for “Hello World!”</h3>
+
+<p><code>app-&gt;res-&gt;layout-&gt;activity_main.xml</code>中添加代码：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">android:text=&#34;Hello World!&#34;</code></pre></div>
+<p>（虽然新建空白模板项目中已有Hello World代码）</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/Af53bfelJ8.png" alt="mark" /></p>
+
+<p>但是预览效果图中，并没有看到Hello World!的显示：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/G9bGkcK2gi.png" alt="mark" /></p>
+
+<p>修改<code>app-&gt;res-&gt;values-&gt;styles.xml</code>：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#6ab825;font-weight:bold">&lt;style</span> <span style="color:#bbb">name=</span><span style="color:#ed9d13">&#34;AppTheme&#34;</span> <span style="color:#bbb">parent=</span><span style="color:#ed9d13">&#34;Theme.AppCompat.Light.DarkActionBar&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+      <span style="color:#999;font-style:italic">&lt;!--改成--&gt;</span>
+   <span style="color:#6ab825;font-weight:bold">&lt;style</span> <span style="color:#bbb">name=</span><span style="color:#ed9d13">&#34;AppTheme&#34;</span> <span style="color:#bbb">parent=</span><span style="color:#ed9d13">&#34;Base.Theme.AppCompat.Light.DarkActionBar&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>   </code></pre></div>
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/hcCfckA4Df.png" alt="mark" /></p>
+
+<p>效果图可以显示<code>Hello World!</code>:</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/7378D92elG.png" alt="mark" /></p>
+
+<h3 id="4-usb连接手机真机测试">4. USB连接手机真机测试</h3>
+
+<ul>
+<li>配置运行设置：</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/hgkje61JcD.png" alt="mark" /></p>
+
+<pre><code>     Target调成`USB Device`
+     ![mark](http://peo1cra6j.bkt.clouddn.com/blog/180910/G69J730e4d.png)
+</code></pre>
+
+<ul>
+<li>点击绿色运行键，成功运行<code>Hello World!</code>应用。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/LkL81ji1jJ.png" alt="mark" /></p>
+
+<hr />
+
+<h2 id="出现的问题">出现的问题：</h2>
+
+<h3 id="1-无可控下载的sdk显示">1.无可控下载的SDK显示</h3>
+
+<p>​    在<code>Android SDK</code>下载时，在<code>SDK Manager-&gt;Android SDK-&gt;SDK Platforms</code>中不显示可供下载的SDK，无法进行SDK下载。</p>
+
+<p><strong>解决方法：更换host IP地址：</strong></p>
+
+<ul>
+<li><p>登陆站长工具：<a href="http://ping.chinaz.com">http://ping.chinaz.com</a>，输入<code>dl.google.com</code></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/5GBKG78Cfe.png" alt="mark" /></p></li>
+
+<li><p>选择Ping检测最快的节点：</p>
+
+<p>（例如图中的上海电信<code>[203.208.41.72</code>）</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/bi8CFIjfFg.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/ajdl5111iE.png" alt="mark" /></p>
+
+<ul>
+<li>在<code>C:\Windows\System32\drivers\etc\hosts</code>文件末尾添加一句：</li>
+</ul>
+
+<p><code>203.208.41.164 dl.google.com</code>，以管理员身份保存退出。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180909/k76lgCh6l7.png" alt="mark" /></p>
+
+<ul>
+<li>重新打开<code>Android Studio</code>，<code>SDK Manager-&gt;Android SDK-&gt;SDK Platforms</code>内就可以显示可供下载的SDK版本了。</li>
+</ul></li>
+</ul>
+
+<h3 id="2-no-target-device-found-错误">2. <code>No target device found</code>错误</h3>
+
+<p>进行USB真机测试的时候，说找不到设备，解决方法很简单，打开手机的开发者选项，卡开USB调试选项。Android Studio会自动再识别。如果没有自动识别，点击Android Studio最右边栏有个<code>Device File Explorer</code>，选择连接移动设备。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180910/JkJH3fFl2b.png" alt="mark" /></p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E9%9A%8F%E7%AC%94">随笔</a><a href="/categories/android">Android</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android-studio">Android Studio</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
