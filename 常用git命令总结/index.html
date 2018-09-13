@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>常用git命令总结 - SYSUcarey</title>
+<meta property="og:title" content="常用git命令总结 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">常用git命令总结</h1>
+    
+    <span class="article-date">2018-09-13</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="常用git命令总结">常用git命令总结</h2>
+
+<h3 id="git的版本管理机制">git的版本管理机制</h3>
+
+<ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li>Remote：远程仓库</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180911/BhIf9Gh0F5.png" alt="mark" /></p>
+
+<hr />
+
+<h3 id="1-git配置">1. git配置</h3>
+
+<p>git 的配置文件<code>.gitconfig</code>，某个仓库的配置文件为根目录下<code>.git\config</code>。目录下右键，选择<code>git bash here</code>，打开git原生命令行模式窗口。通过以下指令进行查看，修改配置。</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 编辑Git配置文件</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git config -e --<span style="color:#6ab825;font-weight:bold">global</span>
+
+<span style="color:#999;font-style:italic"># 设置提交代码时的用户信息</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git config --<span style="color:#6ab825;font-weight:bold">global</span> user.name <span style="color:#ed9d13">&#34;[name]&#34;</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git config --<span style="color:#6ab825;font-weight:bold">global</span> user.email <span style="color:#ed9d13">&#34;[email address]&#34;</span></code></pre></div>
+<hr />
+
+<h3 id="2-新建git本地仓库">2.新建git本地仓库</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 在当前目录新建一个Git代码库</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git init
+
+<span style="color:#999;font-style:italic"># 新建一个目录，将其初始化为Git代码库</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git init [project-name]
+
+<span style="color:#999;font-style:italic"># 新建一个目录，并下载一个项目和它的整个代码历史</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git clone [url]
+
+<span style="color:#999;font-style:italic"># 将一个项目下载到当前目录下</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git pull [url]</code></pre></div>
+<p>这里的[url]指的是远程仓库url，以.git结尾，以本人个人博客远程git仓库为例：</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180911/ia199J3cgC.png" alt="mark" /></p>
+
+<p>url地址就为：<a href="https://github.com/SYSUcarey/SYSUcarey.github.io.git">https://github.com/SYSUcarey/SYSUcarey.github.io.git</a></p>
+
+<hr />
+
+<h3 id="3-添加删除文件">3.添加删除文件</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 添加指定文件到暂存区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git add [file1] [file2] ...
+
+<span style="color:#999;font-style:italic"># 添加指定目录到暂存区，包括子目录</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git add [<span style="color:#24909d">dir</span>]
+
+<span style="color:#999;font-style:italic"># 添加当前目录的所有文件到暂存区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git add .
+
+<span style="color:#999;font-style:italic"># 删除工作区文件，并且将这次删除放入暂存区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git rm [file1] [file2] ...
+
+<span style="color:#999;font-style:italic"># 停止追踪指定文件，但该文件会保留在工作区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git rm --cached [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 改名文件，并且将这个改名放入暂存区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git mv [<span style="color:#24909d">file</span>-original] [<span style="color:#24909d">file</span>-renamed]</code></pre></div>
+<hr />
+
+<h3 id="4-代码提交">4. 代码提交</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 提交暂存区到仓库区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git commit -m [message]
+
+<span style="color:#999;font-style:italic"># 提交暂存区的指定文件到仓库区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git commit [file1] [file2] ... -m [message]
+
+<span style="color:#999;font-style:italic"># 提交工作区自上次commit之后的变化，直接到仓库区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git commit -a
+
+<span style="color:#999;font-style:italic"># 提交时显示所有diff信息</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git commit -v
+
+<span style="color:#999;font-style:italic"># 使用一次新的commit，替代上一次提交</span>
+<span style="color:#999;font-style:italic"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git commit --amend -m [message]
+
+<span style="color:#999;font-style:italic"># 重做上一次commit，并包括指定文件的新变化</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git commit --amend [file1] [file2] ...</code></pre></div>
+<hr />
+
+<h3 id="5-分支">5. 分支</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 列出所有本地分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch
+
+<span style="color:#999;font-style:italic"># 列出所有远程分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch -r
+
+<span style="color:#999;font-style:italic"># 列出所有本地分支和远程分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch -a
+
+<span style="color:#999;font-style:italic"># 新建一个分支，但依然停留在当前分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch [branch-name]
+
+<span style="color:#999;font-style:italic"># 新建一个分支，并切换到该分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git checkout -b [branch]
+
+<span style="color:#999;font-style:italic"># 新建一个分支，指向指定commit</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch [branch] [commit]
+
+<span style="color:#999;font-style:italic"># 新建一个分支，与指定的远程分支建立追踪关系</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch --track [branch] [remote-branch]
+
+<span style="color:#999;font-style:italic"># 切换到指定分支，并更新工作区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git checkout [branch-name]
+
+<span style="color:#999;font-style:italic"># 切换到上一个分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git checkout -
+
+<span style="color:#999;font-style:italic"># 建立追踪关系，在现有分支与指定的远程分支之间</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch --<span style="color:#24909d">set</span>-upstream [branch] [remote-branch]
+
+<span style="color:#999;font-style:italic"># 合并指定分支到当前分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git merge [branch]
+
+<span style="color:#999;font-style:italic"># 选择一个commit，合并进当前分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git cherry-pick [commit]
+
+<span style="color:#999;font-style:italic"># 删除分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch -d [branch-name]
+
+<span style="color:#999;font-style:italic"># 删除远程分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git push origin --delete [branch-name]
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git branch -dr [remote/branch]</code></pre></div>
+<hr />
+
+<h3 id="6-查看信息">6. 查看信息</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 显示有变更的文件</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git status
+
+<span style="color:#999;font-style:italic"># 显示当前分支的版本历史</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log
+
+<span style="color:#999;font-style:italic"># 显示commit历史，以及每次commit发生变更的文件</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log --stat
+
+<span style="color:#999;font-style:italic"># 搜索提交历史，根据关键词</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log -S [keyword]
+
+<span style="color:#999;font-style:italic"># 显示某个commit之后的所有变动，每个commit占据一行</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log [tag] HEAD --pretty=format:%s
+
+<span style="color:#999;font-style:italic"># 显示某个commit之后的所有变动，其&#34;提交说明&#34;必须符合搜索条件</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log [tag] HEAD --grep feature
+
+<span style="color:#999;font-style:italic"># 显示某个文件的版本历史，包括文件改名</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log --follow [<span style="color:#24909d">file</span>]
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git whatchanged [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 显示指定文件相关的每一次diff</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log -p [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 显示过去5次提交</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git log -<span style="color:#3677a9">5</span> --pretty --oneline
+
+<span style="color:#999;font-style:italic"># 显示所有提交过的用户，按提交次数排序</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git shortlog -sn
+
+<span style="color:#999;font-style:italic"># 显示指定文件是什么人在什么时间修改过</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git blame [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 显示暂存区和工作区的差异</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git diff
+
+<span style="color:#999;font-style:italic"># 显示暂存区和上一个commit的差异</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git diff --cached [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 显示工作区与当前分支最新commit之间的差异</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git diff HEAD
+
+<span style="color:#999;font-style:italic"># 显示两次提交之间的差异</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git diff [first-branch]...[second-branch]
+
+<span style="color:#999;font-style:italic"># 显示今天你写了多少行代码</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git diff --shortstat <span style="color:#ed9d13">&#34;@{0 day ago}&#34;</span>
+
+<span style="color:#999;font-style:italic"># 显示某次提交的元数据和内容变化</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git show [commit]
+
+<span style="color:#999;font-style:italic"># 显示某次提交发生变化的文件</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git show --name-only [commit]
+
+<span style="color:#999;font-style:italic"># 显示某次提交时，某个文件的内容</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git show [commit]:[filename]
+
+<span style="color:#999;font-style:italic"># 显示当前分支的最近几次提交</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git reflog</code></pre></div>
+<hr />
+
+<h3 id="7-远程同步">7. 远程同步</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 下载远程仓库的所有变动</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git fetch [remote]
+
+<span style="color:#999;font-style:italic"># 显示所有远程仓库</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git remote -v
+
+<span style="color:#999;font-style:italic"># 显示某个远程仓库的信息</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git remote show [remote]
+
+<span style="color:#999;font-style:italic"># 增加一个新的远程仓库，并命名</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git remote add [shortname] [url]
+
+<span style="color:#999;font-style:italic"># 删除远程仓库：</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git remote rm [name]
+
+<span style="color:#999;font-style:italic"># 修改远程仓库：</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git remote <span style="color:#24909d">set</span>-url --push [name] [newUrl]
+
+<span style="color:#999;font-style:italic"># 取回远程仓库的变化，并与本地分支合并</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git pull [remote] [branch]
+
+<span style="color:#999;font-style:italic"># 上传本地指定分支到远程仓库</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git push [remote] [branch]
+
+<span style="color:#999;font-style:italic"># 强行推送当前分支到远程仓库，即使有冲突</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git push [remote] --force
+
+<span style="color:#999;font-style:italic"># 推送所有分支到远程仓库</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git push [remote] --<span style="color:#24909d">all</span></code></pre></div>
+<hr />
+
+<h3 id="8-撤销">8. 撤销</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 恢复暂存区的指定文件到工作区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git checkout [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 恢复某个commit的指定文件到暂存区和工作区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git checkout [commit] [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 恢复暂存区的所有文件到工作区</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git checkout .
+
+<span style="color:#999;font-style:italic"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git reset [<span style="color:#24909d">file</span>]
+
+<span style="color:#999;font-style:italic"># 重置暂存区与工作区，与上一次commit保持一致</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git reset --hard
+
+<span style="color:#999;font-style:italic"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git reset [commit]
+
+<span style="color:#999;font-style:italic"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git reset --hard [commit]
+
+<span style="color:#999;font-style:italic"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git reset --keep [commit]
+
+<span style="color:#999;font-style:italic"># 新建一个commit，用来撤销指定commit</span>
+<span style="color:#999;font-style:italic"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git revert [commit]
+
+<span style="color:#999;font-style:italic"># 暂时将未提交的变化移除，稍后再移入</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git stash
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git stash pop</code></pre></div>
+<hr />
+
+<h3 id="9-其他">9. 其他</h3>
+
+<ul>
+<li>可供发布压缩包生成</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># 生成一个可供发布的压缩包</span>
+<span style="color:#a61717;background-color:#e3d2d2">$</span> git archive</code></pre></div>
+<ul>
+<li>一次完整地从工作区Workspace到远程仓库的文件上传步骤：</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic">#步骤为：</span>
+<span style="color:#999;font-style:italic">#1.初始仓库（已初始化的跳过）</span>
+git init 
+
+<span style="color:#999;font-style:italic">#2.提交至暂存区</span>
+git add .
+
+<span style="color:#999;font-style:italic">#3.commit到本地仓库</span>
+git commit -m <span style="color:#ed9d13">&#39;first commit&#39;</span>
+
+<span style="color:#999;font-style:italic">#4.关联远程库</span>
+git remote add origin [<span style="color:#a61717;background-color:#e3d2d2">你的远程库</span>url地址]
+
+<span style="color:#999;font-style:italic">#5.获取远程库与本地同步合并（若远程库不为空必须进行这一步）</span>
+git pull --rebase origin master
+
+<span style="color:#999;font-style:italic">#6.将本地仓库内容推送到远程仓库</span>
+git push -u origin master
+
+<span style="color:#999;font-style:italic">#**推送完毕查询状态</span>
+git status</code></pre></div>
+<p>​</p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E9%9A%8F%E7%AC%94">随笔</a><a href="/categories/git">git</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/git">git</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
