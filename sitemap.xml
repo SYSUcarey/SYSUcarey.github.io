@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sysucarey.github.io/virtualbox-centos%E8%AE%A9pc%E6%8F%90%E4%BE%9B%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sysucarey.github.io/leetcode4-median-of-two-sorted-arrays/</loc>
     <lastmod>2018-09-16T23:50:53+08:00</lastmod>
   </url>
@@ -61,13 +66,19 @@
   </url>
   
   <url>
-    <loc>https://sysucarey.github.io/tags/git/</loc>
-    <lastmod>2018-09-13T12:35:27+08:00</lastmod>
+    <loc>https://sysucarey.github.io/tags/centos/</loc>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sysucarey.github.io/categories/git/</loc>
+    <lastmod>2018-09-13T12:35:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/tags/git/</loc>
     <lastmod>2018-09-13T12:35:27+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -85,13 +96,13 @@
   </url>
   
   <url>
-    <loc>https://sysucarey.github.io/tags/leetcode/</loc>
+    <loc>https://sysucarey.github.io/categories/leetcode/</loc>
     <lastmod>2018-09-16T23:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sysucarey.github.io/categories/leetcode/</loc>
+    <loc>https://sysucarey.github.io/tags/leetcode/</loc>
     <lastmod>2018-09-16T23:50:53+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -110,19 +121,37 @@
   
   <url>
     <loc>https://sysucarey.github.io/post/</loc>
-    <lastmod>2018-09-16T23:50:53+08:00</lastmod>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sysucarey.github.io/</loc>
-    <lastmod>2018-09-16T23:50:53+08:00</lastmod>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sysucarey.github.io/tags/</loc>
     <lastmod>2018-09-10T20:00:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/categories/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2018-09-17T11:15:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
