@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>VirtualBox&#43;CentOS让PC提供桌面云服务 - SYSUcarey</title>
+<meta property="og:title" content="VirtualBox&#43;CentOS让PC提供桌面云服务 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">VirtualBox&#43;CentOS让PC提供桌面云服务</h1>
+    
+    <span class="article-date">2018-09-17</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="实验目的">实验目的</h1>
+
+<ol>
+<li><p>初步了解虚拟化技术，理解云计算的相关概念</p></li>
+
+<li><p>为后续课程提供统一的编程与实验环境</p></li>
+
+<li><p>理解系统工程师面临的困境</p></li>
+</ol>
+
+<hr />
+
+<h1 id="实验环境">实验环境</h1>
+
+<ul>
+<li><p>Windows10</p></li>
+
+<li><p>Git for windows</p></li>
+
+<li><p>VictualBox for windows</p></li>
+</ul>
+
+<hr />
+
+<h1 id="步骤流程">步骤流程</h1>
+
+<h2 id="1-git-for-windows-下载">1. git for windows 下载</h2>
+
+<p><a href="https://gitforwindows.org/">git for windows 官网</a></p>
+
+<h2 id="2-virtualbox-下载安装并配置">2. VirtualBox 下载安装并配置</h2>
+
+<h3 id="2-1-官网下载-victualbox-官网-https-www-virtualbox-org">2.1 官网下载：<a href="https://www.virtualbox.org/">victualBox 官网</a></h3>
+
+<h3 id="2-2-安装在d盘">2.2 安装在D盘</h3>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/gGj52biCf1.png" alt="mark" /></p>
+
+<h3 id="2-3-配置virtualbox">2.3 配置VirtualBox</h3>
+
+<ul>
+<li><code>管理-&gt;全局设定-&gt;常规</code>，修改默认虚拟电脑位置：</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/iCH8B33da1.png" alt="mark" /></p>
+
+<ul>
+<li><p>创建虚拟机内部虚拟网络，使得 Vbox 内部虚拟机可以通过它，实现虚拟机之间、虚拟机与主机的通讯 。</p>
+
+<ul>
+<li><code>管理-&gt;主机网络管理器-&gt;创建</code>，创建一块虚拟网卡，把<code>IPv4</code>地址分配为<code>192.168.100.1/24</code>。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/HG0aHEbL09.png" alt="mark" /></p>
+
+<ul>
+<li>在主机Windows终端cmd下，输入<code>ipconfig</code>可以看到自己新创建的网卡<code>VirtualBox Host-Only Network #2</code>。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/A5B87aeF4F.png" alt="mark" /></p></li>
+</ul>
+
+<h2 id="3-创建linux-centos虚拟机">3. 创建Linux CentOS虚拟机</h2>
+
+<h3 id="3-1-centos镜像下载">3.1 CentOS镜像下载</h3>
+
+<p><a href="https://www.centos.org/download/">官网下载地址</a></p>
+
+<p>下载<code>Minimal ISO</code></p>
+
+<h3 id="3-2-安装第一个虚拟机">3.2 安装第一个虚拟机</h3>
+
+<h4 id="3-2-1-新建虚拟电脑">3.2.1 新建虚拟电脑</h4>
+
+<ul>
+<li><code>新建</code>，在名称填上<code>centos</code>，Vbox自动帮你选择类型和版本号。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/k4e61Jhi1l.png" alt="mark" /></p>
+
+<ul>
+<li><p>分配内存<code>2GB(2048MB)</code>。</p></li>
+
+<li><p>选择<code>现在创建虚拟硬盘</code>。</p></li>
+
+<li><p>文件类型选择<code>VDI</code>。</p></li>
+
+<li><p>选择<code>动态分配</code>虚拟硬盘。</p></li>
+
+<li><p>分配<code>30GB</code>硬盘空间。</p></li>
+</ul>
+
+<h4 id="3-2-2-修改虚拟电脑设置">3.2.2 修改虚拟电脑设置</h4>
+
+<ul>
+<li><p>右键选择刚创建的虚拟机，<code>设置-&gt;系统-&gt;启动顺序</code>，将硬盘调成第一启动顺序。</p></li>
+
+<li><p>右键虚拟机，<code>设置-&gt;存储-&gt;控制器IDE</code>，点击没有盘片，然后分配光驱右边选择刚刚下载的CentOS镜像。</p></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/7Gg8iBb0Bf.png" alt="mark" /></p>
+
+<ul>
+<li>右键虚拟机，<code>设置-&gt;网络</code>，网卡1默认NAT，启用网卡2的网络连接，连接方式选择<code>Host-Only</code>，界面名称选择上面新创建的虚拟网卡<code>VirtualBox Host-Only Network #2</code>。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/eHiebK3581.png" alt="mark" /></p>
+
+<h4 id="3-2-3-启动虚拟机安装系统">3.2.3 启动虚拟机安装系统</h4>
+
+<ul>
+<li>右键虚拟机，<code>启动-&gt;正常启动</code>，选择<code>Install CentOS7</code>，选择语言</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/3lL7C65dei.png" alt="mark" /></p>
+
+<ul>
+<li><p>进入安装选项配置界面，需要注意两件事情：</p>
+
+<ul>
+<li><p><code>INSTALLATION DESTINATION</code>选择之前分配的30GB硬盘空间</p></li>
+
+<li><p><code>NETWORK &amp; HOST NAME</code>选择把网络连接打开</p></li>
+</ul></li>
+</ul>
+
+<p>然后可以<code>Begin Installation</code></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/mfhBaJDlLb.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/DaB9e3cD65.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/Df4k67dKG3.png" alt="mark" /></p>
+
+<ul>
+<li>安装界面中，配置自己的用户名和密码。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/H9c0dj54Hg.png" alt="mark" /></p>
+
+<ul>
+<li>安装成功后重启，进入系统。</li>
+</ul>
+
+<h4 id="3-2-4-升级内核">3.2.4 升级内核</h4>
+
+<ul>
+<li><p>获取wegt：<code>sudo yum install wget</code></p></li>
+
+<li><p>配置源（163源或阿里源）</p></li>
+</ul>
+
+<p>以配置163源为例的操作：</p>
+
+<ul>
+<li><p>备份<code>/etc/yum.repos.d/CentOS-Base.repo</code></p>
+
+<pre><code>sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+</code></pre></li>
+
+<li><p>进入yum源配置文件：<code>cd /etc/yum.repos.d</code></p></li>
+
+<li><p>下载网易163源：</p>
+
+<pre><code>sudo wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+</code></pre></li>
+
+<li><p>下载好把163源设置为默认源</p>
+
+<pre><code>sudo mv CentOS7-Base-163.repo CentOS-Base.repo
+</code></pre></li>
+
+<li><p>生成缓存</p>
+
+<pre><code>yum clean all
+yum makecache
+</code></pre></li>
+
+<li><p>升级OS内核</p></li>
+</ul>
+
+<pre><code>  sudo yum update
+</code></pre>
+
+<h4 id="3-2-5-检查网卡配置">3.2.5 检查网卡配置</h4>
+
+<ul>
+<li>输入<code>nmtui</code>，进入网卡配置管理，配置第二块网卡。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/LJjcdHecFB.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/L7cl31m0JJ.png" alt="mark" /></p>
+
+<ul>
+<li>IPv4选项点击<code>show</code>，在下面的<code>Addresses</code>点击<code>Add</code>，配置第二块网卡地址为：<code>192.168.100.50/24</code>。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/JL9dcaBhKd.png" alt="mark" /></p>
+
+<ul>
+<li>回到终端，ping主机<code>192.168.100.1</code></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/16FeflF17J.png" alt="mark" /></p>
+
+<p>实现虚拟机对本地主机的访问，第一个虚拟机操作完毕，终端<code>poweroff</code>关机。</p>
+
+<h3 id="3-3-安装第二个虚拟机">3.3 安装第二个虚拟机</h3>
+
+<ul>
+<li><p>利用复制功能，直接用第一个虚拟机复制一个新的：右键第一个虚拟机，选择<code>复制</code>，给新虚拟机取名，并勾上<code>重新初始化所有网卡的MAC地址</code>，然后选择<code>链接复制</code>。<img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/BIfaH7lk79.png" alt="mark" /></p></li>
+
+<li><p>启动第二个虚拟机，配置第二块网卡、激活第二块网卡、修改主机名。</p>
+
+<ul>
+<li><p>配置主机名要管理院权限，命令<code>sudo nmtui</code></p></li>
+
+<li><p>第一个选项<code>Edit a connection</code>配置第二块网卡地址为：<code>192.168.100.100/24</code>，操作同之前。</p></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/FlAL0FC3lk.png" alt="mark" /></p>
+
+<ul>
+<li>第二个选项<code>Activate a connection</code>，激活第二块网卡，前面带*表示激活</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/AE66h1gkj2.png" alt="mark" /></p>
+
+<ul>
+<li>第三个选项<code>Set System hostname</code>，改完主机名后，重启。重启后要重新再激活一次网卡。</li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/bjiLe3A0ab.png" alt="mark" /></p></li>
+
+<li><p>在Windows10下，用<code>git bash</code>里，ping第二个虚拟机的地址，即<code>192.168.100.100</code>。</p></li>
+</ul>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/8K1F1cfHIl.png" alt="mark" /></p>
+
+<ul>
+<li>通过<code>ssh</code>来访问虚拟机，可以通过<code>git bash</code>来进行<code>ssh</code>连接，例如我的虚拟机地址是<code>192.168.100.100</code>，<code>ssh</code>连接的命令为：</li>
+</ul>
+
+<pre><code>  ssh [username]@[virtual_machine_address]
+</code></pre>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/IgmiG6bmEb.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/CHidJAlem2.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/EkJcEH97i1.png" alt="mark" /></p>
+
+<p>成功实现宿主机对虚拟机的ssh访问。</p>
+
+<h1 id="遇到的问题">遇到的问题</h1>
+
+<h2 id="1-安装centos系统后升级内核-要获取wegt-用户没有管理员权限">1. 安装CentOS系统后升级内核，要获取wegt，用户没有管理员权限。</h2>
+
+<p>参考博客：<a href="https://blog.csdn.net/yuanxiang01/article/details/80208304">CentOS普通用户没有sudo权限</a></p>
+
+<ul>
+<li><p><code>su root</code> ，切换到root管理院</p></li>
+
+<li><p><code>vi /etc/sudoers</code>，修改管理员权限文件</p></li>
+
+<li><p>在行<code>root    ALL=(ALL)        ALL</code>下</p></li>
+</ul>
+
+<p>添加一行<code>username    ALL=(ALL)        ALL</code>。</p>
+
+<p>具体操作为：</p>
+
+<p>按键<code>yy</code>复制行，在下一行按键<code>p</code>粘贴，按键<code>i</code>进入编辑，将<code>root</code>改为<code>username</code>，<code>username</code>是你的用户名，按键<code>ESC</code>退出编辑，vi命令行模式输入<code>:wq!</code>保存并退出，再次切回用户<code>su username</code>。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/HKkakKkaEI.png" alt="mark" /></p>
+
+<h2 id="2-windows10-git-bash里访问第二个虚拟机ip时-git-bash里面出现中文乱码的情况">2. Windows10 git bash里访问第二个虚拟机IP时，git bash里面出现中文乱码的情况。</h2>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/29mbAK385b.png" alt="mark" /></p>
+
+<p>解决方法参见博客：<a href="https://blog.csdn.net/u013068377/article/details/52168434">windows下git bash中文乱码解决办法</a></p>
+
+<p>git bash 右键，<code>Options-&gt;Text-&gt;Character set</code>改成<code>GBK</code>。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/8CBLBK5FFH.png" alt="mark" /></p>
+
+<p>后面进行<code>ssh</code>连接虚拟机的时候，GBK的编码又会出错，改回<code>utf-8</code>就又能很好地运行。</p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%E8%AF%BE%E7%A8%8B">服务计算课程</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%E8%AF%BE%E7%A8%8B">服务计算课程</a><a href="/tags/centos">CentOS</a><a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1">云服务</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
