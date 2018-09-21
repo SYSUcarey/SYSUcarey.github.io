@@ -314,6 +314,50 @@ yum makecache
 
 <p>成功实现宿主机对虚拟机的ssh访问。</p>
 
+<hr />
+
+<h2 id="4-远程桌面访问虚拟机">4. 远程桌面访问虚拟机</h2>
+
+<ul>
+<li>安装VBox拓展包</li>
+</ul>
+
+<p><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/ba0Jaldg1e.png" alt="mark" /></p>
+
+<ul>
+<li>配置虚拟机拓展设置</li>
+</ul>
+
+<p><code>管理-&gt;全局设定-&gt;拓展</code>，添加下载好的拓展包。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/E3eG70Hjm6.png" alt="mark" /></p>
+
+<ul>
+<li>配置虚拟机端口</li>
+</ul>
+
+<p><code>右键虚拟机-&gt;设置-&gt;显示-&gt;远程桌面</code>，启用服务器，设置子集的服务器端口号，例如这里设置为5001。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/bEF99BgjEK.png" alt="mark" /></p>
+
+<ul>
+<li>使用远程桌面连接进行虚拟机访问</li>
+</ul>
+
+<p>启动虚拟机。</p>
+
+<p>Windows10下请教小娜姐姐打开<code>远程桌面连接</code>。</p>
+
+<p>计算机处写上，<code>宿主机IP+虚拟机端口号</code>。</p>
+
+<p>连接。</p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/g5I98lcFFe.png" alt="mark" /></p>
+
+<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/hiblhdhjJk.png" alt="mark" /></p>
+
 <h1 id="遇到的问题">遇到的问题</h1>
 
 <h2 id="1-安装centos系统后升级内核-要获取wegt-用户没有管理员权限">1. 安装CentOS系统后升级内核，要获取wegt，用户没有管理员权限。</h2>
