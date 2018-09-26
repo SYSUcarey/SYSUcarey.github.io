@@ -6,10 +6,30 @@
     <description>Recent content in 服务计算课程 on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Sep 2018 11:15:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Sep 2018 10:30:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97%E8%AF%BE%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>虚拟机CentOS7安装图形化界面&#43;Google Chrome</title>
+      <link>https://sysucarey.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BAcentos7%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2-google-chrome/</link>
+      <pubDate>Wed, 26 Sep 2018 10:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BAcentos7%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2-google-chrome/</guid>
+      <description>1. 环境  Windows10
+ Virtual Box + CentOS7 虚拟机的相关环境配置
+  参照上一篇博客：VirtualBox+CentOS让PC提供桌面云服务
+2. 配置虚拟机  图形化界面需要更高的配置，调整虚拟机CPU，内存，显存配置。
+ 右键虚拟机-&amp;gt;设置-&amp;gt;系统-&amp;gt;处理器，分配2个CPU。
+ 右键虚拟机-&amp;gt;设置-&amp;gt;系统-&amp;gt;主板，内存分配2GB。
+ 右键虚拟机-&amp;gt;设置-&amp;gt;显示-&amp;gt;屏幕，显存分配128MB，启用3D加速。
+  3. 安装CentOS桌面  命令sudo yum groupinstall &amp;quot;GNOME Desktop&amp;quot;安装桌面。（要大约半个小时这么久）   startx进入图形化界面。   可以配置虚拟机，让鼠标的切入切出虚拟机更人性化。
+ 先sudo yum install -y kernel-devel gcc，安装kernel-devel 和 gcc。 点击上方设备-&amp;gt;安装增强功能，run。   4. 安装Google Chrome  下载Google Chrome for Linux。  官网可能被墙，国内IP可以移步新浪科技网下载。
+选择正式版RPM-新浪本地下载。
+ 利用yum完成安装  去到下载RPM的目录下，终端输入命令:
+sudo yum localinstall google-chrome-stable_current_x86_64.</description>
+    </item>
     
     <item>
       <title>VirtualBox&#43;CentOS让PC提供桌面云服务</title>
