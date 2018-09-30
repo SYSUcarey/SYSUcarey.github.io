@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode15 3Sum - SYSUcarey</title>
+<meta property="og:title" content="Leetcode15 3Sum - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode15 3Sum</h1>
+    
+    <span class="article-date">2018-09-30</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="题目论述">题目论述</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/3sum/description/">Leetcode15 3Sum</a></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given an array <code>nums</code> of <em>n</em> integers, are there elements <em>a</em>, <em>b</em>, <em>c</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>The solution set must not contain duplicate triplets.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>  Given array nums = [-1, 0, 1, 2, -1, -4],
+  
+  A solution set is:
+  [
+    [-1, 0, 1],
+    [-1, -1, 2]
+  ]
+</code></pre>
+
+<hr />
+
+<h2 id="思考分析">思考分析</h2>
+
+<p><strong>分析一：</strong></p>
+
+<p>​   三层循环暴力求解。</p>
+
+<p>​   <strong>复杂度O(n^3)</strong></p>
+
+<p><strong>分析二(Solution1)：</strong></p>
+
+<p>​   我们根据之前做的<a href="https://sysucarey.github.io/leetcode16-3-sum-closet/">Leetcode16： 3 Sum Closest</a>的思路，将这道三数和问题转化为二数和问题。</p>
+
+<ul>
+<li>第一步，因为所求与原始数组下标无关，故放心大胆地先将数组排序。</li>
+<li>第二步，用一个for循环选出三数中最小的一个数<code>num[target]</code>。</li>
+<li>第三步，用一个while循环从<code>num[target]</code>后面的数中，以从两头向中间逼近的方法确定剩下的两个数<code>num[head], num[tail]</code>，如果<code>num[head] + num[tail] = -num[target]</code>，那么，<code>(num[target], num[head], num[tail])</code>就是满足条件的三元组。</li>
+
+<li><p>第四步，按照上述步骤得到的三元组是有重复的，那么我们要优化一下，避免向答案数组中加入重复项。</p>
+
+<ul>
+<li><p>在for循环中，如果<code>num[target]</code>与之前的一样的话，那么target++，跳过。</p></li>
+
+<li><p>在while循环中，我们规定如果找到一个满足条件的<code>(head, tail)</code>，head++继续寻找不同的<code>(head, tail)</code>。那么需要判断head++后，当下的<code>num[head]</code>与之前的是否相同，相同的话，那么head++，跳过。</p></li>
+</ul></li>
+</ul>
+
+<p><strong>复杂度O(n^2)</strong></p>
+
+<hr />
+
+<h2 id="code-c">code(c++)</h2>
+
+<p>solution (88ms)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; threeSum(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; nums) {
+        <span style="color:#999;font-style:italic">//sort the array
+</span><span style="color:#999;font-style:italic"></span>        sort(nums.begin(), nums.end());
+
+        <span style="color:#999;font-style:italic">//find the answer vector&lt;vector&lt;int&gt;&gt;
+</span><span style="color:#999;font-style:italic"></span>        vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; answer;
+        <span style="color:#6ab825;font-weight:bold">int</span> head, tail;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; (<span style="color:#6ab825;font-weight:bold">int</span>)nums.size(); i++) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(nums[i] == nums[i-<span style="color:#3677a9">1</span>] &amp;&amp; i != <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">continue</span>;
+            head = i + <span style="color:#3677a9">1</span>;
+            tail = nums.size()-<span style="color:#3677a9">1</span>; 
+            <span style="color:#6ab825;font-weight:bold">while</span>(head &lt; tail) {
+                <span style="color:#6ab825;font-weight:bold">if</span>(nums[head] + nums[tail] &lt; -nums[i]) head++;
+                <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#447fcf">if</span>(nums[head] + nums[tail] &gt; -nums[i]) tail--;
+                <span style="color:#6ab825;font-weight:bold">else</span> {
+                    <span style="color:#6ab825;font-weight:bold">if</span>(nums[head] == nums[head-<span style="color:#3677a9">1</span>] &amp;&amp; head != i+<span style="color:#3677a9">1</span>) {
+                        head++;
+                        <span style="color:#6ab825;font-weight:bold">continue</span>;
+                    }
+                    answer.push_back({nums[i], nums[head], nums[tail]});
+                    head++;
+                }
+            }
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> answer;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

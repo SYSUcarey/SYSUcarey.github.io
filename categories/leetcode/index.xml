@@ -6,10 +6,24 @@
     <description>Recent content in Leetcode on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Sep 2018 22:50:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Sep 2018 22:25:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode15 3Sum</title>
+      <link>https://sysucarey.github.io/leetcode15-3sum/</link>
+      <pubDate>Sun, 30 Sep 2018 22:25:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode15-3sum/</guid>
+      <description>题目论述  链接：  Leetcode15 3Sum
+ 概述：  Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+Note:
+The solution set must not contain duplicate triplets.
+Example:
+ Given array nums = [-1, 0, 1, 2, -1, -4], A solution set is: [ [-1, 0, 1], [-1, -1, 2] ]  思考分析 分析一：</description>
+    </item>
     
     <item>
       <title>Leetcode11: Container With Most Water</title>
