@@ -6,10 +6,22 @@
     <description>Recent content in Posts on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Oct 2018 23:20:50 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Oct 2018 21:22:32 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode74 Search a 2D Matrix</title>
+      <link>https://sysucarey.github.io/leetcode74-search-a-2d-matrix/</link>
+      <pubDate>Thu, 04 Oct 2018 21:22:32 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode74-search-a-2d-matrix/</guid>
+      <description>题目论述  链接：  Leetcode74 Search a 2D Matrix
+ 概述：  Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+ Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row.  Example 1:
+ Input: matrix = [ [1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50] ] target = 3 Output: true  Example 2:</description>
+    </item>
     
     <item>
       <title>Leetcode119 Pascal&#39;s Triangle II</title>
@@ -147,43 +159,6 @@ Company domain是公司域名，对应的倒过来的java包名。
       <description>题目： Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 Example:
 Given array nums = [-1, 2, 1, -4], and target = 1. The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</description>
-    </item>
-    
-    <item>
-      <title>Hugo&#43;Github搭建个人博客</title>
-      <link>https://sysucarey.github.io/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Fri, 07 Sep 2018 21:41:22 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/hugo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>搭建环境：  Windows10 Git（不必要）  流程步骤  Hugo下载  下载网址：
-https://github.com/gohugoio/hugo/releases/tag/v0.48
-下载hugo_0.48_Windows-64bit.zip
-解压缩后是一个二进制应用程序hugo.exe
- Hugo环境变量配置  创建以下目录：(将hugo.exe移到\bin目录下)
-F:\Hugo\bin\hugo.exe
-编辑系统环境变量，添加hugo.exe的环境变量：（用英语分号隔开）
-F:\Hugo\bin
-检验是否配好环境变量，cmd下输入hugo version：
- 在F:\Hugo目录下运行cmd，执行hugo new site blog。  成功后，hugo会帮我们创建一个文件夹F:\Hugo\blog，里面有如下文件结构：
- 选择喜好的主题模板  主题选择下载网址：Hugo Themes
-例如选择hugo-natrium-theme这个模板。
-下载地址：https://github.com/mobybit/hugo-natrium-theme
-Download下载到目录F:\Hugo\blog\themes
-（下载地址在Github上，可用Git直接拉，也可以手动下载包）。
-Git命令：git clone https://github.com/mobybit/hugo-natrium-theme.git
-根据下载目录下的README.rd指示配置主题
-配置完成后
-在F:\Hugo\blog目录下cmd终端执行命令hugo server --theme=hugo-natrium-theme：
-浏览器打开http://localhost:1313，可以查看到模板运行效果：
- 个性化自己的博客  仔细阅读README.rd，修改模板网页，配置自己的私有博客。
-例如本例子的：
- 修改个人图标：F:\Hugo\blog\themes\hugo-natrium-theme\static\images\logo.png
- 新建博客：hugo new post\blog.md
- 修改About：F:\Hugo\blog\content\page\about.md
-等等
-  完成后，在F:\Hugo\blog目录下cmd终端再次执行命令hugo server --theme=hugo-natrium-theme
-浏览器打开http://localhost:1313，可以查看运行效果：
- 生成静态网页并推到GithubPages:  首先创建自己的GithubPages，新建仓库repository，命名为Username.</description>
     </item>
     
   </channel>

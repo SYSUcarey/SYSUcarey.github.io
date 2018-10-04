@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode74 Search a 2D Matrix - SYSUcarey</title>
+<meta property="og:title" content="Leetcode74 Search a 2D Matrix - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode74 Search a 2D Matrix</h1>
+    
+    <span class="article-date">2018-10-04</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="题目论述">题目论述</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/search-a-2d-matrix/description/">Leetcode74 Search a 2D Matrix</a></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Write an efficient algorithm that searches for a value in an <em>m</em> x <em>n</em> matrix. This matrix has the following properties:</p>
+
+<ul>
+<li>Integers in each row are sorted from left to right.</li>
+<li>The first integer of each row is greater than the last integer of the previous row.</li>
+</ul>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>  Input:
+  matrix = [
+    [1,   3,  5,  7],
+    [10, 11, 16, 20],
+    [23, 30, 34, 50]
+  ]
+  target = 3
+  Output: true
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>  Input:
+  matrix = [
+    [1,   3,  5,  7],
+    [10, 11, 16, 20],
+    [23, 30, 34, 50]
+  ]
+  target = 13
+  Output: false
+</code></pre>
+
+<hr />
+
+<h2 id="思考分析">思考分析</h2>
+
+<p>​   这道题比较简单，注意到这个m*n矩阵中每一行都是左小右大排序，且下一行的数都比上一行的数要大。</p>
+
+<p>​   那么给定<code>target</code>，我们只要从上到下比较每一行的最后一项即可。</p>
+
+<p>​   如果这最后一项比<code>target</code>小，那么这一行就都比<code>target</code>要小；如果出现第一个最后一项是大于等于<code>target</code>的，那么<code>target</code>只有可能出现在这一行，下面行的数都比这个最后一项大，也就比<code>target</code>大，故不可能出现<code>target</code>。这样我们就找到了<code>target</code>可能出现在的行。复杂度O(m)。</p>
+
+<p>​   然后再遍历这一行n个数，判断<code>target</code>是否出现在这一行。复杂度O(n)。</p>
+
+<p>​   这个算法复杂度O(m+n)。</p>
+
+<hr />
+
+<h2 id="code-c">code(c++)</h2>
+
+<p>solution (8ms)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    <span style="color:#6ab825;font-weight:bold">bool</span> searchMatrix(vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt;&amp; matrix, <span style="color:#6ab825;font-weight:bold">int</span> target) {
+        <span style="color:#6ab825;font-weight:bold">if</span>(matrix.size() &lt;= <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#24909d">false</span>;
+        <span style="color:#6ab825;font-weight:bold">if</span>(matrix[<span style="color:#3677a9">0</span>].size() &lt;= <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#24909d">false</span>;
+        <span style="color:#6ab825;font-weight:bold">int</span> row = matrix.size();
+        <span style="color:#6ab825;font-weight:bold">int</span> col = matrix[<span style="color:#3677a9">0</span>].size();
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; row; i++) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(matrix[i][col-<span style="color:#3677a9">1</span>] &lt; target) <span style="color:#6ab825;font-weight:bold">continue</span>;
+            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> j = col-<span style="color:#3677a9">1</span>; j &gt;= <span style="color:#3677a9">0</span>; j--) {
+                <span style="color:#6ab825;font-weight:bold">if</span>(matrix[i][j] == target) <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#24909d">true</span>;
+            }
+            <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#24909d">false</span>;
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#24909d">false</span>;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
