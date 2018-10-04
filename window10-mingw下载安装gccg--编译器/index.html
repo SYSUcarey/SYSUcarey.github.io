@@ -73,31 +73,31 @@
 
 <p>打开下载好的<code>mingw-get-setup.exe</code> ，这里选择安装目录为<code>F:\MinGW</code>。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/bB6dFeiF7m.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195635.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/labdI9k6B2.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195652.png" alt="" /></p>
 
 <p>3.下载安装gcc/g++</p>
 
 <p>​   通过<code>MinGW Installation Manager</code>下载gcc/g++。勾选<code>mingw32-gcc-g++-bin</code>，点击<code>Apply Changes</code>，下载安装gcc/g++。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/KFkHmJIa3e.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195703.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/G1I8B33Ade.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195716.png" alt="" /></p>
 
 <p>4.配置环境变量：</p>
 
 <p>​   编辑系统变量<code>Path</code>，添加一个环境变量<code>F:\MinGW\bin</code>，具体为MinGW根目录下的<code>\bin</code>目录，用英文分号隔开。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/89K6e2i7g5.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195732.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/FCE6jK70GE.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195746.png" alt="" /></p>
 
 <p>5.检验是否成功下载安装gcc/g++：</p>
 
 <p>​   打开<code>cmd</code>终端，输入<code>gcc -v</code>和<code>g++ -v</code>检验gcc与g++是否安装并配置变量成功。若如下图所示，则成功。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/AHaj8ehJg5.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195759.png" alt="" /></p>
 
 <hr />
 
@@ -107,9 +107,9 @@
 
 <p>具体是因为URL丢失<code>libgmp-6.1.2-2-mingw32-dll-10.tar.xz</code>，<code>libmpfr-3.1.5-1-mingw32-dll-4.tar.xz</code>，两个package包，从而导致在进行g++编译的时候出现重要组件<code>libgmp-10.dll</code>与<code>libmpfr-4.dll</code>的丢失。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/3m0GGchjJj.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195811.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180907/hielC6jdcA.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004195825.png" alt="" /></p>
 
 <p>解决方案：</p>
 

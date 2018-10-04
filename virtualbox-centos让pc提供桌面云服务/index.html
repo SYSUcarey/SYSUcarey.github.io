@@ -95,7 +95,7 @@
 
 <h3 id="2-2-安装在d盘">2.2 安装在D盘</h3>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/gGj52biCf1.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200019.png" alt="" /></p>
 
 <h3 id="2-3-配置virtualbox">2.3 配置VirtualBox</h3>
 
@@ -103,7 +103,7 @@
 <li><code>管理-&gt;全局设定-&gt;常规</code>，修改默认虚拟电脑位置：</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/iCH8B33da1.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200037.png" alt="" /></p>
 
 <ul>
 <li><p>创建虚拟机内部虚拟网络，使得 Vbox 内部虚拟机可以通过它，实现虚拟机之间、虚拟机与主机的通讯 。</p>
@@ -112,13 +112,13 @@
 <li><code>管理-&gt;主机网络管理器-&gt;创建</code>，创建一块虚拟网卡，把<code>IPv4</code>地址分配为<code>192.168.100.1/24</code>。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/HG0aHEbL09.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200049.png" alt="" /></p>
 
 <ul>
 <li>在主机Windows终端cmd下，输入<code>ipconfig</code>可以看到自己新创建的网卡<code>VirtualBox Host-Only Network #2</code>。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/A5B87aeF4F.png" alt="mark" /></p></li>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200120.png" alt="" /></p></li>
 </ul>
 
 <h2 id="3-创建linux-centos虚拟机">3. 创建Linux CentOS虚拟机</h2>
@@ -137,7 +137,7 @@
 <li><code>新建</code>，在名称填上<code>centos</code>，Vbox自动帮你选择类型和版本号。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/k4e61Jhi1l.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200133.png" alt="" /></p>
 
 <ul>
 <li><p>分配内存<code>2GB(2048MB)</code>。</p></li>
@@ -159,13 +159,13 @@
 <li><p>右键虚拟机，<code>设置-&gt;存储-&gt;控制器IDE</code>，点击没有盘片，然后分配光驱右边选择刚刚下载的CentOS镜像。</p></li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/7Gg8iBb0Bf.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200146.png" alt="" /></p>
 
 <ul>
 <li>右键虚拟机，<code>设置-&gt;网络</code>，网卡1默认NAT，启用网卡2的网络连接，连接方式选择<code>Host-Only</code>，界面名称选择上面新创建的虚拟网卡<code>VirtualBox Host-Only Network #2</code>。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/eHiebK3581.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200156.png" alt="" /></p>
 
 <h4 id="3-2-3-启动虚拟机安装系统">3.2.3 启动虚拟机安装系统</h4>
 
@@ -173,7 +173,7 @@
 <li>右键虚拟机，<code>启动-&gt;正常启动</code>，选择<code>Install CentOS7</code>，选择语言</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/3lL7C65dei.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200206.png" alt="" /></p>
 
 <ul>
 <li><p>进入安装选项配置界面，需要注意两件事情：</p>
@@ -187,17 +187,17 @@
 
 <p>然后可以<code>Begin Installation</code></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/mfhBaJDlLb.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200218.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/DaB9e3cD65.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200229.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/Df4k67dKG3.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200238.png" alt="" /></p>
 
 <ul>
 <li>安装界面中，配置自己的用户名和密码。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/H9c0dj54Hg.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200249.png" alt="" /></p>
 
 <ul>
 <li>安装成功后重启，进入系统。</li>
@@ -249,28 +249,28 @@ yum makecache
 <li>输入<code>nmtui</code>，进入网卡配置管理，配置第二块网卡。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/LJjcdHecFB.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200306.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/L7cl31m0JJ.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200315.png" alt="" /></p>
 
 <ul>
 <li>IPv4选项点击<code>show</code>，在下面的<code>Addresses</code>点击<code>Add</code>，配置第二块网卡地址为：<code>192.168.100.50/24</code>。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/JL9dcaBhKd.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200327.png" alt="" /></p>
 
 <ul>
 <li>回到终端，ping主机<code>192.168.100.1</code></li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/16FeflF17J.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200351.png" alt="" /></p>
 
 <p>实现虚拟机对本地主机的访问，第一个虚拟机操作完毕，终端<code>poweroff</code>关机。</p>
 
 <h3 id="3-3-安装第二个虚拟机">3.3 安装第二个虚拟机</h3>
 
 <ul>
-<li><p>利用复制功能，直接用第一个虚拟机复制一个新的：右键第一个虚拟机，选择<code>复制</code>，给新虚拟机取名，并勾上<code>重新初始化所有网卡的MAC地址</code>，然后选择<code>链接复制</code>。<img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/BIfaH7lk79.png" alt="mark" /></p></li>
+<li><p>利用复制功能，直接用第一个虚拟机复制一个新的：右键第一个虚拟机，选择<code>复制</code>，给新虚拟机取名，并勾上<code>重新初始化所有网卡的MAC地址</code>，然后选择<code>链接复制</code>。<img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200402.png" alt="" /></p></li>
 
 <li><p>启动第二个虚拟机，配置第二块网卡、激活第二块网卡、修改主机名。</p>
 
@@ -280,24 +280,24 @@ yum makecache
 <li><p>第一个选项<code>Edit a connection</code>配置第二块网卡地址为：<code>192.168.100.100/24</code>，操作同之前。</p></li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/FlAL0FC3lk.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200417.png" alt="" /></p>
 
 <ul>
 <li>第二个选项<code>Activate a connection</code>，激活第二块网卡，前面带*表示激活</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/AE66h1gkj2.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200427.png" alt="" /></p>
 
 <ul>
 <li>第三个选项<code>Set System hostname</code>，改完主机名后，重启。重启后要重新再激活一次网卡。</li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/bjiLe3A0ab.png" alt="mark" /></p></li>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200439.png" alt="" /></p></li>
 
 <li><p>在Windows10下，用<code>git bash</code>里，ping第二个虚拟机的地址，即<code>192.168.100.100</code>。</p></li>
 </ul>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/8K1F1cfHIl.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200454.png" alt="" /></p>
 
 <ul>
 <li>通过<code>ssh</code>来访问虚拟机，可以通过<code>git bash</code>来进行<code>ssh</code>连接，例如我的虚拟机地址是<code>192.168.100.100</code>，<code>ssh</code>连接的命令为：</li>
@@ -306,11 +306,11 @@ yum makecache
 <pre><code>  ssh [username]@[virtual_machine_address]
 </code></pre>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/IgmiG6bmEb.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200504.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/CHidJAlem2.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200515.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/EkJcEH97i1.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200523.png" alt="" /></p>
 
 <p>成功实现宿主机对虚拟机的ssh访问。</p>
 
@@ -324,7 +324,7 @@ yum makecache
 
 <p><a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/ba0Jaldg1e.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200536.png" alt="" /></p>
 
 <ul>
 <li>配置虚拟机拓展设置</li>
@@ -332,7 +332,7 @@ yum makecache
 
 <p><code>管理-&gt;全局设定-&gt;拓展</code>，添加下载好的拓展包。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/E3eG70Hjm6.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200557.png" alt="" /></p>
 
 <ul>
 <li>配置虚拟机端口</li>
@@ -340,7 +340,7 @@ yum makecache
 
 <p><code>右键虚拟机-&gt;设置-&gt;显示-&gt;远程桌面</code>，启用服务器，设置子集的服务器端口号，例如这里设置为5001。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/bEF99BgjEK.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200607.png" alt="" /></p>
 
 <ul>
 <li>使用远程桌面连接进行虚拟机访问</li>
@@ -354,9 +354,9 @@ yum makecache
 
 <p>连接。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/g5I98lcFFe.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200618.png" alt="" /></p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180921/hiblhdhjJk.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200628.png" alt="" /></p>
 
 <h1 id="遇到的问题">遇到的问题</h1>
 
@@ -378,17 +378,17 @@ yum makecache
 
 <p>按键<code>yy</code>复制行，在下一行按键<code>p</code>粘贴，按键<code>i</code>进入编辑，将<code>root</code>改为<code>username</code>，<code>username</code>是你的用户名，按键<code>ESC</code>退出编辑，vi命令行模式输入<code>:wq!</code>保存并退出，再次切回用户<code>su username</code>。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180913/HKkakKkaEI.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200639.png" alt="" /></p>
 
 <h2 id="2-windows10-git-bash里访问第二个虚拟机ip时-git-bash里面出现中文乱码的情况">2. Windows10 git bash里访问第二个虚拟机IP时，git bash里面出现中文乱码的情况。</h2>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/29mbAK385b.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200649.png" alt="" /></p>
 
 <p>解决方法参见博客：<a href="https://blog.csdn.net/u013068377/article/details/52168434">windows下git bash中文乱码解决办法</a></p>
 
 <p>git bash 右键，<code>Options-&gt;Text-&gt;Character set</code>改成<code>GBK</code>。</p>
 
-<p><img src="http://peo1cra6j.bkt.clouddn.com/blog/180917/8CBLBK5FFH.png" alt="mark" /></p>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181004200658.png" alt="" /></p>
 
 <p>后面进行<code>ssh</code>连接虚拟机的时候，GBK的编码又会出错，改回<code>utf-8</code>就又能很好地运行。</p>
 
