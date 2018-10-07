@@ -6,9 +6,25 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Oct 2018 21:22:32 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Oct 2018 22:33:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Leetcode18 4Sum</title>
+      <link>https://sysucarey.github.io/leetcode18-4sum/</link>
+      <pubDate>Sun, 07 Oct 2018 22:33:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode18-4sum/</guid>
+      <description>题目  链接：  Leetcode18 4Sum
+ 概述：  Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b+ c + d = target? Find all unique quadruplets in the array which gives the sum of target.
+Note:
+The solution set must not contain duplicate quadruplets.
+Example:
+ Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.</description>
+    </item>
     
     
     
@@ -165,19 +181,6 @@ Company domain是公司域名，对应的倒过来的java包名。
  选择Phone and Tablet  选择适合的API（SDK）版本，这里我选择API24：Android7.0
 真机运行项目的时候需要手机的Android不低于选择的API(SDK)
  选择Empty Activity模板创建项目  项目会自动生成一个Java（Activity）文件和一个XML布局文件</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Leetcode16: 3 Sum Closet</title>
-      <link>https://sysucarey.github.io/leetcode16-3-sum-closet/</link>
-      <pubDate>Sun, 09 Sep 2018 20:30:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode16-3-sum-closet/</guid>
-      <description>题目： Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
-Example:
-Given array nums = [-1, 2, 1, -4], and target = 1. The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</description>
     </item>
     
     

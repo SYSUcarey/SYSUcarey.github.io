@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode18 4Sum - SYSUcarey</title>
+<meta property="og:title" content="Leetcode18 4Sum - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode18 4Sum</h1>
+    
+    <span class="article-date">2018-10-07</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/4sum/description/">Leetcode18 4Sum</a></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em>+ <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the array which gives the sum of <code>target</code>.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>The solution set must not contain duplicate quadruplets.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>  Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
+  
+  A solution set is:
+  [
+    [-1,  0, 0, 1],
+    [-2, -1, 1, 2],
+    [-2,  0, 0, 2]
+  ]
+</code></pre>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<p><strong>分析一：</strong></p>
+
+<ul>
+<li>四层循环暴力求解的方法显然是不切实际的。</li>
+</ul>
+
+<p><strong>分析二：</strong></p>
+
+<ul>
+<li><p>我们参考之前<a href="https://sysucarey.github.io/leetcode15-3sum/">leetcode15 3sum</a>的解法套路。在<a href="https://sysucarey.github.io/leetcode15-3sum/">leetcode15 3sum</a>解法中，我们将一个 <em>3 Sum</em> 问题转化为一个 <em>2 Sum</em> 问题，先确定三数中的一个，剩下的 <em>2 Sum</em> 问题可以通过 <em>head, tail</em> 两个 <em>index</em> 指针向中间逼近的方法以 <em>O(n)</em> 的复杂度解决。</p></li>
+
+<li><p>那么同样的道理，对于 <em>4 Sum</em> 问题，我们何不先确定一个数，从而将 <em>4 Sum</em> 问题归化成一个 <em>3 Sum</em> 问题，从而再简化成一个 <em>2 Sum</em> 问题，这样一个算法的复杂度可以变为 <em>O (n^3)</em> 。</p></li>
+</ul>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<ul>
+<li>第一步，将数组排序。</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  sort(nums.begin(), nums.end());
+</code></pre></div>
+<ul>
+<li>第二步，<code>4 Sum -&gt; 3 Sum -&gt; 2 Sum</code>。
+
+<br /></li>
+</ul>
+
+<p>​ 用 <em>smallest, head, tail, largest</em> 四个 <em>index</em> 指针来指向选中的四个数(从小到大)。</p>
+
+<p>​ 两个 <em>for</em> 循环确定最小数和最大数，问题转化从<code>4 Sum -&gt; 3 Sum -&gt; 2 Sum</code>。(<code>smallest from 0 to len-1</code>，<code>largest from len-1 to smallest+3</code>)</p>
+
+<p>​ 一个while循环，<em>head, tail</em> 从两侧向中间逼近解决<code>2 Sum</code>问题。(<code>head = smallest + 1</code>，<code>tail = largest - 1</code>)</p>
+
+<ul>
+<li>第三步，除去重复项。</li>
+</ul>
+
+<p>​  <em>smallest</em> 的重复。第一层 <em>for</em> 循环中，<code>smallest from 0 to len-1</code>，如果最小数与前一个相同，那么跳过。</p>
+
+<pre><code> *largest* 的重复。第二层 *for* 循环中，`largest from len-1 to smallest+3`，如果最大数与后一个数相同，那么跳过。
+</code></pre>
+
+<p>​  <em>head, tail</em> 的重复。第三层 <em>while</em> 循环中，由于我们规定，当找到符合条件的四数组合，那么 <em>head++</em> ，因此在这一层循环中排除重复时，要在最后判断 <em>head</em> 指向数与前一个是否相同，如果相同则跳过。</p>
+
+<ul>
+<li>选择<code>largest frome len-1 to smallest+3</code>，而不是<code>largest from smallest+3 to len-1</code>的原因是：</li>
+</ul>
+
+<p>​ 如果选择后者的遍历方法，当你判断 <em>largest</em> 重复的 时候，因为这是一个 <em>4 Sum</em> 问题，就算新的最大数与前一个数相同，也不一定是重复项。反例示范：</p>
+
+<pre><code>  Input:[-1,2,2,-5,0,-1,4] 3
+  
+  Output:[[-5,2,2,4]]
+  
+  Expected:[[-5,2,2,4],[-1,0,2,2]]
+  
+</code></pre>
+
+<p>​ 如果是后者的遍历方法，这样最大数取到第一个2的时候，因为head与tail取不到第二个2，因此取不到第二个解<code>[-1, 0, 2, 2]</code>。然后tail++的时候会判断2与前一个数相等，直接跳过，那么就漏掉了这个解了。</p>
+
+<hr />
+
+<h2 id="code-c">code(c++)</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; fourSum(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#6ab825;font-weight:bold">int</span> target) {
+        <span style="color:#999;font-style:italic">//sorted the array
+</span><span style="color:#999;font-style:italic"></span>        sort(nums.begin(), nums.end());
+        <span style="color:#999;font-style:italic">//determine the smallest and largest
+</span><span style="color:#999;font-style:italic"></span>        vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; answer;
+        <span style="color:#6ab825;font-weight:bold">int</span> smallest, head, tail, largest;
+        <span style="color:#6ab825;font-weight:bold">int</span> sum;
+        <span style="color:#6ab825;font-weight:bold">for</span>(smallest = <span style="color:#3677a9">0</span>; smallest &lt; (<span style="color:#6ab825;font-weight:bold">int</span>)nums.size(); smallest++) {
+            <span style="color:#999;font-style:italic">// avoid the same pair of smallest and largest numbers
+</span><span style="color:#999;font-style:italic"></span>            <span style="color:#6ab825;font-weight:bold">if</span>(smallest &gt; <span style="color:#3677a9">0</span> &amp;&amp; nums[smallest] == nums[smallest-<span style="color:#3677a9">1</span>]) <span style="color:#6ab825;font-weight:bold">continue</span>;
+
+            <span style="color:#6ab825;font-weight:bold">for</span>(largest = (<span style="color:#6ab825;font-weight:bold">int</span>)nums.size()-<span style="color:#3677a9">1</span>; largest &gt;= smallest+<span style="color:#3677a9">3</span>; largest--) {
+                <span style="color:#999;font-style:italic">// avoid the same pair of smallest and largest numbers
+</span><span style="color:#999;font-style:italic"></span>                <span style="color:#6ab825;font-weight:bold">if</span>(largest &lt; (<span style="color:#6ab825;font-weight:bold">int</span>)nums.size()-<span style="color:#3677a9">1</span> &amp;&amp; nums[largest] == nums[largest+<span style="color:#3677a9">1</span>]) <span style="color:#6ab825;font-weight:bold">continue</span>;
+    
+                <span style="color:#999;font-style:italic">//find the two Sum answer
+</span><span style="color:#999;font-style:italic"></span>                head = smallest + <span style="color:#3677a9">1</span>;
+                tail = largest - <span style="color:#3677a9">1</span>;
+                <span style="color:#6ab825;font-weight:bold">while</span>(head &lt; tail) {
+                    sum = nums[smallest] + nums[head] + nums[tail] + nums[largest];
+                    <span style="color:#6ab825;font-weight:bold">if</span>(sum &lt; target) head++;
+                    <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#447fcf">if</span>(sum &gt; target) tail--;
+                    <span style="color:#6ab825;font-weight:bold">else</span> {
+                        answer.push_back({nums[smallest], nums[head], nums[tail], nums[largest]});
+                        head++;
+                        <span style="color:#999;font-style:italic">// avoid the same pair of head and tail numbers
+</span><span style="color:#999;font-style:italic"></span>                        <span style="color:#6ab825;font-weight:bold">while</span>(nums[head] == nums[head-<span style="color:#3677a9">1</span>]) {
+                            head++;
+                        }
+                    }
+                }
+    
+            }
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> answer;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
