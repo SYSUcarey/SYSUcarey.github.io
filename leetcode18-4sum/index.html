@@ -134,8 +134,7 @@
 
 <p>​  <em>smallest</em> 的重复。第一层 <em>for</em> 循环中，<code>smallest from 0 to len-1</code>，如果最小数与前一个相同，那么跳过。</p>
 
-<pre><code> *largest* 的重复。第二层 *for* 循环中，`largest from len-1 to smallest+3`，如果最大数与后一个数相同，那么跳过。
-</code></pre>
+<p>​  <em>largest</em> 的重复。第二层 <em>for</em> 循环中，<code>largest from len-1 to smallest+3</code>，如果最大数与后一个数相同，那么跳过。</p>
 
 <p>​  <em>head, tail</em> 的重复。第三层 <em>while</em> 循环中，由于我们规定，当找到符合条件的四数组合，那么 <em>head++</em> ，因此在这一层循环中排除重复时，要在最后判断 <em>head</em> 指向数与前一个是否相同，如果相同则跳过。</p>
 
@@ -155,9 +154,13 @@
 
 <p>​ 如果是后者的遍历方法，这样最大数取到第一个2的时候，因为head与tail取不到第二个2，因此取不到第二个解<code>[-1, 0, 2, 2]</code>。然后tail++的时候会判断2与前一个数相等，直接跳过，那么就漏掉了这个解了。</p>
 
+<p><strong>算法复杂度O(n^3)</strong></p>
+
 <hr />
 
 <h2 id="code-c">code(c++)</h2>
+
+<p><strong>solution(20ms)</strong></p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
 <span style="color:#6ab825;font-weight:bold">public</span>:
     vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; fourSum(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#6ab825;font-weight:bold">int</span> target) {
