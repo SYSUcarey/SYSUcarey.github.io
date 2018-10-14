@@ -6,10 +6,25 @@
     <description>Recent content in Leetcode on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Oct 2018 22:33:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Oct 2018 10:30:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode56 Merge Intervals</title>
+      <link>https://sysucarey.github.io/leetcode56-merge-intervals/</link>
+      <pubDate>Sun, 14 Oct 2018 10:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode56-merge-intervals/</guid>
+      <description>题目  链接：  Leetcode56 Merge Intervals
+ 概述：  Given a collection of intervals, merge all overlapping intervals.
+Example 1:
+ Input: [[1,3],[2,6],[8,10],[15,18]] Output: [[1,6],[8,10],[15,18]] Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].  Example 2:
+ Input: [[1,4],[4,5]] Output: [[1,5]] Explanation: Intervals [1,4] and [4,5] are considerred overlapping.  思考 分析一：
+ 合并区间的操作在我们思考中是比较简单的，首先的第一步应该是排序操作，将区间的最小值为Key进行从小到大排序。然后就是从数组第一个区间开始判断到最后一个区间。具体对于自定义结构体的sort数组操作，类内和类外的区别等细节，参考博客。 如果前一个区间的最大值比后一个区间的最小值小，那么没有区间合并操作；如果前一个区间的最大值比后一个区间的最小值大，但比最大值小，那么区间合并成[前一个区间的最小值，后一个区间的最大值]；如果前一个区间的最大值比后一个区间的最大值都大，相当于后一个区间没有用，直接删去。 这样我们就可以得到Solution1，排序复杂度为O(nlogn)，一个for循环，O(n)。一开始我以为算法复杂度是O(nlogn)，但后来我发现错了，因为在数组中删去一个元素erase操作的复杂度为O(n)，所以总复杂度应该是O(n^2)，这样我们非但没有降低到我们想要的复杂度，而且还调用了很多erase操作，还有一个sort操作，还有数组的克隆操作，这样还是蛮慢的，可以预见到算法还有优化的空间。  分析二：
+ 我们考虑优化分析一，造成Solution1中复杂度升到O(n^2)的原因在于for循环中进行了删除元素的操作。那么我们考虑是否可以先判断完，再添加进answer数组，而不是一开始先复制后删除。 基于这样的考虑，我们可以先把intervals数组排序，然后先比较完是否需要进行合并区间，如果是需要合并的话，因为intervals已经基于区间start值排序了，那么也就是说要添加的新区间的start一定比answer中最后一个元素区间的start值要大，那么我们只需要修改answer中最后一个元素区间的end值；不需要合并的话，就直接把新区间添加进answer数组中即可。 这样我们就可以得到Solution2，复杂度为O(nlogn)。  解法 Solution1：</description>
+    </item>
     
     <item>
       <title>Leetcode18 4Sum</title>
