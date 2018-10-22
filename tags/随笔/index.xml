@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on SYSUcarey</title>
+    <link>https://sysucarey.github.io/tags/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on SYSUcarey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Oct 2018 21:30:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://sysucarey.github.io/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git remote 修改 origin 源</title>
+      <link>https://sysucarey.github.io/git-remote-%E4%BF%AE%E6%94%B9-origin-%E6%BA%90/</link>
+      <pubDate>Mon, 22 Oct 2018 21:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/git-remote-%E4%BF%AE%E6%94%B9-origin-%E6%BA%90/</guid>
+      <description> Git remote 修改 origin 源  查看当前remote配置：  git remote -v  删除原来git remote源  git remote remove origin  添加新的 origin 源  git remote add origin [YOUR_NEW_GIT_URL]</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,9 +6,20 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Oct 2018 22:30:53 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Oct 2018 21:30:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Git remote 修改 origin 源</title>
+      <link>https://sysucarey.github.io/git-remote-%E4%BF%AE%E6%94%B9-origin-%E6%BA%90/</link>
+      <pubDate>Mon, 22 Oct 2018 21:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/git-remote-%E4%BF%AE%E6%94%B9-origin-%E6%BA%90/</guid>
+      <description> Git remote 修改 origin 源  查看当前remote配置：  git remote -v  删除原来git remote源  git remote remove origin  添加新的 origin 源  git remote add origin [YOUR_NEW_GIT_URL]</description>
+    </item>
     
     
     
@@ -160,24 +171,6 @@ Note: You may not slant the container and n is at least 2.</description>
 2. VirtualBox 下载安装并配置 2.1 官网下载：victualBox 官网 2.2 安装在D盘 2.3 配置VirtualBox  管理-&amp;gt;全局设定-&amp;gt;常规，修改默认虚拟电脑位置：   创建虚拟机内部虚拟网络，使得 Vbox 内部虚拟机可以通过它，实现虚拟机之间、虚拟机与主机的通讯 。
  管理-&amp;gt;主机网络管理器-&amp;gt;创建，创建一块虚拟网卡，把IPv4地址分配为192.168.100.1/24。   在主机Windows终端cmd下，输入ipconfig可以看到自己新创建的网卡VirtualBox Host-Only Network #2。    3. 创建Linux CentOS虚拟机 3.1 CentOS镜像下载 官网下载地址
 下载Minimal ISO</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Leetcode4: Median of Two Sorted Arrays</title>
-      <link>https://sysucarey.github.io/leetcode4-median-of-two-sorted-arrays/</link>
-      <pubDate>Sun, 16 Sep 2018 23:50:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode4-median-of-two-sorted-arrays/</guid>
-      <description>题目论述  链接：leetcode 4
- 概述：
-  There are two sorted arrays nums1 and nums2 of size m and n respectively.
-Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
-You may assume nums1 and nums2 cannot be both empty.
-Example 1:
- nums1 = [1, 3] nums2 = [2] The median is 2.0  Example 2:
- nums1 = [1, 2] nums2 = [3, 4] The median is (2 + 3)/2 = 2.</description>
     </item>
     
     
