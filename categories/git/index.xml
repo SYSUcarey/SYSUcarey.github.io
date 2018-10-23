@@ -6,17 +6,26 @@
     <description>Recent content in Git on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Sep 2018 12:35:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Oct 2018 23:31:34 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>常用git命令总结</title>
-      <link>https://sysucarey.github.io/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
+      <title>Git日常使用总结</title>
+      <link>https://sysucarey.github.io/git%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 22 Oct 2018 23:31:34 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/git%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
+      <description> Git remote 修改 origin 源  查看当前remote配置：  git remote -v  删除原来git remote源  git remote remove origin  添加新的 origin 源  git remote add origin [YOUR_NEW_GIT_URL]</description>
+    </item>
+    
+    <item>
+      <title>Git命令总结</title>
+      <link>https://sysucarey.github.io/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</link>
       <pubDate>Thu, 13 Sep 2018 12:35:27 +0800</pubDate>
       
-      <guid>https://sysucarey.github.io/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://sysucarey.github.io/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</guid>
       <description>常用git命令总结 git的版本管理机制  Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） Remote：远程仓库  1. git配置 git 的配置文件.gitconfig，某个仓库的配置文件为根目录下.git\config。目录下右键，选择git bash here，打开git原生命令行模式窗口。通过以下指令进行查看，修改配置。
 # 编辑Git配置文件 $ git config -e --global # 设置提交代码时的用户信息 $ git config --global user.name &amp;#34;[name]&amp;#34; $ git config --global user.email &amp;#34;[email address]&amp;#34; 2.新建git本地仓库 # 在当前目录新建一个Git代码库 $ git init # 新建一个目录，将其初始化为Git代码库 $ git init [project-name] # 新建一个目录，并下载一个项目和它的整个代码历史 $ git clone [url] # 将一个项目下载到当前目录下 $ git pull [url] 这里的[url]指的是远程仓库url，以.git结尾，以本人个人博客远程git仓库为例：
 url地址就为：https://github.com/SYSUcarey/SYSUcarey.github.io.git
