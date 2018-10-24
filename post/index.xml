@@ -22,6 +22,17 @@
     </item>
     
     <item>
+      <title>手机平台应用开发week7报告</title>
+      <link>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week7%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Mon, 22 Oct 2018 12:35:27 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week7%E6%8A%A5%E5%91%8A/</guid>
+      <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/10/22 完成日期 2018/10/22    一、实验题目 Broadcast 使用
+二、实验目的  掌握 Broadcast 编程基础。 掌握动态注册 Broadcast 和静态注册 Broadcast。 掌握Notification 编程基础。 掌握 EventBus 编程基础。  三、实现内容 在第六周任务的基础上，实现静态广播、动态广播两种改变Notification 内容的方法。
+要求  在启动应用时，会有通知产生，随机推荐一个食品。   点击通知跳转到所推荐食品的详情界面。   点击收藏图标，会有对应通知产生，并通过Eventbus在收藏列表更新数据。   点击通知返回收藏列表。   实现方式要求:启动页面的通知由静态广播产生，点击收藏图标的通知由动态广播产生。  验收内容  静态广播：启动应用是否有随机推荐食品的通知产生。点击通知是否正确跳转到所推荐食品的详情界面。 动态广播：点击收藏后是否有提示食品已加入收藏列表的通知产生。同时注意设置launchMode。点击通知是否跳转到收藏列表。 Eventbus:点击收藏列表图标是否正确添加食品到收藏列表。每点击一次,添加对应的一个食品到收藏列表并产生一条通知。 代码+实验报告（都在实验课上检查，暂不需要pr）  四、实验结果 1.</description>
+    </item>
+    
+    <item>
       <title>Leetcode57 Insert Interval</title>
       <link>https://sysucarey.github.io/leetcode57-insert-interval/</link>
       <pubDate>Thu, 18 Oct 2018 22:30:53 +0800</pubDate>
@@ -146,20 +157,6 @@ Could you optimize your algorithm to use only O(k) extra space?</description>
  输入框整体距左右屏幕各间距20dp，内容（包括提示内容）如图所示，内容字体大小18sp；
  按钮与输入框间距10dp，文字大小18sp。按钮背景框左右边框与文字间距10dp，上下边框与文字间距5dp，圆角半径180dp，背景色为#3F51B5；
  四个单选按钮整体居中，与输入框间距10dp，字体大小18sp，各个单选按钮之间间距10dp，默认选中的按钮为第一个。   使用的组件 TextView、EditText、ConstraintLayout、Button、ImageView、RadioGroup、RadioButton。</description>
-    </item>
-    
-    <item>
-      <title>Leetcode15 3Sum</title>
-      <link>https://sysucarey.github.io/leetcode15-3sum/</link>
-      <pubDate>Sun, 30 Sep 2018 22:25:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode15-3sum/</guid>
-      <description>题目论述  链接：  Leetcode15 3Sum
- 概述：  Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
-Note:
-The solution set must not contain duplicate triplets.
-Example:
- Given array nums = [-1, 0, 1, 2, -1, -4], A solution set is: [ [-1, 0, 1], [-1, -1, 2] ]  思考分析 分析一：</description>
     </item>
     
   </channel>

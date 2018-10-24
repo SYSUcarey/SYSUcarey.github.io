@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>手机平台应用开发week7报告 - SYSUcarey</title>
+<meta property="og:title" content="手机平台应用开发week7报告 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">手机平台应用开发week7报告</h1>
+    
+    <span class="article-date">2018-10-22</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="中山大学数据科学与计算机学院本科生实验报告">中山大学数据科学与计算机学院本科生实验报告</h1>
+
+<h2 id="2018年秋季学期">（2018年秋季学期）</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">课程名称</th>
+<th align="center">手机平台应用开发</th>
+<th align="center">任课老师</th>
+<th align="center">郑贵锋</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">年级</td>
+<td align="center">大三</td>
+<td align="center">专业（方向）</td>
+<td align="center">计应</td>
+</tr>
+
+<tr>
+<td align="center">学号</td>
+<td align="center">16340015</td>
+<td align="center">姓名</td>
+<td align="center">陈彬彬</td>
+</tr>
+
+<tr>
+<td align="center">电话</td>
+<td align="center">13590883387</td>
+<td align="center">Email</td>
+<td align="center">944131226@qq.com</td>
+</tr>
+
+<tr>
+<td align="center">开始日期</td>
+<td align="center">2018/10/22</td>
+<td align="center">完成日期</td>
+<td align="center">2018/10/22</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="一-实验题目">一、实验题目</h2>
+
+<p><strong>Broadcast 使用</strong></p>
+
+<hr />
+
+<h2 id="二-实验目的">二、实验目的</h2>
+
+<ol>
+<li>掌握 Broadcast 编程基础。</li>
+<li>掌握动态注册 Broadcast 和静态注册 Broadcast。</li>
+<li>掌握Notification 编程基础。</li>
+<li>掌握 EventBus 编程基础。</li>
+</ol>
+
+<hr />
+
+<h2 id="三-实现内容">三、实现内容</h2>
+
+<p>在第六周任务的基础上，实现静态广播、动态广播两种改变Notification 内容的方法。</p>
+
+<h3 id="要求">要求</h3>
+
+<ul>
+<li>在启动应用时，会有通知产生，随机推荐一个食品。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week7_static_notification.jpg" alt="preview" /></p>
+
+<ul>
+<li>点击通知跳转到所推荐食品的详情界面。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week7_static_jump.jpg" alt="preview" /></p>
+
+<ul>
+<li>点击收藏图标，会有对应通知产生，并通过Eventbus在收藏列表更新数据。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week7_requirement3.jpg" alt="preview" /></p>
+
+<ul>
+<li>点击通知返回收藏列表。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week7_requirement4.jpg" alt="preview" /></p>
+
+<ul>
+<li>实现方式要求:启动页面的通知由静态广播产生，点击收藏图标的通知由动态广播产生。</li>
+</ul>
+
+<hr />
+
+<h3 id="验收内容">验收内容</h3>
+
+<ul>
+<li>静态广播：启动应用是否有随机推荐食品的通知产生。点击通知是否正确跳转到所推荐食品的详情界面。</li>
+<li>动态广播：点击收藏后是否有提示食品已加入收藏列表的通知产生。同时注意设置launchMode。点击通知是否跳转到收藏列表。</li>
+<li>Eventbus:点击收藏列表图标是否正确添加食品到收藏列表。每点击一次,添加对应的一个食品到收藏列表并产生一条通知。</li>
+<li>代码+实验报告（都在实验课上检查，暂不需要pr）</li>
+</ul>
+
+<hr />
+
+<h2 id="四-实验结果">四、实验结果</h2>
+
+<h3 id="1-实验截图">1. 实验截图</h3>
+
+<h4 id="1-食品推荐通知">(1)食品推荐通知</h4>
+
+<p>打开应用，随即推荐食物通知，点击通知跳转到该食物详情界面。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024164321.png" alt="recommend_notice_banner" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024164434.png" alt="recommend_notice_in_board" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024164518.png" alt="click_for_jumping_to_DetailActivity" /></p>
+
+<h4 id="2-食品收藏通知">(2)食品收藏通知</h4>
+
+<p>食品详情界面，点击收藏后有收藏通知，点击通知跳转到收藏夹列表界面。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024164609.png" alt="collect_notice_banner" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024164755.png" alt="collect_notice_in_board" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024164829.png" alt="click_for_jumping_to_MainActivity_and_show_favoriteFoodList" /></p>
+
+<hr />
+
+<h3 id="2-实验步骤以及关键代码">2. 实验步骤以及关键代码</h3>
+
+<h4 id="1-项目文件结构">(1)项目文件结构</h4>
+
+<p>相较于<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/report/Wednesday/16340015ChenBinBin/16340015_%E9%99%88%E5%BD%AC%E5%BD%AC_lab3.md">week6</a>新增了两个Java代码文件。</p>
+
+<p><code>java-&gt;com.example.chenbb.personalproject1_finaltask</code> 目录下：</p>
+
+<ul>
+<li><p>MainActivity.java</p></li>
+
+<li><p>DetailActivity.java</p></li>
+
+<li><p>Collection.java</p></li>
+
+<li><p>MyRecyclerViewAdapter.java</p></li>
+
+<li><p>MyViewHolder.java</p></li>
+
+<li><p><strong>StaticReceiver.java</strong></p></li>
+
+<li><p><strong>DynamicReceiver.java</strong></p></li>
+</ul>
+
+<p><code>res-&gt;layout</code>目录下：</p>
+
+<ul>
+<li>activity_main.xml</li>
+<li>detail.xml</li>
+<li>item.xml</li>
+<li>operation.xml</li>
+</ul>
+
+<hr />
+
+<h4 id="2-静态广播的实现">(2)静态广播的实现</h4>
+
+<p><strong>步骤：</strong></p>
+
+<ul>
+<li><p>实现<strong>StaticReceiver.java</strong>类</p></li>
+
+<li><p><strong>AndroidManifest.xml</strong> 中注册静态广播</p></li>
+
+<li><p>修改<strong>MainActivity.java</strong>实现打开应用发送广播的行为</p></li>
+</ul>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">lesson_tutorial.md</a></p>
+
+<p><a href="https://blog.csdn.net/che16340014/article/details/83149640">Android 8.0版本Broadcast以及Notification 参考博客</a></p>
+
+<p><a href="https://blog.csdn.net/kongqwesd12/article/details/78998151">解决Android8.0自定义广播适配问题的参考博客1</a></p>
+
+<p><a href="https://blog.csdn.net/wodenidejingaide/article/details/80505211">解决Android8.0自定义广播适配问题参考博客2</a></p>
+
+<p><a href="https://www.cnblogs.com/liyiran/p/4656821.html">Android开发之PendingIntent的使用 参考博客</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li><p><strong>StaticReceiver.java</strong>继承<strong>BroadcastReceiver</strong>父类，重载<strong>onReceive</strong>函数</p></li>
+
+<li><p><strong>onReceive</strong>函数中：</p>
+
+<ul>
+<li>添加<strong>Notification</strong>广播实现，设置广播的标题内容图标等基础属性。</li>
+<li>获取参数<strong>Intent</strong>获取传过来的<strong>data</strong>，用<strong>PendingIntent</strong>实现通知点击的跳转。</li>
+<li><strong>setComponent</strong> 和 <strong>NotificationChannel</strong>  解决Android8.0自定义广播适配问题。</li>
+</ul></li>
+
+<li><p><strong>MainActivity.java</strong>的<strong>onCreate</strong>函数中：</p>
+
+<ul>
+<li><strong>Random</strong>随机数决定一种推荐食品</li>
+<li><strong>setComponent</strong>+<strong>sendBroadcast</strong>发送静态广播。</li>
+</ul></li>
+
+<li><p><strong>AndroidMainfest.xml</strong>中注册静态广播。</p></li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p><strong>PendingIntent</strong>实现：（StaticReceiver.java）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent1 = <span style="color:#6ab825;font-weight:bold">new</span> Intent(context, DetailActivity.<span style="color:#bbb">class</span>);
+intent1.<span style="color:#bbb">putExtra</span>(<span style="color:#ed9d13">&#34;data&#34;</span>, temp);
+PendingIntent pendingIntent = PendingIntent.<span style="color:#bbb">getActivity</span>(context,1, intent1, PendingIntent.<span style="color:#bbb">FLAG_UPDATE_CURRENT</span>);</code></pre></div>
+<p><strong>Notification</strong>实现：（StaticReceiver.java）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">NotificationChannel channel = <span style="color:#6ab825;font-weight:bold">new</span> NotificationChannel(channelID, channelName, NotificationManager.<span style="color:#bbb">IMPORTANCE_HIGH</span>);
+NotificationManager manager = (NotificationManager) context.<span style="color:#bbb">getSystemService</span>(Context.<span style="color:#bbb">NOTIFICATION_SERVICE</span>);
+manager.<span style="color:#bbb">createNotificationChannel</span>(channel);
+Notification.<span style="color:#bbb">Builder</span> builder =<span style="color:#6ab825;font-weight:bold">new</span> Notification.<span style="color:#bbb">Builder</span>(context);
+builder.<span style="color:#bbb">setContentTitle</span>(<span style="color:#ed9d13">&#34;今日推荐&#34;</span>)
+    .<span style="color:#bbb">setContentText</span>(temp.<span style="color:#bbb">getName</span>())
+    .<span style="color:#bbb">setTicker</span>(<span style="color:#ed9d13">&#34;您有一条新消息&#34;</span>)
+    .<span style="color:#bbb">setSmallIcon</span>(R.<span style="color:#bbb">mipmap</span>.<span style="color:#bbb">empty_star</span>)
+    .<span style="color:#bbb">setAutoCancel</span>(<span style="color:#6ab825;font-weight:bold">true</span>)
+    .<span style="color:#bbb">setContentIntent</span>(pendingIntent)
+    .<span style="color:#bbb">setShowWhen</span>(<span style="color:#6ab825;font-weight:bold">true</span>)
+    .<span style="color:#bbb">build</span>();
+<span style="color:#999;font-style:italic">//创建通知时指定channelID
+</span><span style="color:#999;font-style:italic"></span>builder.<span style="color:#bbb">setChannelId</span>(channelID);
+Notification notification = builder.<span style="color:#bbb">build</span>();
+manager.<span style="color:#bbb">notify</span>(1, notification);</code></pre></div>
+<p>发送静态广播：（MainActivity.java）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ComponentName componentName = <span style="color:#6ab825;font-weight:bold">new</span> ComponentName(<span style="color:#6ab825;font-weight:bold">this</span>.<span style="color:#bbb">getPackageName</span>(),<span style="color:#6ab825;font-weight:bold">this</span>.<span style="color:#bbb">getPackageName</span>()+<span style="color:#ed9d13">&#34;.StaticReceiver&#34;</span>);
+intentBroadcast.<span style="color:#bbb">setComponent</span>(componentName);
+sendBroadcast(intentBroadcast);</code></pre></div>
+<hr />
+
+<h4 id="3-动态广播的实现">(3)动态广播的实现</h4>
+
+<p><strong>步骤：</strong></p>
+
+<ul>
+<li><p>实现<strong>DynamicReceiver.java</strong>类</p></li>
+
+<li><p>修改<strong>DetailActivity.java</strong>实现动态广播的注册，发送，注销。</p></li>
+
+<li><p>修改<strong>MainActivity.java</strong>实现点击收藏通知返回主界面时显示的是收藏夹</p></li>
+</ul>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">lesson_tutorial.md</a></p>
+
+<p><a href="https://blog.csdn.net/qq_16628781/article/details/51539715">android之onNewIntent()用法 参考博客</a></p>
+
+<p><a href="http://yhz61010.iteye.com/blog/2389877">参考博客——Android Activity onNewIntent() 详解</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li>根据<a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">lesson_tutorial.md</a>和之前静态广播的适配问题，实现<strong>DynamicReceiver.java</strong>类</li>
+<li>修改<strong>DetailActivity.java</strong>：
+
+<ul>
+<li>在<strong>onCreate</strong>函数中，实现广播的注册、发送。</li>
+<li>重载<strong>onDestroy</strong>函数中，实现广播的注销。</li>
+</ul></li>
+<li>修改<strong>MainActivity.java</strong>，重载<strong>onNewIntent</strong>函数：
+
+<ul>
+<li>实现收藏夹列表的VISIBLE显示</li>
+<li>修改<strong>Floating Action Button</strong>悬浮按钮图片的相应改变</li>
+</ul></li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p><strong>DetailActivity.java</strong>重载<strong>onDestroy</strong>函数：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Override</span>
+<span style="color:#6ab825;font-weight:bold">protected</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onDestroy</span>() {
+    <span style="color:#6ab825;font-weight:bold">super</span>.<span style="color:#bbb">onDestroy</span>();
+    unregisterReceiver(dynamicReceiver);
+}</code></pre></div>
+<p><strong>MainActivity.java</strong>，重载<strong>onNewIntent</strong>函数：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Override</span>
+<span style="color:#6ab825;font-weight:bold">protected</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onNewIntent</span>(Intent intent) {
+    <span style="color:#6ab825;font-weight:bold">super</span>.<span style="color:#bbb">onNewIntent</span>(intent);
+    setIntent(intent);
+    <span style="color:#999;font-style:italic">// 显示收藏夹列表
+</span><span style="color:#999;font-style:italic"></span>    listview = findViewById(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">listView</span>);
+    listview.<span style="color:#bbb">setVisibility</span>(View.<span style="color:#bbb">VISIBLE</span>);
+    recyclerView = findViewById(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">recyclerView</span>);
+    recyclerView.<span style="color:#bbb">setVisibility</span>(View.<span style="color:#bbb">INVISIBLE</span>);
+    <span style="color:#999;font-style:italic">// view_tag 改为1
+</span><span style="color:#999;font-style:italic"></span>    view_tag = 1;
+    <span style="color:#999;font-style:italic">// fab 悬浮按钮的图片相应改变
+</span><span style="color:#999;font-style:italic"></span>    fab.<span style="color:#bbb">findViewById</span>(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">btn</span>);
+    fab.<span style="color:#bbb">setImageResource</span>(R.<span style="color:#bbb">mipmap</span>.<span style="color:#bbb">mainpage</span>);
+}</code></pre></div>
+<hr />
+
+<h4 id="4-eventbus实现">(4)EventBus实现</h4>
+
+<p><strong>步骤：</strong></p>
+
+<ul>
+<li><p>添加<strong>eventbus</strong>依赖</p></li>
+
+<li><p>修改<strong>MainActivity.java</strong>类，实现<strong>EventBus</strong>的订阅、注销，以及声明订阅方法。</p></li>
+
+<li><p>修改<strong>DetailActivity.java</strong>类，实现<strong>EventBus</strong>黏性事件的发送。</p></li>
+</ul>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">lesson_tutorial.md</a></p>
+
+<p><a href="https://www.jianshu.com/p/f9ae5691e1bb">EventBus 3.0使用详解</a></p>
+
+<p><a href="https://www.cnblogs.com/fuyaozhishang/p/7968059.html"><a href="https://www.cnblogs.com/fuyaozhishang/p/7968059.html">EventBus的粘性事件</a></a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li><p>添加<strong>eventbus</strong>依赖</p></li>
+
+<li><p>修改<strong>MainActivity.java</strong>类，实现<strong>EventBus</strong>的订阅、注销，以及声明订阅方法，与此同时，我们要注释掉之前实现的点击页面跳转的返回处理，也即注释掉<strong>onActivityResult</strong>的响应避免重复添加食品。</p></li>
+
+<li><p>修改<strong>DetailActivity.java</strong>类，实现点击收藏按钮就通过<strong>EventBus</strong>发送<strong>EventBus</strong>黏性事件，这样也修改APP细节成每点击一次收藏就会添加一次食品进入收藏夹。</p></li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p>发送<strong>EventBus</strong>粘性事件：（<strong>DetailActivity.java</strong>）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">EventBus.<span style="color:#bbb">getDefault</span>().<span style="color:#bbb">postSticky</span>(data);</code></pre></div>
+<p>定义<strong>EventBus</strong>的订阅方法，添加食品进入收藏夹：（<strong>MainActivity.java</strong>）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Subscribe</span>(threadMode = ThreadMode.<span style="color:#bbb">MAIN</span>)
+<span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onMessageEvent</span>(Collection _collection) {
+    Map&lt;String, Object&gt; tempMap = <span style="color:#6ab825;font-weight:bold">new</span> LinkedHashMap&lt;&gt;();
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;type&#34;</span>, _collection.<span style="color:#bbb">getType</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;name&#34;</span>, _collection.<span style="color:#bbb">getName</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;longType&#34;</span>, _collection.<span style="color:#bbb">getLongType</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;nutrition&#34;</span>, _collection.<span style="color:#bbb">getNutrition</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;color&#34;</span>, _collection.<span style="color:#bbb">getColor</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;isCollected&#34;</span>, (Boolean)_collection.<span style="color:#bbb">getIsCollected</span>());
+    favorite.<span style="color:#bbb">add</span>(tempMap);
+    simpleAdapter.<span style="color:#bbb">notifyDataSetChanged</span>();
+}</code></pre></div>
+<hr />
+
+<h3 id="3-实验遇到的困难以及解决思路">3. 实验遇到的困难以及解决思路</h3>
+
+<ol>
+<li><p>静态广播8.0Android的改变</p>
+
+<p><strong>解决方案1</strong>：<strong>setComponent</strong> +<strong>ComponentName</strong></p>
+
+<p><strong>解决方案2</strong>：改为使用动态广播，不过这样显然不符合TA要求的内容。</p>
+
+<p><a href="https://blog.csdn.net/kongqwesd12/article/details/78998151">参考博客1——Android8 自定义广播接收不到的问题</a></p>
+
+<p><a href="https://blog.csdn.net/wodenidejingaide/article/details/80505211">参考博客2——Android8.0 下的静态广播</a></p></li>
+
+<li><p>android8.0 <strong>Notification</strong>通知适配</p>
+
+<p><strong>解决方案</strong>：使用<strong>NotificationChannel</strong></p>
+
+<p><a href="https://www.jianshu.com/p/ca92797d925a">参考博客——android8.0 通知适配NotificationChannel</a></p></li>
+
+<li><p>创建广播成功后，无法左滑横幅删除。</p>
+
+<p><strong>解决方案</strong>：后续添加了<strong>PendingIntent</strong>响应处理后，就可以左滑删除了</p></li>
+
+<li><p>静态广播添加<strong>PendingIntent</strong>后，跳转<strong>DetailActivity</strong>程序闪退。（疑惑地是，相似的代码动态广播跳转<strong>MainActivity</strong>则可以成功跳转）</p>
+
+<p><strong>原因</strong>：<strong>DetailActivity</strong>的页面生成需要<strong>Intent</strong>里的<strong>data</strong> : <strong>Collection</strong>用来生成具体的食品详情界面，所以<strong>PendingIntent</strong>参数中的<strong>intent</strong>必须要<strong>putExtra</strong>。</p>
+
+<p><code>MainAcitivity.java</code>:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// temp: Collection
+</span><span style="color:#999;font-style:italic"></span>Intent intent1 = <span style="color:#6ab825;font-weight:bold">new</span> Intent(context, DetailActivity.<span style="color:#bbb">class</span>);
+intent1.<span style="color:#bbb">putExtra</span>(<span style="color:#ed9d13">&#34;data&#34;</span>, temp);
+PendingIntent pendingIntent = PendingIntent.<span style="color:#bbb">getActivity</span>(context,1, intent1, PendingIntent.<span style="color:#bbb">FLAG_UPDATE_CURRENT</span>);</code></pre></div></li>
+
+<li><p>点击收藏通知回去主界面<strong>MainActivity</strong>中，怎么直接显示收藏夹而不是食品列表。(在<strong>OnCreate</strong>中写显然不行，因为这样会刚启动APP就显示收藏夹等一系列的不符合要求的行为)</p>
+
+<p><strong>解决方案</strong>：在<strong>MainActivity</strong>中重载<strong>OnNewIntent</strong>函数，修改显示列表的<strong>Visibility</strong>。<strong>Activity</strong>生命周期调用的第一个函数是<strong>OnNewIntent</strong>函数。要注意要<strong>setIntent</strong>不然一直调用的是在最开始的那个<strong>Intent</strong>上进行修改。</p>
+
+<p><a href="http://yhz61010.iteye.com/blog/2389877">参考博客——Android Activity onNewIntent() 详解</a></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Override</span>
+<span style="color:#6ab825;font-weight:bold">protected</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onNewIntent</span>(Intent intent) {
+    <span style="color:#6ab825;font-weight:bold">super</span>.<span style="color:#bbb">onNewIntent</span>(intent);
+    setIntent(intent);
+    <span style="color:#999;font-style:italic">/*Do Something*/</span>
+}</code></pre></div></li>
+
+<li><p>点击收藏通知返回数据和点击返回按钮返回数据不好同时处理。</p>
+
+<p>解决方案：改用<strong>EventBus</strong>进行订阅处理。但教程上给出的资料太少了，还需要额外搜索<strong>EventBus</strong>有关的使用知识。</p>
+
+<p><a href="https://blog.csdn.net/bskfnvjtlyzmv867/article/details/71480647">参考博客——Android框架之路——EventBus的使用</a></p>
+
+<p><a href="https://www.jianshu.com/p/f9ae5691e1bb">参考博客2——EventBus 3.0使用详解</a></p></li>
+
+<li><p><strong>EventBus</strong>注册订阅者闪退的问题</p>
+
+<p>一开始一位处理订阅事件逻辑，参数可以随便自己设置，这样只要加一个_times，表示点击了收藏多少次，那样直接添加多少次食品进收藏夹即可，如下：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Subscribe</span>(threadMode = ThreadMode.<span style="color:#bbb">MAIN</span>)
+<span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onMessageEvent</span>(Collection _collection, <span style="color:#6ab825;font-weight:bold">int</span> _times) {
+    <span style="color:#999;font-style:italic">/*Do Something*/</span>
+}</code></pre></div>
+<p>但是，这样项目运行就会直接闪退，参数只能一个Object，所以要改成：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Subscribe</span>(threadMode = ThreadMode.<span style="color:#bbb">MAIN</span>)
+<span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onMessageEvent</span>(Collection _collection) {
+    <span style="color:#999;font-style:italic">/*Do Something*/</span>
+}</code></pre></div></li>
+
+<li><p>点击推荐通知，进入详情界面，点击收藏，点击收藏通知，回到收藏夹，然后点击手机系统的返回键，结束<strong>MainActivity</strong>，结果还出现了一个详情界面。而界面正好是推荐食品的详情界面。</p>
+
+<p>解决方案：Debug模式下发现，这个推荐食品的详情界面<strong>Activity</strong>并没有结束它的生命周期。运行TA给出的Demo发现也存在这样的现象，安慰解决法，PASS。</p>
+
+<p>PASS是不可能PASS的，这辈子都不可能PASS，后续经过大佬们的学习讨论，找到了解决方案，将Activity的启动模式改为<strong>singleTask</strong>。</p></li>
+
+<li><p>通知中没有时间显示。</p>
+
+<p>解决方案：添加<strong>.setShowWhen(true)</strong>属性</p>
+
+<p><a href="https://ask.csdn.net/questions/373871">参考博客</a></p></li>
+</ol>
+
+<hr />
+
+<h2 id="五-实验思考及感想">五、实验思考及感想</h2>
+
+<ul>
+<li><p>week7的作业量相比于week6是要简单轻松很多的，没有涉及到太多的代码量，有的只是对于新概念——广播，通知，EventBus等知识，基本<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>都有讲述到。</p></li>
+
+<li><p>但问题也恰好在于<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>没有讲述到一些东西，因为Android8.0并不适用于教程辅导<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>给出的代码，于是这周的大部分时间在于去学习Android8.0对于通知的适配，要去找博客。</p></li>
+
+<li><p>还有的收获就是对于一个Activity的声明周期有了更深刻的理解，一个Activity生命周期依次调用的哪些个函数，对这些有了初步的认知。</p></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181024185854.png" alt="Activity_life" /></p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/android">Android</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android">Android</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
