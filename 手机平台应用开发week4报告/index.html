@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>手机平台应用开发week4报告 - SYSUcarey</title>
+<meta property="og:title" content="手机平台应用开发week4报告 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">手机平台应用开发week4报告</h1>
+    
+    <span class="article-date">2018-10-01</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="中山大学数据科学与计算机学院本科生实验报告">中山大学数据科学与计算机学院本科生实验报告</h1>
+
+<h2 id="2018年秋季学期">（2018年秋季学期）</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">课程名称</th>
+<th align="center">手机平台应用开发</th>
+<th align="center">任课老师</th>
+<th align="center">郑贵锋</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">年级</td>
+<td align="center">大三</td>
+<td align="center">专业（方向）</td>
+<td align="center">计应</td>
+</tr>
+
+<tr>
+<td align="center">学号</td>
+<td align="center">16340015</td>
+<td align="center">姓名</td>
+<td align="center">陈彬彬</td>
+</tr>
+
+<tr>
+<td align="center">电话</td>
+<td align="center">13590883387</td>
+<td align="center">Email</td>
+<td align="center">944131226@qq.com</td>
+</tr>
+
+<tr>
+<td align="center">开始日期</td>
+<td align="center">2018/10/01</td>
+<td align="center">完成日期</td>
+<td align="center">2018/10/01</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="一-实验题目">一、实验题目</h2>
+
+<p><strong>基本的UI界面设计</strong></p>
+
+<hr />
+
+<h2 id="二-实验目的">二、实验目的</h2>
+
+<ol>
+<li><p>熟悉Android Studio开发工具操作。</p></li>
+
+<li><p>熟悉Android Studio基本UI开发，并进行UI基本设计。</p></li>
+</ol>
+
+<hr />
+
+<h2 id="三-实现内容">三、实现内容</h2>
+
+<p>实现一个Android应用，界面呈现如图中的效果。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181010134337.png" alt="" /></p>
+
+<h4 id="要求">要求</h4>
+
+<ul>
+<li>该界面为应用启动后看到的第一个界面。<br /></li>
+<li>各控件的要求
+
+<ol>
+<li>标题字体大小<strong>20sp</strong>，与顶部距离<strong>20dp</strong>，居中；</li>
+<li>图片与上下控件的间距均为<strong>20dp</strong>，居中；<br /></li>
+<li>输入框整体距左右屏幕各间距<strong>20dp</strong>，内容（包括提示内容）如图所示，内容字体大小<strong>18sp</strong>；<br /></li>
+<li>按钮与输入框间距<strong>10dp</strong>，文字大小<strong>18sp</strong>。按钮背景框左右边框与文字间距<strong>10dp</strong>，上下边框与文字间距<strong>5dp</strong>，圆角半径<strong>180dp</strong>，背景色为<strong>#3F51B5</strong>；<br /></li>
+<li>四个单选按钮整体居中，与输入框间距10dp，字体大小<strong>18sp</strong>，各个单选按钮之间间距<strong>10dp</strong>，默认选中的按钮为第一个。</li>
+</ol></li>
+</ul>
+
+<h4 id="使用的组件">使用的组件</h4>
+
+<p>TextView、EditText、ConstraintLayout、Button、ImageView、RadioGroup、RadioButton。</p>
+
+<hr />
+
+<h2 id="四-实验结果">四、实验结果</h2>
+
+<h3 id="1-实验截图">(1)实验截图</h3>
+
+<p>实验效果图：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181010145250.png" alt="" /></p>
+
+<h3 id="2-实验步骤以及关键代码">(2)实验步骤以及关键代码</h3>
+
+<p><strong>1.完成基本控件的基本属性设置。</strong></p>
+
+<p>根据<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>给的教程，在activity_main.xml文件中添加 TextView、ImageView、EditText、Button、RadioGroup、RadioButton控件并配置响应的属性，其中重点在于用ConstraintLayout来进行各控件的位置布局。</p>
+
+<p>关键代码给出以输入框的代码为例子，输入框包括EditText和Button两个控件，他们左右分布。</p>
+
+<p><strong>关键代码</strong>：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;Button</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;wrap_content&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;wrap_content&#34;</span>
+    <span style="color:#bbb">android:id=</span><span style="color:#ed9d13">&#34;@+id/button1&#34;</span>
+    <span style="color:#bbb">android:text=</span><span style="color:#ed9d13">&#34;搜索&#34;</span>
+    <span style="color:#bbb">android:textColor=</span><span style="color:#ed9d13">&#34;@color/white&#34;</span>
+    <span style="color:#bbb">android:textSize=</span><span style="color:#ed9d13">&#34;18sp&#34;</span>
+    <span style="color:#bbb">android:paddingLeft=</span><span style="color:#ed9d13">&#34;10dp&#34;</span>
+    <span style="color:#bbb">android:paddingRight=</span><span style="color:#ed9d13">&#34;10dp&#34;</span>
+    <span style="color:#bbb">android:paddingTop=</span><span style="color:#ed9d13">&#34;5dp&#34;</span>
+    <span style="color:#bbb">android:paddingBottom=</span><span style="color:#ed9d13">&#34;5dp&#34;</span>
+    <span style="color:#bbb">android:background=</span><span style="color:#ed9d13">&#34;@drawable/button_shape_normal&#34;</span>
+    <span style="color:#bbb">android:layout_marginTop=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">android:layout_marginRight=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">android:layout_marginLeft=</span><span style="color:#ed9d13">&#34;10dp&#34;</span>
+    <span style="color:#bbb">app:layout_constraintTop_toBottomOf=</span><span style="color:#ed9d13">&#34;@id/logo&#34;</span>
+    <span style="color:#bbb">app:layout_constraintRight_toRightOf=</span><span style="color:#ed9d13">&#34;parent&#34;</span>
+    <span style="color:#bbb">app:layout_constraintLeft_toRightOf=</span><span style="color:#ed9d13">&#34;@id/search_box&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+   
+<span style="color:#6ab825;font-weight:bold">&lt;EditText</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;0dp&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;wrap_content&#34;</span>
+    <span style="color:#bbb">android:gravity=</span><span style="color:#ed9d13">&#34;center&#34;</span>
+    <span style="color:#bbb">android:id=</span><span style="color:#ed9d13">&#34;@+id/search_box&#34;</span>
+    <span style="color:#bbb">android:hint=</span><span style="color:#ed9d13">&#34;请输入搜索内容&#34;</span>
+    <span style="color:#bbb">android:textSize=</span><span style="color:#ed9d13">&#34;18sp&#34;</span>
+    <span style="color:#bbb">android:layout_marginTop=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">android:layout_marginLeft=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">app:layout_constraintTop_toBottomOf=</span><span style="color:#ed9d13">&#34;@id/logo&#34;</span>
+    <span style="color:#bbb">app:layout_constraintLeft_toLeftOf=</span><span style="color:#ed9d13">&#34;parent&#34;</span>
+    <span style="color:#bbb">app:layout_constraintRight_toLeftOf=</span><span style="color:#ed9d13">&#34;@id/button1&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span></code></pre></div>
+<p><strong>2.完成按钮的背景颜色设置和圆角样式设置</strong></p>
+
+<p>这是<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>教程中没有给出来应该如何去设置相关属性。最后通过在drawable中添加button_shape_normal.xml文件，然后在activity_main.xml中设置Button的background属性。</p>
+
+<p><strong>关键代码：</strong></p>
+
+<p>activity_main.xml中，对于Button属性设置：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  android:background=&#34;@drawable/button_shape_normal&#34;</code></pre></div>
+<p>​       button_shape_normal.xml中：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#cd2828;font-weight:bold">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;shape</span> <span style="color:#bbb">xmlns:android=</span><span style="color:#ed9d13">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+    android:shape=&#34;rectangle&#34;&gt;
+    <span style="color:#999;font-style:italic">&lt;!-- rounded corner --&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;corners</span> <span style="color:#bbb">android:radius=</span><span style="color:#ed9d13">&#34;180dp&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;solid</span> <span style="color:#bbb">android:color=</span><span style="color:#ed9d13">&#34;@color/colorPrimary&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;/shape&gt;</span></code></pre></div>
+<h3 id="3-实验遇到的困难以及解决思路">(3)实验遇到的困难以及解决思路</h3>
+
+<p>1.输入框，EditText与Button无法左右对齐，即使配置了ConstraintLayout的属性。</p>
+
+<p>解决方法：修改EditText中的android:layout_width属性</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">android:layout_width=&#34;0dp&#34;</code></pre></div>
+<p>2.完成按钮的背景颜色设置和圆角设置</p>
+
+<p>解决方法：drawable 添加 button_shape_normal.xml</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;shape</span> <span style="color:#bbb">xmlns:android=</span><span style="color:#ed9d13">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+    android:shape=&#34;rectangle&#34;&gt;
+    <span style="color:#999;font-style:italic">&lt;!-- rounded corner --&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;corners</span> <span style="color:#bbb">android:radius=</span><span style="color:#ed9d13">&#34;180dp&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;solid</span> <span style="color:#bbb">android:color=</span><span style="color:#ed9d13">&#34;@color/colorPrimary&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;/shape&gt;</span></code></pre></div>
+<p><a href="https://blog.csdn.net/never_cxb/article/details/47662129">参考博客链接</a></p>
+
+<hr />
+
+<h2 id="五-实验思考及感想">五、实验思考及感想</h2>
+
+<ul>
+<li>项目实验一难度不大，只用查阅控件对应文档的属性使用方式即可，<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>教程已经给出了绝大多数的使用属性，仔细阅读教程之后基本可以完成这次实验，难度不大。</li>
+<li>做HelloAndroid项目时，没有仔细地去思考各个文件结构的作用，导致这次实验对项目结构认知还不够熟悉。</li>
+<li>实验遇到问题1的时候，百思不得其解，因为明明自己已经配置好ConstraintLayout属性，依然不懂为什么布局结果并不如自己意。后来在求助舍友后，了解了android:layout_width属性中wrap_content和0dp的区别，事实上在<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>也有提到过，只不过自己漏过去了，下次一定再仔细研读tutorial.md。</li>
+</ul>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/android">Android</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android">Android</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
