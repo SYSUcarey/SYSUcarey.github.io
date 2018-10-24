@@ -51,6 +51,25 @@ Example 1:
     </item>
     
     <item>
+      <title>手机平台应用开发week6报告</title>
+      <link>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week6%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Sat, 13 Oct 2018 12:35:27 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week6%E6%8A%A5%E5%91%8A/</guid>
+      <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/10/13 完成日期 2018/10/16    一、实验题目 Intent、Bundle的使用以及RecyclerView、ListView的应用
+二、实验目的  复习事件处理。
+ 学习Intent、Bundle在Activity跳转中的应用。 学习RecyclerView、ListView以及各类适配器的用法。 学习FloatingActionBar的用法。  三、实现内容  本次实验模拟实现一个健康食品列表，有两个界面，第一个界面用于呈现食品列表 如下所示
+数据在&amp;rdquo;manual/素材&amp;rdquo;目录下给出。
+点击右下方的悬浮按钮可以切换到收藏夹
+上面两个列表点击任意一项后，可以看到详细的信息：
+  UI要求  食品列表
+每一项为一个圆圈和一个名字，圆圈和名字都是垂直居中。圆圈内的内容是该食品的种类，内容要处于圆圈的中心，颜色为白色。食品名字为黑色，圆圈颜色自定义，只需能看见圆圈内的内容即可。 收藏夹
+与食品列表相似 食品详情界面
+ 界面顶部
+顶部占整个界面的1/3。每个食品详情的顶部颜色在数据中已给出。返回图标处于这块区域的左上角，食品名字处于左下角，星标处于右下角，边距可以自己设置。 返回图标与名字左对齐，名字与星标底边对齐。 建议用RelativeLayout实现，以熟悉RelativeLayout的使用。</description>
+    </item>
+    
+    <item>
       <title>Leetcode18 4Sum</title>
       <link>https://sysucarey.github.io/leetcode18-4sum/</link>
       <pubDate>Sun, 07 Oct 2018 22:33:53 +0800</pubDate>
@@ -62,6 +81,27 @@ Note:
 The solution set must not contain duplicate quadruplets.
 Example:
  Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.</description>
+    </item>
+    
+    <item>
+      <title>手机平台应用开发week5报告</title>
+      <link>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week5%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Sun, 07 Oct 2018 12:35:27 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week5%E6%8A%A5%E5%91%8A/</guid>
+      <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/10/07 完成日期 2018/10/07    一、实验题目 基础的事件处理
+二、实验目的  了解Android编程基础。
+ 熟悉Button、RadioButton、EditText等基本控件，能够处理这些控件的基本事件。
+ 学会弹出对话框，并定制对话框中的内容，能对确定和取消按钮的事件做处理。
+  三、实现内容 实现一个Android应用，界面呈现如图中的效果。
+要求
+ 该界面为应用启动后看到的第一个界面。
+ 各控件处理的要求  点击搜索按钮：  如果搜索内容为空，弹出Toast信息“搜索内容不能为空”。 如果搜索内容为“Health”，根据选中的RadioButton项弹出如下对话框。
+点击“确定”，弹出Toast信息——对话框“确定”按钮被点击。
+点击“取消”，弹出Toast 信息——对话框“取消”按钮被点击。
+否则弹出如下对话框，对话框点击效果同上。
+  RadioButton选择项切换：选择项切换之后，弹出Toast信息“XX被选中”，例如从图片切换到视频，弹出Toast信息“视频被选中”
+   四、实验结果 (1)实验截图 实验效果图：</description>
     </item>
     
     <item>
@@ -92,6 +132,23 @@ Could you optimize your algorithm to use only O(k) extra space?</description>
     </item>
     
     <item>
+      <title>手机平台应用开发week4报告</title>
+      <link>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week4%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Mon, 01 Oct 2018 12:35:27 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week4%E6%8A%A5%E5%91%8A/</guid>
+      <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/10/01 完成日期 2018/10/01    一、实验题目 基本的UI界面设计
+二、实验目的  熟悉Android Studio开发工具操作。
+ 熟悉Android Studio基本UI开发，并进行UI基本设计。
+  三、实现内容 实现一个Android应用，界面呈现如图中的效果。
+要求  该界面为应用启动后看到的第一个界面。
+ 各控件的要求  标题字体大小20sp，与顶部距离20dp，居中； 图片与上下控件的间距均为20dp，居中；
+ 输入框整体距左右屏幕各间距20dp，内容（包括提示内容）如图所示，内容字体大小18sp；
+ 按钮与输入框间距10dp，文字大小18sp。按钮背景框左右边框与文字间距10dp，上下边框与文字间距5dp，圆角半径180dp，背景色为#3F51B5；
+ 四个单选按钮整体居中，与输入框间距10dp，字体大小18sp，各个单选按钮之间间距10dp，默认选中的按钮为第一个。   使用的组件 TextView、EditText、ConstraintLayout、Button、ImageView、RadioGroup、RadioButton。</description>
+    </item>
+    
+    <item>
       <title>Leetcode15 3Sum</title>
       <link>https://sysucarey.github.io/leetcode15-3sum/</link>
       <pubDate>Sun, 30 Sep 2018 22:25:53 +0800</pubDate>
@@ -103,56 +160,6 @@ Note:
 The solution set must not contain duplicate triplets.
 Example:
  Given array nums = [-1, 0, 1, 2, -1, -4], A solution set is: [ [-1, 0, 1], [-1, -1, 2] ]  思考分析 分析一：</description>
-    </item>
-    
-    <item>
-      <title>虚拟机CentOS7安装图形化界面&#43;Google Chrome</title>
-      <link>https://sysucarey.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BAcentos7%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2-google-chrome/</link>
-      <pubDate>Wed, 26 Sep 2018 10:30:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/%E8%99%9A%E6%8B%9F%E6%9C%BAcentos7%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2-google-chrome/</guid>
-      <description>1. 环境  Windows10
- Virtual Box + CentOS7 虚拟机的相关环境配置
-  参照上一篇博客：VirtualBox+CentOS让PC提供桌面云服务
-2. 配置虚拟机  图形化界面需要更高的配置，调整虚拟机CPU，内存，显存配置。
- 右键虚拟机-&amp;gt;设置-&amp;gt;系统-&amp;gt;处理器，分配2个CPU。
- 右键虚拟机-&amp;gt;设置-&amp;gt;系统-&amp;gt;主板，内存分配2GB。
- 右键虚拟机-&amp;gt;设置-&amp;gt;显示-&amp;gt;屏幕，显存分配128MB，启用3D加速。
-  3. 安装CentOS桌面  命令sudo yum groupinstall &amp;quot;GNOME Desktop&amp;quot;安装桌面。（要大约半个小时这么久）   startx进入图形化界面。   可以配置虚拟机，让鼠标的切入切出虚拟机更人性化。
- 先sudo yum install -y kernel-devel gcc，安装kernel-devel 和 gcc。 点击上方设备-&amp;gt;安装增强功能，run。   4. 安装Google Chrome  下载Google Chrome for Linux。  官网可能被墙，国内IP可以移步新浪科技网下载。
-选择正式版RPM-新浪本地下载。
- 利用yum完成安装  去到下载RPM的目录下，终端输入命令:
-sudo yum localinstall google-chrome-stable_current_x86_64.</description>
-    </item>
-    
-    <item>
-      <title>Leetcode11: Container With Most Water</title>
-      <link>https://sysucarey.github.io/leetcode11-container-with-most-water/</link>
-      <pubDate>Sun, 23 Sep 2018 22:50:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode11-container-with-most-water/</guid>
-      <description>题目论述  链接：Leetcode11: Container With Most Water
- 概述：
-  Given n non-negative integers a1, a2, &amp;hellip;, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
-Note: You may not slant the container and n is at least 2.</description>
-    </item>
-    
-    <item>
-      <title>VirtualBox&#43;CentOS让PC提供桌面云服务</title>
-      <link>https://sysucarey.github.io/virtualbox-centos%E8%AE%A9pc%E6%8F%90%E4%BE%9B%E6%A1%8C%E9%9D%A2%E4%BA%91%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Mon, 17 Sep 2018 11:15:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/virtualbox-centos%E8%AE%A9pc%E6%8F%90%E4%BE%9B%E6%A1%8C%E9%9D%A2%E4%BA%91%E6%9C%8D%E5%8A%A1/</guid>
-      <description>实验目的  初步了解虚拟化技术，理解云计算的相关概念
- 为后续课程提供统一的编程与实验环境
- 理解系统工程师面临的困境
-  实验环境  Windows10
- Git for windows
- VictualBox for windows
-  步骤流程 1. git for windows 下载 git for windows 官网
-2. VirtualBox 下载安装并配置 2.1 官网下载：victualBox 官网 2.2 安装在D盘 2.3 配置VirtualBox  管理-&amp;gt;全局设定-&amp;gt;常规，修改默认虚拟电脑位置：   创建虚拟机内部虚拟网络，使得 Vbox 内部虚拟机可以通过它，实现虚拟机之间、虚拟机与主机的通讯 。
- 管理-&amp;gt;主机网络管理器-&amp;gt;创建，创建一块虚拟网卡，把IPv4地址分配为192.168.100.1/24。   在主机Windows终端cmd下，输入ipconfig可以看到自己新创建的网卡VirtualBox Host-Only Network #2。    3. 创建Linux CentOS虚拟机 3.1 CentOS镜像下载 官网下载地址
-下载Minimal ISO</description>
     </item>
     
   </channel>

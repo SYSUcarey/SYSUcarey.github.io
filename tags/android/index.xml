@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on SYSUcarey</title>
-    <link>https://sysucarey.github.io/categories/android/</link>
+    <link>https://sysucarey.github.io/tags/android/</link>
     <description>Recent content in Android on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Oct 2018 12:35:27 +0800</lastBuildDate>
     
-	<atom:link href="https://sysucarey.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sysucarey.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -66,26 +66,6 @@
  输入框整体距左右屏幕各间距20dp，内容（包括提示内容）如图所示，内容字体大小18sp；
  按钮与输入框间距10dp，文字大小18sp。按钮背景框左右边框与文字间距10dp，上下边框与文字间距5dp，圆角半径180dp，背景色为#3F51B5；
  四个单选按钮整体居中，与输入框间距10dp，字体大小18sp，各个单选按钮之间间距10dp，默认选中的按钮为第一个。   使用的组件 TextView、EditText、ConstraintLayout、Button、ImageView、RadioGroup、RadioButton。</description>
-    </item>
-    
-    <item>
-      <title>Windows10 Android 开发环境配置</title>
-      <link>https://sysucarey.github.io/windows10-android-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 10 Sep 2018 20:00:27 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/windows10-android-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-      <description>下载安装Android 和 SDK： 1. Android Studio下载 （需要VPN外网）
-下载地址
-2. Android Studio安装 因空间占量比较大，Android Studio及其SDK都不建议安装在系统盘。
-3. SDK tools下载 Android Studio下载完毕后初次打开，要加载SDK位置的时候，提示SDK tool Directory is missing，下载后双击运行.exe文件安装在目录D:\Android_Studio_SDK下。
-4. SDK下载  打开Android Studio内的SDK Manager
- Android SDK-&amp;gt;SDK Platforms下勾选需要下载的SDK，OK。
-在SDK Manager-&amp;gt;Android SDK-&amp;gt;SDK Platforms中如果不显示可供下载的SDK，无法进行SDK下载，参考遇到的问题1中提到的换host的方法解决。
-  进行第一个Android 项目 1. 新建项目  start a new Android Studio project   给项目命名Hello Android  设定工作台路径D:\AndroidStudioProjects。
-Company domain是公司域名，对应的倒过来的java包名。
- 选择Phone and Tablet  选择适合的API（SDK）版本，这里我选择API24：Android7.0
-真机运行项目的时候需要手机的Android不低于选择的API(SDK)
- 选择Empty Activity模板创建项目  项目会自动生成一个Java（Activity）文件和一个XML布局文件</description>
     </item>
     
   </channel>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>手机平台应用开发week6报告 - SYSUcarey</title>
+<meta property="og:title" content="手机平台应用开发week6报告 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">手机平台应用开发week6报告</h1>
+    
+    <span class="article-date">2018-10-13</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="中山大学数据科学与计算机学院本科生实验报告">中山大学数据科学与计算机学院本科生实验报告</h1>
+
+<h2 id="2018年秋季学期">（2018年秋季学期）</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">课程名称</th>
+<th align="center">手机平台应用开发</th>
+<th align="center">任课老师</th>
+<th align="center">郑贵锋</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">年级</td>
+<td align="center">大三</td>
+<td align="center">专业（方向）</td>
+<td align="center">计应</td>
+</tr>
+
+<tr>
+<td align="center">学号</td>
+<td align="center">16340015</td>
+<td align="center">姓名</td>
+<td align="center">陈彬彬</td>
+</tr>
+
+<tr>
+<td align="center">电话</td>
+<td align="center">13590883387</td>
+<td align="center">Email</td>
+<td align="center">944131226@qq.com</td>
+</tr>
+
+<tr>
+<td align="center">开始日期</td>
+<td align="center">2018/10/13</td>
+<td align="center">完成日期</td>
+<td align="center">2018/10/16</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="一-实验题目">一、实验题目</h2>
+
+<p><strong>Intent、Bundle的使用以及RecyclerView、ListView的应用</strong></p>
+
+<hr />
+
+<h2 id="二-实验目的">二、实验目的</h2>
+
+<ol>
+<li>复习事件处理。<br /></li>
+<li>学习Intent、Bundle在Activity跳转中的应用。</li>
+<li>学习RecyclerView、ListView以及各类适配器的用法。</li>
+<li>学习FloatingActionBar的用法。</li>
+</ol>
+
+<hr />
+
+<h2 id="三-实现内容">三、实现内容</h2>
+
+<ul>
+<li>本次实验模拟实现一个健康食品列表，有两个界面，第一个界面用于呈现食品列表 如下所示<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img1.jpg" alt="img1" /><br />
+数据在&rdquo;manual/素材&rdquo;目录下给出。<br />
+点击右下方的悬浮按钮可以切换到收藏夹<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img2.jpg" alt="img2" /><br />
+上面两个列表点击任意一项后，可以看到详细的信息：<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img3.jpg" alt="img3" /></li>
+</ul>
+
+<h3 id="ui要求">UI要求</h3>
+
+<ul>
+<li>食品列表<br />
+    每一项为一个圆圈和一个名字，圆圈和名字都是垂直居中。圆圈内的内容是该食品的种类，内容要处于圆圈的中心，颜色为白色。食品名字为黑色，圆圈颜色自定义，只需能看见圆圈内的内容即可。</li>
+<li>收藏夹<br />
+    与食品列表相似</li>
+<li>食品详情界面<br />
+
+<ol>
+<li>界面顶部<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img4.jpg" alt="img4" /><br />
+顶部占整个界面的1/3。每个食品详情的顶部颜色在数据中已给出。返回图标处于这块区域的左上角，食品名字处于左下角，星标处于右下角，边距可以自己设置。 <strong>返回图标与名字左对齐，名字与星标底边对齐。</strong> 建议用RelativeLayout实现，以熟悉RelativeLayout的使用。<br /></li>
+<li>界面中部<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img5.jpg" alt="img5" /><br />
+使用的黑色argb编码值为#D5000000，稍微偏灰色的“富含”“蛋白质”的argb编码值为#8A000000。&rdquo;更多资料&rdquo;一栏上方有一条分割线，argb编码值为#1E000000。右边收藏符号的左边也有一条分割线，要求与收藏符号高度一致，垂直居中。字体大小自定。&rdquo;更多资料&rdquo;下方分割线高度自定。这部分所有的分割线argb编码值都是#1E000000。<br /></li>
+<li>界面底部<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img6.jpg" alt="img6" /><br />
+使用的黑色argb编码值为#D5000000。<br /></li>
+</ol></li>
+<li>标题栏<br />
+    两个界面的标题栏都需要去掉<br /></li>
+</ul>
+
+<h3 id="功能要求">功能要求</h3>
+
+<ul>
+<li><p>使用RecyclerView实现食品列表。点击某个食品会跳转到该食品的详情界面，呈现该食品的详细信息。长按列表中某个食品会删除该食品，并弹出Toast，提示 <strong>&ldquo;删除XX&rdquo;</strong> 。</p></li>
+
+<li><p>点击右下方的FloatingActionButton，从食品列表切换到收藏夹或从收藏夹切换到食品列表，并且该按钮的图片作出相应改变。</p></li>
+
+<li><p>使用ListView实现收藏夹。点击收藏夹的某个食品会跳转到食品详情界面，呈现该食品的详细信息。长按收藏夹中的某个食品会弹出对话框询问是否移出该食品，点击确定则移除该食品，点击取消则对话框消失。如长按“鸡蛋”，对话框内容如下图所示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject1/raw/master/manual/images/img7.jpg" alt="img7" /></p></li>
+
+<li><p>商品详情界面中点击返回图标会返回上一层。点击星标会切换状态，如果原本是空心星星，则会变成实心星星；原本是实心星星，则会变成空心星星。点击收藏图表则将该食品添加到收藏夹并弹出Toast提示 <strong>&ldquo;已收藏&rdquo;</strong> 。</p></li>
+</ul>
+
+<h3 id="验收内容">验收内容</h3>
+
+<ul>
+<li>食品列表和收藏夹中，圆圈是圆的，圆圈内的字居中，圆圈和食品名字垂直居中。</li>
+<li>食品详情界面中，顶部占三分之一的<strong>实现方法</strong>。以及界面顶部各控件的位置与对齐关系。</li>
+<li>食品详情界面中，中部收藏符号旁边的分割线上下与符号等高且垂直居中。</li>
+<li>食品列表用RecyclerView实现，收藏夹用ListView实现，食品详情底部的四个操作列表用ListView实现。</li>
+<li>单击后跳转各项资料显示正确，星星点击后行为正常，返回图表功能正常。</li>
+<li>食品列表中的食品长按后能正确删除食品，且删除后列表工作正常（点击其他食品显示信息正确，长按其他食品删除操作正确）。</li>
+<li>收藏夹中的食品长按后弹出框显示内容正确，点击确定后能正确删除食品，且删除后列表工作正常（点击其他食品显示信息正确，长按其他食品删除操作正确）。</li>
+<li>长按事件能正确处理，不会报错</li>
+<li>悬浮按钮的功能正确。</li>
+<li>从收藏夹界面点击食品X进入食品X的详情界面，点击收藏图标后，点击返回按钮，回到收藏夹界面且收藏夹内多出食品X这一项。若在食品X的详情界面没有点击收藏图标，返回后收藏夹界面也不会多出食品X的条目。</li>
+<li>详情界面点击返回按钮，是返回上一界面，而非跳转到新的界面中，即不是跳转到新建的食品列表界面或收藏夹界面。</li>
+<li>点击收藏夹界面的&rdquo;收藏夹&rdquo;一项，应用不会出错。</li>
+<li>不做检查的几项：<br />
+
+<ol>
+<li>若圆圈为button控件，点击该圆圈后可以不跳转到详情界面。<br /></li>
+<li>UI要求中要求自定的距离，颜色等均不检查。<br /></li>
+<li>详情界面顶部，中部可不用RelativeLayout实现。<br /></li>
+<li>详情界面中点击星星图标，图标的状态不需要保存，即再次进入这一项的详情界面，星星图标仍可以是空心星星。<br /></li>
+<li>点击收藏按钮后，如果不是点击返回图标返回上一级界面，收藏夹内容可以不改变。<br /></li>
+<li>多次点击某个食品的详情页面的收藏按钮，收藏夹内可以只出现一个或多个该食品。<br /></li>
+</ol></li>
+<li>如果有以上验收内容存在疑问的话，以demo为准。</li>
+</ul>
+
+<hr />
+
+<h2 id="四-实验结果">四、实验结果</h2>
+
+<h3 id="1-实验截图">1. 实验截图</h3>
+
+<h4 id="1-食谱主界面">(1)食谱主界面</h4>
+
+<p>APP的起始页面，短按食品列表项，进入食品详情。长按食品列表项，删除在食谱List中删除该食品。点击右下角悬浮按钮，显示收藏夹界面。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017162710.png" alt="MainPage_foodList" /></p>
+
+<h4 id="2-收藏夹页面">(2)收藏夹页面</h4>
+
+<p>（点击右下角悬浮按钮在食谱界面和收藏夹界面跳转）</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017162834.png" alt="MainPage_favoriteFoodList" /></p>
+
+<h4 id="3-食物详情界面">(3)食物详情界面</h4>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017170405.png" alt="" /></p>
+
+<h4 id="4-app应用操作">(4)APP应用操作</h4>
+
+<p>短按食谱界面或收藏夹界面食物列表项进入食品对应的详情界面后：</p>
+
+<ul>
+<li>点击收藏按钮添加食物到收藏夹</li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017163025.png" alt="DetailPage_clickFavoriteButton" /></p>
+
+<ul>
+<li>点击star按钮，实心/空心星星转变。</li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017163221.png" alt="DetailPage_clickStarButton" /></p>
+
+<ul>
+<li>点击返回按钮，退回到主界面。<strong>activity_main.xml</strong>。可以看到收藏夹界面添加了海鱼食品。</li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017163434.png" alt="add_Fish_To_FavoriteList" /></p>
+
+<p>如法炮制，再添加几项进入收藏夹（可重复添加同一项食品）</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017163914.png" alt="moreFood_intoFavoriteList" /></p>
+
+<ul>
+<li>长按收藏夹食物项（最上面的“收藏夹”项不是），都会弹出窗口，询问是否从收藏夹内删除，确定的话就删除该食品。</li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017164000.png" alt="ask_If_Delete_FavoriteListItem" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017164043.png" alt="if_Yes_DeleteIt" /></p>
+
+<ul>
+<li>食谱界面长按，直接在食谱中删除该食品；短按跳转详情界面。</li>
+</ul>
+
+<p>如图删剩食谱前两项。删除时有<strong>Tosat</strong>消息提醒。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181017164405.png" alt="delete_Food_From_foodList" /></p>
+
+<hr />
+
+<h3 id="2-实验步骤以及关键代码">2. 实验步骤以及关键代码</h3>
+
+<h4 id="1-项目文件结构">(1)项目文件结构</h4>
+
+<p><code>java-&gt;com.example.chenbb.personalproject1_finaltask</code>中含有五个<strong>Java</strong>文件：</p>
+
+<ul>
+<li><p>MainActivity.java</p></li>
+
+<li><p>DetailActivity.java</p></li>
+
+<li><p>Collection.java</p></li>
+
+<li><p>MyRecyclerViewAdapter</p></li>
+
+<li><p>MyViewHolder</p></li>
+</ul>
+
+<p><code>res-&gt;layout</code>中有四个<strong>XML</strong>文件：</p>
+
+<ul>
+<li>activity_main.xml</li>
+<li>detail.xml</li>
+<li>item.xml</li>
+<li>operation.xml</li>
+</ul>
+
+<h4 id="2-食谱界面的实现">(2)食谱界面的实现</h4>
+
+<p>食谱界面是由一个<strong>RecyclerView</strong>来展现食谱中的食物列表。</p>
+
+<p>食物信息封装在类<strong>Collection</strong>中。</p>
+
+<p><strong>RecyclerView</strong>使用的是自定义的适配器，定义在<strong>MyRecyclerViewAdapter</strong>类中，这个类是继承自<strong>RecyclerView.Adapter</strong>，其中我们要重载<strong>MyRecyclerViewAdapter</strong>的<strong>onCreateViewHolder</strong>，<strong>onBindViewHolder</strong>，<strong>getItemCount</strong>方法，其中为了定义它的点击响应事件，还要定义接口<strong>OnItemClickListener</strong>，定义方法<strong>setOnItemClickListener</strong>。</p>
+
+<p>定义自己的<strong>MyViewHolder</strong>用于上面的<strong>Adapter</strong>的定义。</p>
+
+<p>食谱列表中每一项的布局定义在<strong>item.xml</strong>中。</p>
+
+<hr />
+
+<p><strong>首先关于食物信息，我们将信息封装在一个Collection类中。</strong></p>
+
+<p>在<strong>Collection.java</strong>中定义类，设置私有信息，设置相对应的构造函数，get函数和set函数。其中<strong>Collection类</strong>要<strong>implements Serializable</strong>，以便后续页面跳转的时候传递数据。</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Collection</span> <span style="color:#6ab825;font-weight:bold">implements</span> Serializable{
+    <span style="color:#6ab825;font-weight:bold">private</span> String type;
+    <span style="color:#6ab825;font-weight:bold">private</span> String name;
+    <span style="color:#6ab825;font-weight:bold">private</span> String longType;
+    <span style="color:#6ab825;font-weight:bold">private</span> String nutrition;
+    <span style="color:#6ab825;font-weight:bold">private</span> String color;
+    <span style="color:#6ab825;font-weight:bold">private</span> <span style="color:#6ab825;font-weight:bold">boolean</span> isCollected;
+    
+    <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>}</code></pre></div>
+<p><strong>Collection</strong>类的构造函数，和get方法、set方法都很简单，这里不列出来了。</p>
+
+<hr />
+
+<p><strong>XML中布局使用RecyclerView，以及后台java代码</strong></p>
+
+<p>在<strong>activity_main.xml</strong>中添加<strong>RecyclerView</strong>控件：</p>
+
+<p><code>layout-&gt;activity_main.xml</code>中：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;android.support.v7.widget.RecyclerView</span>
+    <span style="color:#bbb">android:id=</span><span style="color:#ed9d13">&#34;@+id/recyclerView&#34;</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;match_parent&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;wrap_content&#34;</span>
+    <span style="color:#bbb">android:dividerHeight=</span><span style="color:#ed9d13">&#34;10dp&#34;</span>
+    <span style="color:#bbb">android:visibility=</span><span style="color:#ed9d13">&#34;visible&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span></code></pre></div>
+<p>在<strong>item.xml</strong>中对列表每一项进行布局，其中左边是一个圆形蓝色按钮，右边是一个<strong>TextView</strong>。</p>
+
+<p><strong>TextView</strong>控件比较容易实现，这里不讲。<strong>Button</strong>控件圆形蓝色的实现方法在lab1中已经给有。</p>
+
+<p>创建<code>drawable-&gt;button_shape_of_foodtype.xml</code>文件：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#cd2828;font-weight:bold">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;shape</span> <span style="color:#bbb">xmlns:android=</span><span style="color:#ed9d13">&#34;http://schemas.android.com/apk/res/android&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+    android:shape=&#34;rectangle&#34;&gt;
+    <span style="color:#999;font-style:italic">&lt;!-- rounded corner --&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;corners</span> <span style="color:#bbb">android:radius=</span><span style="color:#ed9d13">&#34;180dp&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;solid</span> <span style="color:#bbb">android:color=</span><span style="color:#ed9d13">&#34;@color/colorPrimary&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;/shape&gt;</span></code></pre></div>
+<p><code>layout-&gt;item.xml</code>文件中添加<strong>Button</strong>控件：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;Button</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;60sp&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;60sp&#34;</span>
+    <span style="color:#bbb">android:background=</span><span style="color:#ed9d13">&#34;@drawable/button_shape_of_foodtype&#34;</span>
+    <span style="color:#bbb">android:layout_weight =</span> <span style="color:#ed9d13">&#34;1&#34;</span>
+    <span style="color:#bbb">android:id=</span><span style="color:#ed9d13">&#34;@+id/type&#34;</span>
+    <span style="color:#bbb">android:textSize=</span><span style="color:#ed9d13">&#34;25sp&#34;</span>
+    <span style="color:#bbb">android:textColor=</span><span style="color:#ed9d13">&#34;@color/white&#34;</span>
+    <span style="color:#bbb">android:layout_margin=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">app:layout_constraintTop_toTopOf=</span><span style="color:#ed9d13">&#34;parent&#34;</span>
+    <span style="color:#bbb">app:layout_constraintBottom_toBottomOf=</span><span style="color:#ed9d13">&#34;parent&#34;</span>
+    <span style="color:#bbb">app:layout_constraintLeft_toLeftOf=</span><span style="color:#ed9d13">&#34;parent&#34;</span>
+    <span style="color:#bbb">app:layout_constraintRight_toLeftOf=</span><span style="color:#ed9d13">&#34;@+id/name&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span></code></pre></div>
+<p>然后我们使用我们自己定义<strong>MyRecyclerViewAdapter</strong>对<strong>RecyclerView</strong>进行适配</p>
+
+<p><code>MainActivity.java</code>文件<strong>onCreate</strong>函数中：（<code>data：List&lt;Collection&gt;</code>）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// 初始化食谱数据
+</span><span style="color:#999;font-style:italic"></span>data = <span style="color:#6ab825;font-weight:bold">new</span> ArrayList&lt;&gt;();
+String[] foodType = <span style="color:#6ab825;font-weight:bold">new</span> String[]{<span style="color:#ed9d13">&#34;粮&#34;</span>, <span style="color:#ed9d13">&#34;蔬&#34;</span>, <span style="color:#ed9d13">&#34;饮&#34;</span>, <span style="color:#ed9d13">&#34;肉&#34;</span>, <span style="color:#ed9d13">&#34;蔬&#34;</span>, <span style="color:#ed9d13">&#34;饮&#34;</span>, <span style="color:#ed9d13">&#34;蔬&#34;</span>, <span style="color:#ed9d13">&#34;蔬&#34;</span>, <span style="color:#ed9d13">&#34;粮&#34;</span>, <span style="color:#ed9d13">&#34;杂&#34;</span>};
+String[] foodName = <span style="color:#6ab825;font-weight:bold">new</span> String[]{<span style="color:#ed9d13">&#34;大豆&#34;</span>, <span style="color:#ed9d13">&#34;十字花科蔬菜&#34;</span>, <span style="color:#ed9d13">&#34;牛奶&#34;</span>, <span style="color:#ed9d13">&#34;海鱼&#34;</span>, <span style="color:#ed9d13">&#34;菌菇类&#34;</span>, <span style="color:#ed9d13">&#34;绿茶&#34;</span>, <span style="color:#ed9d13">&#34;番茄&#34;</span>, <span style="color:#ed9d13">&#34;胡萝卜&#34;</span>, <span style="color:#ed9d13">&#34;荞麦&#34;</span>, <span style="color:#ed9d13">&#34;鸡蛋&#34;</span>};
+String[] longType = <span style="color:#6ab825;font-weight:bold">new</span> String[]{<span style="color:#ed9d13">&#34;粮食&#34;</span>, <span style="color:#ed9d13">&#34;蔬菜&#34;</span>, <span style="color:#ed9d13">&#34;饮品&#34;</span>, <span style="color:#ed9d13">&#34;肉食&#34;</span>, <span style="color:#ed9d13">&#34;蔬菜&#34;</span>, <span style="color:#ed9d13">&#34;饮品&#34;</span>, <span style="color:#ed9d13">&#34;蔬菜&#34;</span>, <span style="color:#ed9d13">&#34;蔬菜&#34;</span>, <span style="color:#ed9d13">&#34;粮食&#34;</span>, <span style="color:#ed9d13">&#34;杂&#34;</span>};
+String[] foodNutrition = <span style="color:#6ab825;font-weight:bold">new</span> String[]{<span style="color:#ed9d13">&#34;蛋白质&#34;</span>, <span style="color:#ed9d13">&#34;维生素C&#34;</span>, <span style="color:#ed9d13">&#34;钙&#34;</span>, <span style="color:#ed9d13">&#34;蛋白质&#34;</span>, <span style="color:#ed9d13">&#34;微量元素&#34;</span>, <span style="color:#ed9d13">&#34;无机矿质元素&#34;</span>, <span style="color:#ed9d13">&#34;番茄红素&#34;</span>, <span style="color:#ed9d13">&#34;胡萝卜素&#34;</span>, <span style="color:#ed9d13">&#34;膳食纤维&#34;</span>, <span style="color:#ed9d13">&#34;几乎所有物质&#34;</span>};
+String[] color = <span style="color:#6ab825;font-weight:bold">new</span> String[]{<span style="color:#ed9d13">&#34;#BB4C3B&#34;</span>, <span style="color:#ed9d13">&#34;#C48D30&#34;</span>, <span style="color:#ed9d13">&#34;#4469B0&#34;</span>, <span style="color:#ed9d13">&#34;#20A17B&#34;</span>, <span style="color:#ed9d13">&#34;#BB4C3B&#34;</span>, <span style="color:#ed9d13">&#34;#C48D30&#34;</span>, <span style="color:#ed9d13">&#34;#4469B0&#34;</span>, <span style="color:#ed9d13">&#34;#20A17B&#34;</span>, <span style="color:#ed9d13">&#34;#BB4C3B&#34;</span>, <span style="color:#ed9d13">&#34;#C48D30&#34;</span>};
+<span style="color:#6ab825;font-weight:bold">for</span> (<span style="color:#6ab825;font-weight:bold">int</span> i = 0; i &lt; 10; i++) {
+    Collection temp = <span style="color:#6ab825;font-weight:bold">new</span> Collection(foodType[i], foodName[i], longType[i], foodNutrition[i], color[i], <span style="color:#6ab825;font-weight:bold">false</span>);
+    data.<span style="color:#bbb">add</span>(temp);
+}
+
+myAdapter = <span style="color:#6ab825;font-weight:bold">new</span> MyRecyclerViewAdapter&lt;Collection&gt;(MainActivity.<span style="color:#bbb">this</span>, R.<span style="color:#bbb">layout</span>.<span style="color:#bbb">item</span>, data) {
+    <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#999;font-style:italic">//重载MyRecyclerViewAdapter类中定义的虚函数convert
+</span><span style="color:#999;font-style:italic"></span>}
+
+myAdapter.<span style="color:#bbb">setOnItemClickListener</span>(<span style="color:#6ab825;font-weight:bold">new</span> MyRecyclerViewAdapter.<span style="color:#bbb">OnItemClickListener</span>() {
+    <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#999;font-style:italic">//点击事件重载，包括短按onClick和长按onLongClick
+</span><span style="color:#999;font-style:italic"></span>}
+                                 
+<span style="color:#999;font-style:italic">// 动画效果 setAdapter                                 
+</span><span style="color:#999;font-style:italic"></span>recyclerView = (RecyclerView)findViewById(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">recyclerView</span>);
+recyclerView.<span style="color:#bbb">setLayoutManager</span>(<span style="color:#6ab825;font-weight:bold">new</span> LinearLayoutManager(<span style="color:#6ab825;font-weight:bold">this</span>));
+ScaleInAnimationAdapter scaleInAnimationAdapter = <span style="color:#6ab825;font-weight:bold">new</span> ScaleInAnimationAdapter(myAdapter);
+scaleInAnimationAdapter.<span style="color:#bbb">setDuration</span>(1000);
+recyclerView.<span style="color:#bbb">setAdapter</span>((scaleInAnimationAdapter));
+recyclerView.<span style="color:#bbb">setItemAnimator</span>(<span style="color:#6ab825;font-weight:bold">new</span> OvershootInLeftAnimator()); </code></pre></div>
+<hr />
+
+<p>关于<strong>MyRecyclerViewAdapter.java</strong>与<strong>MyViewHolder.java</strong>的实现。</p>
+
+<p><code>MyRecyclerViewAdapter.java</code>中的成员、函数结构：（其中大多数代码在教程中给出了，这里<strong>todo</strong>省略）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">abstract</span> <span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">MyRecyclerViewAdapter</span>&lt;T&gt; <span style="color:#6ab825;font-weight:bold">extends</span> RecyclerView.<span style="color:#bbb">Adapter</span>&lt;MyViewHolder&gt; {
+    <span style="color:#6ab825;font-weight:bold">private</span> Context context;
+    <span style="color:#6ab825;font-weight:bold">private</span> <span style="color:#6ab825;font-weight:bold">int</span> layoutId;
+    <span style="color:#6ab825;font-weight:bold">private</span> List&lt;T&gt; data;
+    <span style="color:#6ab825;font-weight:bold">private</span> OnItemClickListener onItemClickListener;
+    
+    <span style="color:#999;font-style:italic">//构造函数
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#447fcf">MyRecyclerViewAdapter</span>(Context _context, <span style="color:#6ab825;font-weight:bold">int</span> _layoutId, List _data){
+        <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    }
+    
+    <span style="color:#999;font-style:italic">//创建自定的ViewHolder和绑定ViewHolder
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#ffa500">@Override</span>
+    <span style="color:#6ab825;font-weight:bold">public</span> MyViewHolder <span style="color:#447fcf">onCreateViewHolder</span>(ViewGroup parent, <span style="color:#6ab825;font-weight:bold">int</span> viewType) {
+        <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    }
+    <span style="color:#ffa500">@Override</span>
+    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onBindViewHolder</span>(<span style="color:#6ab825;font-weight:bold">final</span> MyViewHolder holder, <span style="color:#6ab825;font-weight:bold">int</span> position) {
+        <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#999;font-style:italic">//调用convert虚函数
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#999;font-style:italic">//绑定监听器
+</span><span style="color:#999;font-style:italic"></span>    }
+    
+    <span style="color:#999;font-style:italic">// 重载必要函数，获得列表中size数量
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#ffa500">@Override</span>
+    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">getItemCount</span>() {
+        <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    }
+    
+    <span style="color:#999;font-style:italic">//定义虚函数
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">abstract</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">convert</span>(MyViewHolder holder, T t);
+    
+    <span style="color:#999;font-style:italic">//定义点击事件接口
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">interface</span> <span style="color:#447fcf;text-decoration:underline">OnItemClickListener</span>{
+        <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    }
+    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">setOnItemClickListener</span>(OnItemClickListener _onItemClickListener){
+        <span style="color:#999;font-style:italic">//todo
+</span><span style="color:#999;font-style:italic"></span>    }
+    
+}</code></pre></div>
+<p><code>MyViewHolder.java</code>文件，教程中已给出，复制粘贴即可。</p>
+
+<hr />
+
+<h4 id="3-收藏夹界面的实现">(3)收藏夹界面的实现</h4>
+
+<p>相比于食谱界面，还是简单很多，这里没有创建使用教程中给的<strong>MyListViewAdapter.java</strong>，数据存储也不封装在<strong>Collection</strong>中，而是直接用<strong>List<Map<String, Object>&gt; 数据结构</strong>进行存储。列表项的布局与食谱界面的一样，依然使用的是<strong>item.xml</strong>的列表项布局。所以大致代码与食谱界面实现的代码差不多。</p>
+
+<p>这里给出避免点击到“收藏夹”项的点击事件处理，通过判断文字是否是“收藏夹”而实现的。以长按事件处理为例，如果长按的是“收藏夹”项，则无响应，如果是别的项，弹出窗口询问是否删除，确定的话则删除收藏夹中的该项。</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">//长按事件处理
+</span><span style="color:#999;font-style:italic"></span>listview.<span style="color:#bbb">setOnItemLongClickListener</span>(<span style="color:#6ab825;font-weight:bold">new</span> AdapterView.<span style="color:#bbb">OnItemLongClickListener</span>() {
+    <span style="color:#ffa500">@Override</span>
+    <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">boolean</span> <span style="color:#447fcf">onItemLongClick</span>(AdapterView&lt;?&gt; parent, View view, <span style="color:#6ab825;font-weight:bold">final</span> <span style="color:#6ab825;font-weight:bold">int</span> position, <span style="color:#6ab825;font-weight:bold">long</span> id) {
+        <span style="color:#999;font-style:italic">// 如果点击到收藏夹，无反应
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">if</span>(favorite.<span style="color:#bbb">get</span>(position).<span style="color:#bbb">get</span>(<span style="color:#ed9d13">&#34;name&#34;</span>).<span style="color:#bbb">toString</span>().<span style="color:#bbb">equals</span>(<span style="color:#ed9d13">&#34;收藏夹&#34;</span>)) <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#6ab825;font-weight:bold">true</span>;
+        <span style="color:#999;font-style:italic">// 处理长按事件
+</span><span style="color:#999;font-style:italic"></span>        AlertDialog.<span style="color:#bbb">Builder</span> builder = <span style="color:#6ab825;font-weight:bold">new</span> AlertDialog.<span style="color:#bbb">Builder</span>(MainActivity.<span style="color:#bbb">this</span>);
+        builder.<span style="color:#bbb">setTitle</span>(<span style="color:#ed9d13">&#34;删除&#34;</span>);
+        builder.<span style="color:#bbb">setMessage</span>(<span style="color:#ed9d13">&#34;确定删除&#34;</span> + favorite.<span style="color:#bbb">get</span>(position).<span style="color:#bbb">get</span>(<span style="color:#ed9d13">&#34;name&#34;</span>).<span style="color:#bbb">toString</span>() + <span style="color:#ed9d13">&#34;?&#34;</span> );
+        <span style="color:#999;font-style:italic">// 设置正面按钮
+</span><span style="color:#999;font-style:italic"></span>        builder.<span style="color:#bbb">setPositiveButton</span>(<span style="color:#ed9d13">&#34;确定&#34;</span>, <span style="color:#6ab825;font-weight:bold">new</span> DialogInterface.<span style="color:#bbb">OnClickListener</span>() {
+            <span style="color:#ffa500">@Override</span>
+            <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onClick</span>(DialogInterface dialog, <span style="color:#6ab825;font-weight:bold">int</span> which) {
+                favorite.<span style="color:#bbb">remove</span>(position);
+                simpleAdapter.<span style="color:#bbb">notifyDataSetChanged</span>();
+                dialog.<span style="color:#bbb">dismiss</span>();
+            }
+        });
+        <span style="color:#999;font-style:italic">// 设置反面按钮
+</span><span style="color:#999;font-style:italic"></span>builder.<span style="color:#bbb">setNegativeButton</span>(<span style="color:#ed9d13">&#34;取消&#34;</span>, <span style="color:#6ab825;font-weight:bold">new</span> DialogInterface.<span style="color:#bbb">OnClickListener</span>() {
+            <span style="color:#ffa500">@Override</span>
+            <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onClick</span>(DialogInterface dialog, <span style="color:#6ab825;font-weight:bold">int</span> which) {
+                dialog.<span style="color:#bbb">dismiss</span>();
+            }
+        });
+        AlertDialog dialog = builder.<span style="color:#bbb">create</span>();
+        dialog.<span style="color:#bbb">show</span>();
+        <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#6ab825;font-weight:bold">true</span>;
+    }
+});</code></pre></div>
+<hr />
+
+<h4 id="4-页面跳转的实现">(4)页面跳转的实现</h4>
+
+<p>使用<strong>Intent</strong>和<strong>Bundle</strong>从主界面跳到详情界面，详情界面回调回主界面。</p>
+
+<p><code>MainActivity.java</code>中跳转：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent =<span style="color:#6ab825;font-weight:bold">new</span> Intent(MainActivity.<span style="color:#bbb">this</span>, DetailActivity.<span style="color:#bbb">class</span>);
+Bundle bundle = <span style="color:#6ab825;font-weight:bold">new</span> Bundle();
+bundle.<span style="color:#bbb">putSerializable</span>(<span style="color:#ed9d13">&#34;data&#34;</span>, data.<span style="color:#bbb">get</span>(position));
+intent.<span style="color:#bbb">putExtras</span>(bundle);
+startActivityForResult(intent, 0);</code></pre></div>
+<p><code>DetailActivity.java</code>中获得页面跳转的Intent中的数据</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent = <span style="color:#6ab825;font-weight:bold">this</span>.<span style="color:#bbb">getIntent</span>();
+Bundle bundle = intent.<span style="color:#bbb">getExtras</span>();
+data = (Collection) bundle.<span style="color:#bbb">getSerializable</span>(<span style="color:#ed9d13">&#34;data&#34;</span>);
+data.<span style="color:#bbb">setCollected</span>(<span style="color:#6ab825;font-weight:bold">false</span>);</code></pre></div>
+<p><code>DetailActivity.java</code>中回调（判断是否收藏了该食品）：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6ab825;font-weight:bold">if</span>(data.<span style="color:#bbb">getIsCollected</span>() == <span style="color:#6ab825;font-weight:bold">true</span>) {
+    Intent intent1 = <span style="color:#6ab825;font-weight:bold">new</span> Intent(DetailActivity.<span style="color:#bbb">this</span>, MainActivity.<span style="color:#bbb">class</span>);
+    Bundle bundle1 = <span style="color:#6ab825;font-weight:bold">new</span> Bundle();
+    bundle1.<span style="color:#bbb">putSerializable</span>(<span style="color:#ed9d13">&#34;data&#34;</span>, data);
+    intent1.<span style="color:#bbb">putExtras</span>(bundle1);
+    setResult(RESULT_OK, intent1);
+}
+finish();</code></pre></div>
+<p>然后<code>MainActivity.java</code>中要重载回调后的执行函数<strong>onActivityResult</strong>。</p>
+
+<p>为了就是实现，如果回调过来的数据中表示收藏了该食品，那么我们要在收藏夹列表中add这一项食品，然后更新Adapter。</p>
+
+<hr />
+
+<h4 id="5-详情界面的实现">(5)详情界面的实现</h4>
+
+<p>最难的就是1/3屏幕高度的实现，解决方法是最外层用<strong>LinearLayout</strong>，通过属性<strong>layout_weight</strong>的设置，实现按比例分配高度。而各分区的实现，用<strong>RelativeLayout</strong>控件裹着里面的子控件，确实布局来说很方便。</p>
+
+<p>还有分割线的实现：（横分割线）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;View</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;match_parent&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;3px&#34;</span>
+    <span style="color:#bbb">android:layout_marginLeft=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">android:layout_marginRight=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">android:background=</span><span style="color:#ed9d13">&#34;#1E000000&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span></code></pre></div>
+<p>具体看后续遇到的困难中都有提到。</p>
+
+<p>详情界面底部是一个<strong>ListView</strong>，用最简单的<strong>ArrayAdapter</strong>就行了，但项目中我粘贴方便，还是用了<strong>SimpleAdapter</strong>。这个想复杂了一点点。</p>
+
+<hr />
+
+<h3 id="3-实验遇到的困难以及解决思路">3. 实验遇到的困难以及解决思路</h3>
+
+<ol>
+<li><p><strong>RecyclerView</strong>的使用，<strong>List</strong>中一个<strong>Item</strong>占一整页的问题。</p>
+
+<p><strong>原因</strong>：item.xml中单项控件的高度设成了<strong>match_parent</strong>，这样会导致列表中的每一项的高度都是整个屏幕高度。</p>
+
+<p><strong>解决方法</strong>：<strong>item.xml</strong>文件中最外层<strong>Layout</strong>的属性<strong>layout_height = wrap_content</strong></p>
+
+<p><a href="https://bbs.csdn.net/topics/391997966">参考博客</a></p></li>
+
+<li><p>点击事件，<strong>TextView</strong>字后面的空间无法聚焦点击。</p>
+
+<p><strong>解决方法</strong>：在<strong>activity_main.xml</strong>中对<strong>ListView</strong>和<strong>RecyclerView</strong>的<strong>width</strong>都要设成<strong>match_parent</strong>，不然只能点到控件所在的地方，控件后面的点击无效。</p>
+
+<p><a href="https://blog.csdn.net/Zero_uou/article/details/78397932">参考博客</a></p></li>
+
+<li><p><strong>Android</strong> 用<strong>Intent</strong>跳转时，新页面未显示就直接闪退程序</p>
+
+<p><strong>原因</strong>：新页面未在AndroidMainfest.xml中注册</p>
+
+<p><a href="https://www.cnblogs.com/comefuture/p/6734913.html">页面跳转参考博客</a></p></li>
+
+<li><p>设置Layout的layout_weight实现按比例分配屏幕高度发现没用</p>
+
+<p><strong>原因</strong>：layout_weight属性只用于<strong>LinearLayout</strong>布局。</p>
+
+<p><strong>解决方案</strong>：<strong>detail.xml</strong>最外层的布局用<strong>LinearLayout</strong>，<strong>LinearLayout</strong>里面再加<strong>RelativeLayout</strong>，设置<strong>layout_weight</strong>属性实现屏幕高度比例分配。</p>
+
+<p><a href="https://blog.csdn.net/ljheee/article/details/53425410">参考博客</a></p></li>
+
+<li><p>分割线的实现方法</p>
+
+<p><strong>解决方案</strong>：横分割线，设置高度很小；竖分割线，设置宽度很小。</p>
+
+<p><a href="https://blog.csdn.net/nazicsdn/article/details/80193406">参考博客</a></p></li>
+
+<li><p>使用<strong>Bundle.putSerializable()</strong> 在Activity中交换数据的实现。</p>
+
+<p><a href="https://blog.csdn.net/qq_33441205/article/details/50669006">参考博客</a></p>
+
+<p><a href="https://www.cnblogs.com/tianguook/p/3407378.html">参考博客2</a></p></li>
+</ol>
+
+<hr />
+
+<h2 id="五-实验思考及感想">五、实验思考及感想</h2>
+
+<ul>
+<li>项目实验三的难度相较于实验一二来说，就难很多了，<a href="https://gitee.com/SYSUcarey/PersonalProject1/blob/master/manual/tutorial.md">tutorial.md</a>给出的教程也有很多页，接触到的新概念也很多，重点在于不同种类的<strong>ListView</strong>，自定义的<strong>Adapter</strong>，这两个知识点是这次实验的核心重点。</li>
+<li>关于布局方面，学会了<strong>LinearLayout</strong>和<strong>RelativeLayout</strong>的基础使用，了解到它们在布局方面上的优点优越性，主要体现在这次实验关于详情界面的布局上。</li>
+<li>当然还有页面跳转这个在之前看上去应该是很难得一个点，教程也没有给出相应的代码，但是我简单地上网查了一下，发现Intent, Bundle实现页面跳转的原理很简单，数据也是放在Intent中一起传递过去的，之后就简单了，网上的教程讲得很清晰。</li>
+<li>这周的项目用的时间也很长，但实现了这一个项目感觉学会了很多很多，收获很大。</li>
+</ul>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/android">Android</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android">Android</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

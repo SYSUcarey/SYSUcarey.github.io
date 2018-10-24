@@ -18,8 +18,18 @@
   </url>
   
   <url>
+    <loc>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week6%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2018-10-13T12:35:27+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sysucarey.github.io/leetcode18-4sum/</loc>
     <lastmod>2018-10-07T22:33:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week5%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2018-10-07T12:35:27+08:00</lastmod>
   </url>
   
   <url>
@@ -30,6 +40,11 @@
   <url>
     <loc>https://sysucarey.github.io/leetcode119-pascals-triangle-ii/</loc>
     <lastmod>2018-10-02T23:20:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week4%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2018-10-01T12:35:27+08:00</lastmod>
   </url>
   
   <url>
@@ -94,7 +109,13 @@
   
   <url>
     <loc>https://sysucarey.github.io/categories/android/</loc>
-    <lastmod>2018-09-10T20:00:27+08:00</lastmod>
+    <lastmod>2018-10-13T12:35:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/tags/android/</loc>
+    <lastmod>2018-10-13T12:35:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -106,7 +127,7 @@
   
   <url>
     <loc>https://sysucarey.github.io/categories/</loc>
-    <lastmod>2018-09-10T20:00:27+08:00</lastmod>
+    <lastmod>2018-10-13T12:35:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -178,7 +199,7 @@
   
   <url>
     <loc>https://sysucarey.github.io/tags/</loc>
-    <lastmod>2018-09-10T20:00:27+08:00</lastmod>
+    <lastmod>2018-10-13T12:35:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
