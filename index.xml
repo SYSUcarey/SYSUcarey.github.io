@@ -6,9 +6,24 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Oct 2018 23:31:34 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Oct 2018 20:30:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Leetcode31 Next Permutation</title>
+      <link>https://sysucarey.github.io/leetcode31-next-permutation/</link>
+      <pubDate>Thu, 25 Oct 2018 20:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode31-next-permutation/</guid>
+      <description>题目  链接：  Leetcode31 Next Permutation
+ 概述：  Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
+If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+The replacement must be in-place and use only constant extra memory.
+Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</description>
+    </item>
     
     
     
@@ -157,25 +172,6 @@ In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers direct
 Example:
  Input: 3 Output: [1,3,3,1]  Follow up:
 Could you optimize your algorithm to use only O(k) extra space?</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>手机平台应用开发week4报告</title>
-      <link>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week4%E6%8A%A5%E5%91%8A/</link>
-      <pubDate>Mon, 01 Oct 2018 12:35:27 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week4%E6%8A%A5%E5%91%8A/</guid>
-      <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/10/01 完成日期 2018/10/01    一、实验题目 基本的UI界面设计
-二、实验目的  熟悉Android Studio开发工具操作。
- 熟悉Android Studio基本UI开发，并进行UI基本设计。
-  三、实现内容 实现一个Android应用，界面呈现如图中的效果。
-要求  该界面为应用启动后看到的第一个界面。
- 各控件的要求  标题字体大小20sp，与顶部距离20dp，居中； 图片与上下控件的间距均为20dp，居中；
- 输入框整体距左右屏幕各间距20dp，内容（包括提示内容）如图所示，内容字体大小18sp；
- 按钮与输入框间距10dp，文字大小18sp。按钮背景框左右边框与文字间距10dp，上下边框与文字间距5dp，圆角半径180dp，背景色为#3F51B5；
- 四个单选按钮整体居中，与输入框间距10dp，字体大小18sp，各个单选按钮之间间距10dp，默认选中的按钮为第一个。   使用的组件 TextView、EditText、ConstraintLayout、Button、ImageView、RadioGroup、RadioButton。</description>
     </item>
     
     

@@ -6,10 +6,23 @@
     <description>Recent content in Leetcode on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Oct 2018 22:30:53 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Oct 2018 20:30:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode31 Next Permutation</title>
+      <link>https://sysucarey.github.io/leetcode31-next-permutation/</link>
+      <pubDate>Thu, 25 Oct 2018 20:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode31-next-permutation/</guid>
+      <description>题目  链接：  Leetcode31 Next Permutation
+ 概述：  Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
+If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+The replacement must be in-place and use only constant extra memory.
+Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</description>
+    </item>
     
     <item>
       <title>Leetcode57 Insert Interval</title>
