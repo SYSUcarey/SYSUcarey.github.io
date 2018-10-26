@@ -6,10 +6,20 @@
     <description>Recent content in Git on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Oct 2018 23:31:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 15:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git报错处理总结</title>
+      <link>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 26 Oct 2018 15:00:00 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</guid>
+      <description> [TOC]
+1.Git出现Fatal: TaskCanceledException encountered.的解决方法  设置全局配置helper为manager：  git config –global credential.helper manager  </description>
+    </item>
     
     <item>
       <title>Git日常使用总结</title>

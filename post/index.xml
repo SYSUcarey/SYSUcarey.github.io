@@ -6,10 +6,20 @@
     <description>Recent content in Posts on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Oct 2018 14:49:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 15:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git报错处理总结</title>
+      <link>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 26 Oct 2018 15:00:00 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</guid>
+      <description> [TOC]
+1.Git出现Fatal: TaskCanceledException encountered.的解决方法  设置全局配置helper为manager：  git config –global credential.helper manager  </description>
+    </item>
     
     <item>
       <title>Leetcode581 Shortest Unsorted Continuous Subarray</title>
@@ -141,18 +151,6 @@ Example:
 否则弹出如下对话框，对话框点击效果同上。
   RadioButton选择项切换：选择项切换之后，弹出Toast信息“XX被选中”，例如从图片切换到视频，弹出Toast信息“视频被选中”
    四、实验结果 (1)实验截图 实验效果图：</description>
-    </item>
-    
-    <item>
-      <title>Leetcode74 Search a 2D Matrix</title>
-      <link>https://sysucarey.github.io/leetcode74-search-a-2d-matrix/</link>
-      <pubDate>Thu, 04 Oct 2018 21:22:32 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode74-search-a-2d-matrix/</guid>
-      <description>题目论述  链接：  Leetcode74 Search a 2D Matrix
- 概述：  Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
- Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row.  Example 1:
- Input: matrix = [ [1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50] ] target = 3 Output: true  Example 2:</description>
     </item>
     
   </channel>
