@@ -6,10 +6,23 @@
     <description>Recent content in Leetcode on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Oct 2018 20:30:53 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 14:49:15 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode581 Shortest Unsorted Continuous Subarray</title>
+      <link>https://sysucarey.github.io/leetcode581-shortest-unsorted-continuous-subarray/</link>
+      <pubDate>Fri, 26 Oct 2018 14:49:15 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode581-shortest-unsorted-continuous-subarray/</guid>
+      <description>题目  链接：  Leetcode581 Shortest Unsorted Continuous Subarray
+ 概述：  Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.
+You need to find the shortest such subarray and output its length.
+Example 1:
+ Input: [2, 6, 4, 8, 10, 9, 15] Output: 5 Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</description>
+    </item>
     
     <item>
       <title>Leetcode31 Next Permutation</title>
@@ -134,17 +147,6 @@ You may assume nums1 and nums2 cannot be both empty.
 Example 1:
  nums1 = [1, 3] nums2 = [2] The median is 2.0  Example 2:
  nums1 = [1, 2] nums2 = [3, 4] The median is (2 + 3)/2 = 2.</description>
-    </item>
-    
-    <item>
-      <title>Leetcode16: 3 Sum Closet</title>
-      <link>https://sysucarey.github.io/leetcode16-3-sum-closet/</link>
-      <pubDate>Sun, 09 Sep 2018 20:30:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode16-3-sum-closet/</guid>
-      <description>题目： Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
-Example:
-Given array nums = [-1, 2, 1, -4], and target = 1. The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</description>
     </item>
     
   </channel>

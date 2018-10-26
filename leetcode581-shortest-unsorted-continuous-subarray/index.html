@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode581 Shortest Unsorted Continuous Subarray - SYSUcarey</title>
+<meta property="og:title" content="Leetcode581 Shortest Unsorted Continuous Subarray - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode581 Shortest Unsorted Continuous Subarray</h1>
+    
+    <span class="article-date">2018-10-26</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/">Leetcode581 Shortest Unsorted Continuous Subarray</a></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given an integer array, you need to find one <strong>continuous subarray</strong> that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.</p>
+
+<p>You need to find the <strong>shortest</strong> such subarray and output its length.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>  Input: [2, 6, 4, 8, 10, 9, 15]
+  Output: 5
+  Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.
+</code></pre>
+
+<p><strong>Note:</strong></p>
+
+<ol>
+<li>Then length of the input array is in range [1, 10,000].</li>
+<li>The input array may contain duplicates, so ascending order here means <strong>&lt;=</strong>.</li>
+</ol>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<p><strong>分析：</strong></p>
+
+<ul>
+<li>找到最短的要排序的连续项的数量，使得排序这些项后，整个数组是升序的。</li>
+<li>那么我们考虑的很简单，我们干脆先复制数组，然后先进行排序。然后用两个指针<strong>begin</strong>和<strong>end</strong>从头和尾向中间逼近，找到第一项和排序后的数组不一样的，那么这时候<strong>Output=end-begin+1</strong>。</li>
+</ul>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<p><strong>Solution：</strong></p>
+
+<ul>
+<li>根据分析里的思路，首先考虑数组<code>SIZE == 0</code>和 <code>SIZE == 1</code>的情况。</li>
+<li>克隆数组<strong>sortArray</strong>，然后用<strong>sort</strong>函数排序<strong>sortArray</strong>数组。</li>
+<li>定义两个指针<strong>begin</strong>和<strong>end</strong>从两头向中间逼近，找出第一项和排序数组不一样的。这里只要注意好一些边界细节就没问题了。</li>
+<li><strong>算法复杂度O(n logn)</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="code-c">code(c++)</h2>
+
+<p><strong>solution(32ms)：</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    <span style="color:#6ab825;font-weight:bold">int</span> findUnsortedSubarray(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; nums) {
+        <span style="color:#6ab825;font-weight:bold">if</span>(nums.size()==<span style="color:#3677a9">0</span> || nums.size()==<span style="color:#3677a9">1</span>) <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#3677a9">0</span>;
+        vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt; sortArray;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; (<span style="color:#6ab825;font-weight:bold">int</span>)nums.size(); i++) sortArray.push_back(nums[i]);
+        sort(sortArray.begin(), sortArray.end());
+        <span style="color:#6ab825;font-weight:bold">int</span> begin = <span style="color:#3677a9">0</span>, end = nums.size() - <span style="color:#3677a9">1</span>;
+        <span style="color:#6ab825;font-weight:bold">while</span>(begin &lt;= end) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(nums[begin] == sortArray[begin]) begin++;
+            <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#6ab825;font-weight:bold">break</span>;
+        }
+        <span style="color:#6ab825;font-weight:bold">while</span>(end &gt; begin) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(nums[end] == sortArray[end]) end--;
+            <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#6ab825;font-weight:bold">break</span>;
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> end-begin+<span style="color:#3677a9">1</span>;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

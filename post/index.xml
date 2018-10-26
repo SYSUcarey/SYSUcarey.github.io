@@ -6,10 +6,23 @@
     <description>Recent content in Posts on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Oct 2018 20:30:53 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 14:49:15 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode581 Shortest Unsorted Continuous Subarray</title>
+      <link>https://sysucarey.github.io/leetcode581-shortest-unsorted-continuous-subarray/</link>
+      <pubDate>Fri, 26 Oct 2018 14:49:15 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode581-shortest-unsorted-continuous-subarray/</guid>
+      <description>题目  链接：  Leetcode581 Shortest Unsorted Continuous Subarray
+ 概述：  Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.
+You need to find the shortest such subarray and output its length.
+Example 1:
+ Input: [2, 6, 4, 8, 10, 9, 15] Output: 5 Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</description>
+    </item>
     
     <item>
       <title>Leetcode31 Next Permutation</title>
@@ -140,21 +153,6 @@ Example:
  概述：  Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
  Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row.  Example 1:
  Input: matrix = [ [1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50] ] target = 3 Output: true  Example 2:</description>
-    </item>
-    
-    <item>
-      <title>Leetcode119 Pascal&#39;s Triangle II</title>
-      <link>https://sysucarey.github.io/leetcode119-pascals-triangle-ii/</link>
-      <pubDate>Tue, 02 Oct 2018 23:20:50 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode119-pascals-triangle-ii/</guid>
-      <description>题目论述  链接：  Leetcode119 Pascal&amp;rsquo;s Triangle II
- 概述：  Given a non-negative index k where k ≤ 33, return the k th index row of the Pascal&amp;rsquo;s triangle.
-Note that the row index starts from 0.
-In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it.
-Example:
- Input: 3 Output: [1,3,3,1]  Follow up:
-Could you optimize your algorithm to use only O(k) extra space?</description>
     </item>
     
   </channel>
