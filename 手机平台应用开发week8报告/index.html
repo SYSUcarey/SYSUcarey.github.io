@@ -407,18 +407,10 @@ widget_dynamic_filter.<span style="color:#bbb">addAction</span>(WIDGETDYNAMICACT
 widgetDynamicReceiver = <span style="color:#6ab825;font-weight:bold">new</span> DynamicReceiver(); <span style="color:#999;font-style:italic">//添加动态广播的Action
 </span><span style="color:#999;font-style:italic"></span>registerReceiver(widgetDynamicReceiver, widget_dynamic_filter); //注册自定义动态广播信息</code></pre></div>
 <p><strong>Widget</strong>动态广播发送：</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Subscribe</span>(threadMode = ThreadMode.<span style="color:#bbb">MAIN</span>)
-<span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onMessageEvent</span>(Collection _collection) {
-    Map&lt;String, Object&gt; tempMap = <span style="color:#6ab825;font-weight:bold">new</span> LinkedHashMap&lt;&gt;();
-    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;type&#34;</span>, _collection.<span style="color:#bbb">getType</span>().<span style="color:#bbb">toString</span>());
-    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;name&#34;</span>, _collection.<span style="color:#bbb">getName</span>().<span style="color:#bbb">toString</span>());
-    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;longType&#34;</span>, _collection.<span style="color:#bbb">getLongType</span>().<span style="color:#bbb">toString</span>());
-    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;nutrition&#34;</span>, _collection.<span style="color:#bbb">getNutrition</span>().<span style="color:#bbb">toString</span>());
-    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;color&#34;</span>, _collection.<span style="color:#bbb">getColor</span>().<span style="color:#bbb">toString</span>());
-    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;isCollected&#34;</span>, (Boolean)_collection.<span style="color:#bbb">getIsCollected</span>());
-    favorite.<span style="color:#bbb">add</span>(tempMap);
-    simpleAdapter.<span style="color:#bbb">notifyDataSetChanged</span>();
-}</code></pre></div>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent widgetIntentBroadcast = <span style="color:#6ab825;font-weight:bold">new</span> Intent();   <span style="color:#999;font-style:italic">//定义Intent
+</span><span style="color:#999;font-style:italic"></span>widgetIntentBroadcast.<span style="color:#bbb">setAction</span>(WIDGETDYNAMICACTION);
+widgetIntentBroadcast.<span style="color:#bbb">putExtras</span>(bundle);
+sendBroadcast(widgetIntentBroadcast);</code></pre></div>
 <p><strong>Widget</strong>动态广播注销：</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">unregisterReceiver(widgetDynamicReceiver);</code></pre></div>
 <p><strong>Widget</strong>动态广播的响应处理：</p>
