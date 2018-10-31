@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>手机平台应用开发week8报告 - SYSUcarey</title>
+<meta property="og:title" content="手机平台应用开发week8报告 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">手机平台应用开发week8报告</h1>
+    
+    <span class="article-date">2018-10-31</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="中山大学数据科学与计算机学院本科生实验报告">中山大学数据科学与计算机学院本科生实验报告</h1>
+
+<h2 id="2018年秋季学期">（2018年秋季学期）</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">课程名称</th>
+<th align="center">手机平台应用开发</th>
+<th align="center">任课老师</th>
+<th align="center">郑贵锋</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">年级</td>
+<td align="center">大三</td>
+<td align="center">专业（方向）</td>
+<td align="center">计应</td>
+</tr>
+
+<tr>
+<td align="center">学号</td>
+<td align="center">16340015</td>
+<td align="center">姓名</td>
+<td align="center">陈彬彬</td>
+</tr>
+
+<tr>
+<td align="center">电话</td>
+<td align="center">13590883387</td>
+<td align="center">Email</td>
+<td align="center">944131226@qq.com</td>
+</tr>
+
+<tr>
+<td align="center">开始日期</td>
+<td align="center">2018/10/30</td>
+<td align="center">完成日期</td>
+<td align="center">2018/10/30</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="一-实验题目">一、实验题目</h2>
+
+<p><strong>AppWidget 使用</strong></p>
+
+<hr />
+
+<h2 id="二-实验目的">二、实验目的</h2>
+
+<ol>
+<li>复习 Broadcast 编程基础。</li>
+<li>复习动态注册 Broadcast 和静态注册 Broadcast 。</li>
+<li>掌握 AppWidget 编程基础。</li>
+</ol>
+
+<hr />
+
+<h2 id="三-实现内容">三、实现内容</h2>
+
+<p>在第七周任务的基础上，实现静态广播、动态广播两种改变widget内容的方法。</p>
+
+<h3 id="要求">要求</h3>
+
+<ul>
+<li>widget初始情况如下：</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week8_begin.PNG" alt="preview" /></p>
+
+<ul>
+<li>点击widget可以启动应用，并在widget随机推荐一个食品。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week8_recommendation.PNG" alt="preview" /></p>
+
+<ul>
+<li>点击widget跳转到所推荐食品的详情界面。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week8_jump.PNG" alt="preview" /></p>
+
+<ul>
+<li>点击收藏图标，widget相应更新。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week8_update.PNG" alt="preview" /></p>
+
+<ul>
+<li>点击widget跳转到收藏列表。</li>
+</ul>
+
+<p><img src="https://gitee.com/code_sysu/PersonalProject2/raw/master/manual/images/week8_collection.PNG" alt="preview" /></p>
+
+<ul>
+<li>实现方式要求:启动时的widget更新通过静态广播实现，点击收藏图标时的widget更新通过动态广播实现。</li>
+</ul>
+
+<hr />
+
+<h3 id="验收内容">验收内容</h3>
+
+<ul>
+<li>布局显示是否正常。</li>
+<li>静态广播：启动应用Widget是否有随机推荐食品。</li>
+<li>动态广播：点击收藏图标后，Widget是否提示食品已加入收藏列表。</li>
+<li>点击widget是否正确跳到对应的界面。</li>
+<li>代码+实验报告（先在实验课上检查，检查后再pr）</li>
+</ul>
+
+<hr />
+
+<h2 id="四-实验结果">四、实验结果</h2>
+
+<h3 id="1-实验截图">1. 实验截图</h3>
+
+<h4 id="1-widget初始情况">(1)Widget初始情况</h4>
+
+<p>Widget初始显示为“当前没有任何消息”</p>
+
+<p>这时点击Widget星星图标可以打开应用</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031164919.png" alt="Img1_Widget_initial_Condition" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031164950.png" alt="Img2_Click_for_Jumping_to_MainActivity" /></p>
+
+<h4 id="2-widget显示-推荐食品">(2)Widget显示“推荐食品”</h4>
+
+<p>此时返回桌面，Widget显示今日推荐的食品</p>
+
+<p>这时点击Widget星星图标，可以跳转到该推荐食品的界面</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031165424.png" alt="Img3_Widget_Condition2_showing_Recommended_food" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031165558.png" alt="Img4_Click_for_Jumping_to_DetailActivity" /></p>
+
+<h4 id="2-widget显示-已收藏食品">(2)Widget显示“已收藏食品”</h4>
+
+<p>详情界面点击收藏按钮，退回桌面，Widget显示已收藏对应食品。</p>
+
+<p>这时点击Widget星星图标，可以跳转到收藏夹界面</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031165824.png" alt="Img5_Click_for_collecting_food" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031165915.png" alt="Img6_Widget_showing_Collection" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181031165936.png" alt="Img7_Click_for_Jumping_to_Collection_List" /></p>
+
+<hr />
+
+<h3 id="2-实验步骤以及关键代码">2. 实验步骤以及关键代码</h3>
+
+<h4 id="1-项目文件结构">(1)项目文件结构</h4>
+
+<p>相较于week7新增了一个Java代码文件，两个xml文件</p>
+
+<p><code>java-&gt;com.example.chenbb.personalproject1_finaltask</code> 目录下：</p>
+
+<ul>
+<li>MainActivity.java</li>
+<li>DetailActivity.java</li>
+<li>Collection.java</li>
+<li>MyRecyclerViewAdapter.java</li>
+<li>MyViewHolder.java</li>
+<li>StaticReceiver.java</li>
+<li>DynamicReceiver.java</li>
+<li><strong>NewAppWidget.java</strong></li>
+</ul>
+
+<p><code>res-&gt;layout</code>目录下：</p>
+
+<ul>
+<li><p>activity_main.xml</p></li>
+
+<li><p>detail.xml</p></li>
+
+<li><p>item.xml</p></li>
+
+<li><p>operation.xml</p></li>
+
+<li><p><strong>new_app_widget.xml</strong></p></li>
+</ul>
+
+<p><code>res-&gt;xml</code>目录下：</p>
+
+<ul>
+<li><strong>new_app_widget_info.xml</strong></li>
+</ul>
+
+<hr />
+
+<h4 id="2-widget布局实现">(2)Widget布局实现</h4>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">tutorial.md</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li>创建<strong>Widget</strong>类。Android Studio中<code>File-&gt;New-&gt;Widget</code>。</li>
+<li><strong>new_app_widget.xml</strong>布局两个控件<strong>ImageView</strong>和<strong>TextView</strong>，使用的是<strong>RelativeLayout</strong>布局。</li>
+<li><strong>new_app_widget_info.xml</strong>实现<strong>Widget</strong>的大小、模式、对齐、布局等属性。</li>
+<li><strong>AndroidManifest.xml</strong>注册Widget。</li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p><strong>new_app_widget.xml</strong>布局实现：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;ImageView</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;40dp&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;40dp&#34;</span>
+    <span style="color:#bbb">android:src=</span><span style="color:#ed9d13">&#34;@mipmap/full_star&#34;</span>
+    <span style="color:#bbb">android:id=</span><span style="color:#ed9d13">&#34;@+id/widget_image&#34;</span>
+    <span style="color:#bbb">android:layout_margin=</span><span style="color:#ed9d13">&#34;20dp&#34;</span>
+    <span style="color:#bbb">android:layout_alignParentLeft=</span><span style="color:#ed9d13">&#34;true&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;TextView</span>
+    <span style="color:#bbb">android:layout_width=</span><span style="color:#ed9d13">&#34;wrap_content&#34;</span>
+    <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;wrap_content&#34;</span>
+    <span style="color:#bbb">android:id=</span><span style="color:#ed9d13">&#34;@+id/widget_text&#34;</span>
+    <span style="color:#bbb">android:text=</span><span style="color:#ed9d13">&#34;当前没有任何消息&#34;</span>
+    <span style="color:#bbb">android:textSize=</span><span style="color:#ed9d13">&#34;15sp&#34;</span>
+    <span style="color:#bbb">android:textColor=</span><span style="color:#ed9d13">&#34;@color/white&#34;</span>
+    <span style="color:#bbb">android:layout_centerVertical=</span><span style="color:#ed9d13">&#34;true&#34;</span>
+    <span style="color:#bbb">android:layout_toRightOf=</span><span style="color:#ed9d13">&#34;@+id/widget_image&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span></code></pre></div>
+<p><strong>new_app_widget_info.xml</strong>实现：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#cd2828;font-weight:bold">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;appwidget-provider</span> <span style="color:#bbb">xmlns:android=</span><span style="color:#ed9d13">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#bbb">android:initialKeyguardLayout=</span><span style="color:#ed9d13">&#34;@layout/new_app_widget&#34;</span>
+    <span style="color:#bbb">android:initialLayout=</span><span style="color:#ed9d13">&#34;@layout/new_app_widget&#34;</span>
+    <span style="color:#bbb">android:minWidth=</span><span style="color:#ed9d13">&#34;300dp&#34;</span>
+    <span style="color:#bbb">android:minHeight=</span><span style="color:#ed9d13">&#34;50dp&#34;</span>
+    <span style="color:#bbb">android:previewImage=</span><span style="color:#ed9d13">&#34;@mipmap/full_star&#34;</span>
+    <span style="color:#bbb">android:resizeMode=</span><span style="color:#ed9d13">&#34;horizontal|vertical&#34;</span>
+    <span style="color:#bbb">android:updatePeriodMillis=</span><span style="color:#ed9d13">&#34;86400000&#34;</span>
+    <span style="color:#bbb">android:widgetCategory=</span><span style="color:#ed9d13">&#34;home_screen|keyguard&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;/appwidget-provider&gt;</span></code></pre></div>
+<p>注册表注册：（<strong>AndroidManifest.xml</strong>）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;receiver</span> <span style="color:#bbb">android:name=</span><span style="color:#ed9d13">&#34;.NewAppWidget&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;intent-filter&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;action</span> <span style="color:#bbb">android:name=</span><span style="color:#ed9d13">&#34;android.appwidget.action.APPWIDGET_UPDATE&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;action</span> <span style="color:#bbb">android:name=</span><span style="color:#ed9d13">&#34;com.example.chenbb.personalproject1_finaltask.MyWidgetStaticFilter&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;/intent-filter&gt;</span>
+
+    <span style="color:#6ab825;font-weight:bold">&lt;meta-data</span>
+               <span style="color:#bbb">android:name=</span><span style="color:#ed9d13">&#34;android.appwidget.provider&#34;</span>
+               <span style="color:#bbb">android:resource=</span><span style="color:#ed9d13">&#34;@xml/new_app_widget_info&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;/receiver&gt;</span></code></pre></div>
+<hr />
+
+<h4 id="3-静态widget广播实现">(3)静态Widget广播实现</h4>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">tutorial.md</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li>根据<a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">tutorial.md</a>的教程，重写<strong>NewAppWidget.java</strong>中<strong>onUpdate</strong>函数，为初始Widget添加点击事件跳转到应用程序的<strong>MainActivity</strong>。</li>
+<li>编辑<strong>MainActivity.java</strong>，在<strong>onCreate</strong>函数中添加发送静态<strong>Widget</strong>广播的代码部分。
+
+<ul>
+<li><strong>Random</strong>选出来一个随机推荐食品（week7已实现）</li>
+<li><strong>sendBroadcast</strong>发送静态广播。</li>
+</ul></li>
+<li>重写<strong>NewAppWidget.java</strong>中<strong>onReceive</strong>函数，用来处理接收到静态广播的响应事件。
+
+<ul>
+<li>修改<strong>Widget</strong>文字部分，改成“今日推荐：[XX食品]”</li>
+<li>修改点击星星图标的响应时间，使得点击后跳转到<strong>DetailActivity</strong>的食品详情界面。</li>
+<li>用<strong>AppWidgetManager</strong>更新<strong>Widget</strong>。</li>
+</ul></li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p><strong>NewAppWidget.java</strong>重写<strong>onUpdate</strong>函数：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6ab825;font-weight:bold">for</span> (<span style="color:#6ab825;font-weight:bold">int</span> appWidgetId : appWidgetIds) {
+    RemoteViews updateView = <span style="color:#6ab825;font-weight:bold">new</span> RemoteViews(context.<span style="color:#bbb">getPackageName</span>(), R.<span style="color:#bbb">layout</span>.<span style="color:#bbb">new_app_widget</span>);<span style="color:#999;font-style:italic">//实例化RemoteView,其对应相应的Widget布局
+</span><span style="color:#999;font-style:italic"></span>    Intent i = <span style="color:#6ab825;font-weight:bold">new</span> Intent(context, MainActivity.<span style="color:#bbb">class</span>);
+    PendingIntent pi = PendingIntent.<span style="color:#bbb">getActivity</span>(context, 0, i, PendingIntent.<span style="color:#bbb">FLAG_UPDATE_CURRENT</span>);
+    updateView.<span style="color:#bbb">setOnClickPendingIntent</span>(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">widget_image</span>, pi); <span style="color:#999;font-style:italic">//设置点击事件
+</span><span style="color:#999;font-style:italic"></span>    ComponentName me = <span style="color:#6ab825;font-weight:bold">new</span> ComponentName(context, NewAppWidget.<span style="color:#bbb">class</span>);
+    appWidgetManager.<span style="color:#bbb">updateAppWidget</span>(me, updateView);
+}</code></pre></div>
+<p><code>MainActivity.java-&gt;onCreate</code>：发送静态<strong>Widget</strong>广播：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent widgetIntentBroadcast = <span style="color:#6ab825;font-weight:bold">new</span> Intent(WIDGETSTATICACTION);
+bundle.<span style="color:#bbb">putSerializable</span>(<span style="color:#ed9d13">&#34;data&#34;</span>, data.<span style="color:#bbb">get</span>(position));
+widgetIntentBroadcast.<span style="color:#bbb">putExtras</span>(bundle);
+sendBroadcast(widgetIntentBroadcast);</code></pre></div>
+<p><strong>NewAppWidget.java</strong>重写<strong>onReceive</strong>函数：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6ab825;font-weight:bold">super</span>.<span style="color:#bbb">onReceive</span>(context, intent);
+AppWidgetManager appWidgetManager = AppWidgetManager.<span style="color:#bbb">getInstance</span>(context);
+Bundle bundle = intent.<span style="color:#bbb">getExtras</span>();
+
+<span style="color:#6ab825;font-weight:bold">if</span>(intent.<span style="color:#bbb">getAction</span>().<span style="color:#bbb">equals</span>(WIDGETSTATICACTION)){
+    <span style="color:#6ab825;font-weight:bold">try</span> {
+        <span style="color:#999;font-style:italic">//实例化RemoteView,其对应相应的Widget布局
+</span><span style="color:#999;font-style:italic"></span>        RemoteViews updateView = <span style="color:#6ab825;font-weight:bold">new</span> RemoteViews(context.<span style="color:#bbb">getPackageName</span>(), R.<span style="color:#bbb">layout</span>.<span style="color:#bbb">new_app_widget</span>);
+        <span style="color:#999;font-style:italic">// 修改Widget文字
+</span><span style="color:#999;font-style:italic"></span>        Collection recommendation = (Collection) bundle.<span style="color:#bbb">getSerializable</span>(<span style="color:#ed9d13">&#34;data&#34;</span>);
+        updateView.<span style="color:#bbb">setTextViewText</span>(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">widget_text</span>, <span style="color:#ed9d13">&#34;今日推荐：&#34;</span> + recommendation.<span style="color:#bbb">getName</span>());
+        <span style="color:#999;font-style:italic">// 修改点击响应事件，跳转至详情界面
+</span><span style="color:#999;font-style:italic"></span>        Intent i = <span style="color:#6ab825;font-weight:bold">new</span> Intent(context, DetailActivity.<span style="color:#bbb">class</span>);
+        i.<span style="color:#bbb">putExtras</span>(bundle);
+        PendingIntent pi = PendingIntent.<span style="color:#bbb">getActivity</span>(context, 0, i, PendingIntent.<span style="color:#bbb">FLAG_UPDATE_CURRENT</span>);
+        updateView.<span style="color:#bbb">setOnClickPendingIntent</span>(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">widget_image</span>, pi);
+        <span style="color:#999;font-style:italic">// 更新Widget
+</span><span style="color:#999;font-style:italic"></span>        ComponentName me = <span style="color:#6ab825;font-weight:bold">new</span> ComponentName(context, NewAppWidget.<span style="color:#bbb">class</span>);
+        appWidgetManager.<span style="color:#bbb">updateAppWidget</span>(me, updateView);
+    }<span style="color:#6ab825;font-weight:bold">catch</span> (Exception e) {}</code></pre></div>
+<hr />
+
+<h4 id="4-动态widget广播实现">(4)动态Widget广播实现</h4>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject2/blob/master/manual/tutorial.md">tutorial.md</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li>编辑<strong>DetailActivity.java</strong>，在<strong>onCreate</strong>函数中对动态<strong>Widget</strong>广播进行注册。</li>
+<li>编辑<strong>DetailActivity.java</strong>，在收藏按钮的响应函数中发送动态Widget广播。</li>
+<li>编辑<strong>DetailActivity.java</strong>，在<strong>onDestroy</strong>函数中对动态<strong>Widget</strong>广播进行注销。</li>
+<li>编辑<strong>DynamicReceiver.java</strong>（week7中实现的），丰富<strong>onReceive</strong>函数，对该Widget动态广播进行响应处理：
+
+<ul>
+<li>修改<strong>Widget</strong>文字为“已收藏 [XX食品]”</li>
+<li>修改点击Widget星星图标的响应事件，跳转至<strong>MainActivity</strong>。</li>
+<li>用<strong>AppWidgetManager</strong>更新<strong>Widget</strong>。</li>
+</ul></li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p><strong>Widget</strong>动态广播注册：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">IntentFilter widget_dynamic_filter = <span style="color:#6ab825;font-weight:bold">new</span> IntentFilter();
+widget_dynamic_filter.<span style="color:#bbb">addAction</span>(WIDGETDYNAMICACTION);
+widgetDynamicReceiver = <span style="color:#6ab825;font-weight:bold">new</span> DynamicReceiver(); <span style="color:#999;font-style:italic">//添加动态广播的Action
+</span><span style="color:#999;font-style:italic"></span>registerReceiver(widgetDynamicReceiver, widget_dynamic_filter); //注册自定义动态广播信息</code></pre></div>
+<p><strong>Widget</strong>动态广播发送：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ffa500">@Subscribe</span>(threadMode = ThreadMode.<span style="color:#bbb">MAIN</span>)
+<span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">onMessageEvent</span>(Collection _collection) {
+    Map&lt;String, Object&gt; tempMap = <span style="color:#6ab825;font-weight:bold">new</span> LinkedHashMap&lt;&gt;();
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;type&#34;</span>, _collection.<span style="color:#bbb">getType</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;name&#34;</span>, _collection.<span style="color:#bbb">getName</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;longType&#34;</span>, _collection.<span style="color:#bbb">getLongType</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;nutrition&#34;</span>, _collection.<span style="color:#bbb">getNutrition</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;color&#34;</span>, _collection.<span style="color:#bbb">getColor</span>().<span style="color:#bbb">toString</span>());
+    tempMap.<span style="color:#bbb">put</span>(<span style="color:#ed9d13">&#34;isCollected&#34;</span>, (Boolean)_collection.<span style="color:#bbb">getIsCollected</span>());
+    favorite.<span style="color:#bbb">add</span>(tempMap);
+    simpleAdapter.<span style="color:#bbb">notifyDataSetChanged</span>();
+}</code></pre></div>
+<p><strong>Widget</strong>动态广播注销：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">unregisterReceiver(widgetDynamicReceiver);</code></pre></div>
+<p><strong>Widget</strong>动态广播的响应处理：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// Widget 动态广播响应
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">if</span> (intent.<span style="color:#bbb">getAction</span>().<span style="color:#bbb">equals</span>(WIDGETDYNAMICACTION)){
+    <span style="color:#999;font-style:italic">//Toast.makeText(context, &#34;接受到动态Widget广播 &#34; , Toast.LENGTH_SHORT).show();
+</span><span style="color:#999;font-style:italic"></span>    AppWidgetManager appWidgetManager = AppWidgetManager.<span style="color:#bbb">getInstance</span>(context);
+    Bundle bundle = intent.<span style="color:#bbb">getExtras</span>();
+    <span style="color:#999;font-style:italic">//实例化RemoteView,其对应相应的Widget布局
+</span><span style="color:#999;font-style:italic"></span>    RemoteViews updateView = <span style="color:#6ab825;font-weight:bold">new</span> RemoteViews(context.<span style="color:#bbb">getPackageName</span>(), R.<span style="color:#bbb">layout</span>.<span style="color:#bbb">new_app_widget</span>);
+    <span style="color:#999;font-style:italic">// 修改Widget文字
+</span><span style="color:#999;font-style:italic"></span>    Collection recommendation = (Collection) bundle.<span style="color:#bbb">getSerializable</span>(<span style="color:#ed9d13">&#34;data&#34;</span>);
+    updateView.<span style="color:#bbb">setTextViewText</span>(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">widget_text</span>, <span style="color:#ed9d13">&#34;已收藏 &#34;</span> + recommendation.<span style="color:#bbb">getName</span>());
+    <span style="color:#999;font-style:italic">// 修改点击响应事件，跳转至收藏夹界面
+</span><span style="color:#999;font-style:italic"></span>    Intent i = <span style="color:#6ab825;font-weight:bold">new</span> Intent(context, MainActivity.<span style="color:#bbb">class</span>);
+    i.<span style="color:#bbb">putExtras</span>(bundle);
+    PendingIntent pi = PendingIntent.<span style="color:#bbb">getActivity</span>(context, 0, i, PendingIntent.<span style="color:#bbb">FLAG_UPDATE_CURRENT</span>);
+    updateView.<span style="color:#bbb">setOnClickPendingIntent</span>(R.<span style="color:#bbb">id</span>.<span style="color:#bbb">widget_image</span>, pi);
+    <span style="color:#999;font-style:italic">// 更新Widget
+</span><span style="color:#999;font-style:italic"></span>    ComponentName me = <span style="color:#6ab825;font-weight:bold">new</span> ComponentName(context, NewAppWidget.<span style="color:#bbb">class</span>);
+    appWidgetManager.<span style="color:#bbb">updateAppWidget</span>(me, updateView);
+}</code></pre></div>
+<hr />
+
+<h3 id="3-实验遇到的困难以及解决思路">3. 实验遇到的困难以及解决思路</h3>
+
+<ol>
+<li><p>布局文件背景透明的实现</p>
+
+<p>解决方案：<a href="https://blog.csdn.net/stanny_bing/article/details/49589905">参考博客——Android开发，给layout设置背景透明度</a></p>
+
+<p>后来发现，完全不设置的时候，<strong>Widget</strong>背景就是透明的，根本不用实现。</p></li>
+
+<li><p>无法发送静态Widget广播的问题。</p>
+
+<p>对于全局静态常量<code>WIDGETSTATICACTION</code>，因为教程中给出的注册表action有两个：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;action</span> <span style="color:#bbb">android:name=</span><span style="color:#ed9d13">&#34;android.appwidget.action.APPWIDGET_UPDATE&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;action</span> <span style="color:#bbb">android:name=</span><span style="color:#ed9d13">&#34;com.example.chenbb.personalproject1_finaltask.MyWidgetStaticFilter&#34;</span> <span style="color:#6ab825;font-weight:bold">/&gt;</span></code></pre></div>
+<p>一开始用的是后者，<code>WIDGETSTATICACTION = “com.example.chenbb.personalproject1_finaltask.MyWidgetStaticFilter”</code>，结果发现根本无法发送静态广播，分析后以为是没设置<strong>ComponentName</strong>的问题，但是后来添加了也同样无济于事，可能这跟Android版本有关。于是只能改用前者，<code>WIDGETSTATICACTION  = &quot;android.appwidget.action.APPWIDGET_UPDATE&quot;</code>。可以成功发送静态<strong>Widget</strong>广播</p></li>
+
+<li><p>静态广播使用Action<code>WIDGETSTATICACTION  = &quot;android.appwidget.action.APPWIDGET_UPDATE&quot;</code>后，窗口小工具一添加，尽管还没有打开应用程序，<strong>onReceive</strong>就执行，也即静态广播已经发送并接收到了（莫名其妙ing）。随后点击星星图标程序闪退。</p>
+
+<p><strong>原因</strong>：莫名其妙提前就收到静态广播的原因未知，各种神奇。但是随后程序闪退的原因可能是：因为程序没打开就发送了静态广播，这时候收到的静态广播是没有带有一个随机推荐的食品数据的，也就是intent的bundle中没有Collection类数据，因此我们无法执行onReceive处理函数后面的修改Widget文字、响应等代码。</p>
+
+<p><strong>解决方案</strong>：用try，如果我们无法获取Collection-&gt;Bundle里面的食品详情数据，那么就是刚添加窗口小工具，还没有打开应用程序的时候，那么我们就什么也不做。只有在打开程序时，有Intent,Bundle传进来时，我们才更新Widget。</p></li>
+</ol>
+
+<hr />
+
+<h2 id="五-实验思考及感想">五、实验思考及感想</h2>
+
+<ul>
+<li><p>week8作业现在回顾一下，其实很少，比week7还要简单，毕竟week7已经涉及到了静态广播、动态广播的知识，这次week8的新知识还是蛮少的。但是这次我用的事件比week7竟然多了很多，原因见上面碰到的难题中，有各种神奇的BUG，然而舍友同学他们是没有遇到的。</p></li>
+
+<li><p>另外就是这次week8的实验，Widget部分竟然是无法在DEBUG模式下调试的，所以导致DEBUG也难以下手，也是用时较长的一个原因。</p></li>
+</ul>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/android">Android</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android">Android</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
