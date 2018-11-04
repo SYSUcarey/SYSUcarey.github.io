@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>区块链热身实验报告实验报告 - SYSUcarey</title>
+<meta property="og:title" content="区块链热身实验报告实验报告 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">区块链热身实验报告实验报告</h1>
+    
+    <span class="article-date">2018-11-04</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="center-区块链热身实验报告实验报告-center"><center>区块链热身实验报告实验报告</center></h1>
+
+<p>[TOC]</p>
+
+<h2 id="一-以太坊安装-私有链创世区块搭建">一、以太坊安装、私有链创世区块搭建</h2>
+
+<h3 id="1-1-翻墙下载geth">1.1 翻墙下载Geth</h3>
+
+<p><a href="https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum">下载指引https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum</a></p>
+
+<h3 id="1-2-定义创世区块配置">1.2 定义创世区块配置</h3>
+
+<p>在<code>privatechain</code>目录下，新建一个Json文件，编辑如下：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#6ab825;font-weight:bold">&#34;config&#34;</span>: {
+        <span style="color:#6ab825;font-weight:bold">&#34;chainId&#34;</span>: <span style="color:#3677a9">10</span>, 
+        <span style="color:#6ab825;font-weight:bold">&#34;homesteadBlock&#34;</span>: <span style="color:#3677a9">0</span>,
+        <span style="color:#6ab825;font-weight:bold">&#34;eip155Block&#34;</span>: <span style="color:#3677a9">0</span>,
+        <span style="color:#6ab825;font-weight:bold">&#34;eip158Block&#34;</span>: <span style="color:#3677a9">0</span>
+    },
+  <span style="color:#6ab825;font-weight:bold">&#34;alloc&#34;</span>      : {},
+  <span style="color:#6ab825;font-weight:bold">&#34;coinbase&#34;</span>   : <span style="color:#ed9d13">&#34;0x0000000000000000000000000000000000000000&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;difficulty&#34;</span> : <span style="color:#ed9d13">&#34;0x20000&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;extraData&#34;</span>  : <span style="color:#ed9d13">&#34;&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;gasLimit&#34;</span>   : <span style="color:#ed9d13">&#34;0x2fefd8&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;nonce&#34;</span>      : <span style="color:#ed9d13">&#34;0x0000000000000042&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;mixhash&#34;</span>    : <span style="color:#ed9d13">&#34;0x0000000000000000000000000000000000000000000000000000000000000000&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;parentHash&#34;</span> : <span style="color:#ed9d13">&#34;0x0000000000000000000000000000000000000000000000000000000000000000&#34;</span>,
+  <span style="color:#6ab825;font-weight:bold">&#34;timestamp&#34;</span>  : <span style="color:#ed9d13">&#34;0x00&#34;</span>
+}</code></pre></div>
+<h3 id="1-3-初始化私有链">1.3 初始化私有链</h3>
+
+<p>创建data0文件夹</p>
+
+<p>在<code>privatechain</code>目录下新建文件夹<strong>data0</strong>，这个目录data0就相当于一个根节点。</p>
+
+<p>执行初始化命令</p>
+
+<p>进入<code>privatechain</code>目录，打开终端，输入命令：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir data0 init genesis.json</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104160004.png" alt="Img_init" /></p>
+
+<h3 id="1-4-启动私有链结点">1.4 启动私有链结点</h3>
+
+<p>终端输入命令：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir data0 --networkid <span style="color:#3677a9">1997</span> console</code></pre></div>
+<p><strong>–datadir</strong>选项指定使用<strong>data0</strong>作为数据目录，<strong>–networkid</strong>选项后面跟一个数字，这里是1997，表示指定这个私有链的网络id为1997。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104160416.png" alt="Img_console" /></p>
+
+<p>这样我们就启动了区块链节点并进入了<strong>Javascript Console</strong> 。</p>
+
+<h3 id="1-5-创建用户-创建两个">1.5 创建用户（创建两个）</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.accounts
+[]
+&gt; personal.newAccount()
+Passphrase:
+Repeat passphrase:
+<span style="color:#ed9d13">&#34;0x9f72a74e269dd4e7766a4bc4788562d6b1987031&#34;</span>
+&gt; personal.newAccount()
+Passphrase:
+Repeat passphrase:
+<span style="color:#ed9d13">&#34;0x2994d23e0dbff5f87492e0175f5e49d67ab83bec&#34;</span>
+&gt; eth.accounts
+[<span style="color:#ed9d13">&#34;0x9f72a74e269dd4e7766a4bc4788562d6b1987031&#34;</span>, <span style="color:#ed9d13">&#34;0x2994d23e0dbff5f87492e0175f5e49d67ab83bec&#34;</span>]</code></pre></div>
+<p><strong>Passphrase</strong>为用户密码。</p>
+
+<p>创建用户完成后，在<code>privatechain-&gt;data0-&gt;keystore</code>目录下，有两个<strong>json</strong>文件存储用户信息。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104161114.png" alt="Img_create_two_accounts" /></p>
+
+<p>查看<strong>json</strong>文件里面的用户信息（以第一个用户为例子）：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#6ab825;font-weight:bold">&#34;address&#34;</span>:<span style="color:#ed9d13">&#34;9f72a74e269dd4e7766a4bc4788562d6b1987031&#34;</span>,<span style="color:#6ab825;font-weight:bold">&#34;crypto&#34;</span>:{<span style="color:#6ab825;font-weight:bold">&#34;cipher&#34;</span>:<span style="color:#ed9d13">&#34;aes-128-ctr&#34;</span>,<span style="color:#6ab825;font-weight:bold">&#34;ciphertext&#34;</span>:<span style="color:#ed9d13">&#34;37c27935fd7ac277d70a89600b99a79bd144bf3df7f62d4ddf13790816ed1908&#34;</span>,<span style="color:#6ab825;font-weight:bold">&#34;cipherparams&#34;</span>:{<span style="color:#6ab825;font-weight:bold">&#34;iv&#34;</span>:<span style="color:#ed9d13">&#34;28d299db4b533636d43f4a4a7eaafbce&#34;</span>},<span style="color:#6ab825;font-weight:bold">&#34;kdf&#34;</span>:<span style="color:#ed9d13">&#34;scrypt&#34;</span>,<span style="color:#6ab825;font-weight:bold">&#34;kdfparams&#34;</span>:{<span style="color:#6ab825;font-weight:bold">&#34;dklen&#34;</span>:<span style="color:#3677a9">32</span>,<span style="color:#6ab825;font-weight:bold">&#34;n&#34;</span>:<span style="color:#3677a9">262144</span>,<span style="color:#6ab825;font-weight:bold">&#34;p&#34;</span>:<span style="color:#3677a9">1</span>,<span style="color:#6ab825;font-weight:bold">&#34;r&#34;</span>:<span style="color:#3677a9">8</span>,<span style="color:#6ab825;font-weight:bold">&#34;salt&#34;</span>:<span style="color:#ed9d13">&#34;0bc50703e57ab9ab438b967b3dd074079bcafe7e5514ab95e92d7f6615b9c2e1&#34;</span>},<span style="color:#6ab825;font-weight:bold">&#34;mac&#34;</span>:<span style="color:#ed9d13">&#34;fcc54fda6c73369235de08cbcf1986eb2bf3148a500ee3bbf72ed87db541f2af&#34;</span>},<span style="color:#6ab825;font-weight:bold">&#34;id&#34;</span>:<span style="color:#ed9d13">&#34;7528bf72-7ee7-4bc0-b063-8a5b487b79c5&#34;</span>,<span style="color:#6ab825;font-weight:bold">&#34;version&#34;</span>:<span style="color:#3677a9">3</span>}</code></pre></div>
+<h3 id="1-6-查看用户的账号比太币余额">1.6 查看用户的账号比太币余额：</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">0</span>])
+<span style="color:#3677a9">0</span>
+&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>])
+<span style="color:#3677a9">0</span></code></pre></div>
+<p>目前两个用户的以太币余额都为0，我们可以通过转账或者挖矿来获得以太币。</p>
+
+<h3 id="1-7-挖矿">1.7 挖矿</h3>
+
+<p>开始挖矿：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">miner.start(<span style="color:#3677a9">10</span>)</code></pre></div>
+<p>升级DAG挖矿程序：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104161921.png" alt="Img-dig" /></p>
+
+<p>正在挖矿：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104162130.png" alt="Img-dig2" /></p>
+
+<p>结束挖矿：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">miner.stop()</code></pre></div>
+<h3 id="1-8-查看账户比特币数额">1.8 查看账户比特币数额</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">0</span>])
+<span style="color:#3677a9">795000000000000000000</span>
+&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>])
+<span style="color:#3677a9">0</span>
+&gt; web3.fromWei(eth.getBalance(eth.accounts[<span style="color:#3677a9">0</span>]),<span style="color:#ed9d13">&#39;ether&#39;</span>)
+<span style="color:#3677a9">795</span>
+&gt; web3.fromWei(eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>]),<span style="color:#ed9d13">&#39;ether&#39;</span>)
+<span style="color:#3677a9">0</span></code></pre></div>
+<p><strong>getBalance()</strong>返回值的单位是<strong>wei</strong>，<strong>wei</strong>是以太币的最小单位，1个以太币=10的18次方个<strong>wei</strong>。要查看有多少个以太币，可以用<strong>web3.fromWei()</strong>将返回值换算成以太币。</p>
+
+<h3 id="1-9-发送交易">1.9 发送交易</h3>
+
+<p>账户1交易10比特币到账户2</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; <span style="color:#40ffff">amount</span> = web3.toWei(<span style="color:#3677a9">10</span>,<span style="color:#ed9d13">&#39;ether&#39;</span>)
+<span style="color:#ed9d13">&#34;10000000000000000000&#34;</span>
+&gt; eth.sendTransaction({from:eth.accounts[<span style="color:#3677a9">0</span>],to:eth.accounts[<span style="color:#3677a9">1</span>],value:amount})
+Error: authentication needed: password or unlock
+    at web3.js:3143:20
+    at web3.js:6347:15
+    at web3.js:5081:36
+    at &lt;anonymous&gt;:1:1
+
+&gt;</code></pre></div>
+<p>报错，账户被锁住了，我们先解锁账户</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; personal.unlockAccount(eth.accounts[<span style="color:#3677a9">0</span>])
+Unlock account 0x9f72a74e269dd4e7766a4bc4788562d6b1987031
+Passphrase:
+true</code></pre></div>
+<p>再发送交易：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; <span style="color:#40ffff">amount</span> = web3.toWei(<span style="color:#3677a9">10</span>,<span style="color:#ed9d13">&#39;ether&#39;</span>)
+<span style="color:#ed9d13">&#34;10000000000000000000&#34;</span>
+&gt; eth.sendTransaction({from:eth.accounts[<span style="color:#3677a9">0</span>],to:eth.accounts[<span style="color:#3677a9">1</span>],value:amount})
+INFO [<span style="color:#3677a9">11</span>-04|<span style="color:#3677a9">16</span>:40:34.643] Setting new <span style="color:#24909d">local</span> account                <span style="color:#40ffff">address</span>=0x9f72a74E269Dd4e7766A4bc4788562d6b1987031
+INFO [<span style="color:#3677a9">11</span>-04|<span style="color:#3677a9">16</span>:40:34.648] Submitted transaction                    <span style="color:#40ffff">fullhash</span>=0x9e5cd2101b4d36f2e2202c049a1ed398439a256c629178ee5fd24ef91081e273 <span style="color:#40ffff">recipient</span>=0x2994D23E0dbFF5F87492E0175f5e49D67AB83BEc
+<span style="color:#ed9d13">&#34;0x9e5cd2101b4d36f2e2202c049a1ed398439a256c629178ee5fd24ef91081e273&#34;</span></code></pre></div>
+<p>查看账户1的比特币余额：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>])
+<span style="color:#3677a9">0</span></code></pre></div>
+<p>还是0，因为交易提交到区块链，但还未被处理:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; txpool.status
+{
+  pending: <span style="color:#3677a9">1</span>,
+  queued: <span style="color:#3677a9">0</span>
+}</code></pre></div>
+<p>要交易被处理，必须要挖矿</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; miner.start(<span style="color:#3677a9">1</span>);admin.sleepBlocks(<span style="color:#3677a9">1</span>);miner.stop();</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104164508.png" alt="Img-dig-again" /></p>
+
+<p>再查看账户1的比特币余额</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>])
+<span style="color:#3677a9">10000000000000000000</span></code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104201508.png" alt="" /></p>
+
+<p>交易成功。</p>
+
+<h3 id="1-10-查看区块">1.10 查看区块</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.blockNumber
+<span style="color:#3677a9">161</span>
+&gt; eth.getBlock(<span style="color:#3677a9">161</span>)</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104201701.png" alt="" /></p>
+
+<h3 id="1-11-查看交易">1.11 查看交易</h3>
+
+<p>通过发送交易时得到的交易<strong>Hash</strong>查看交易详情</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;eth.getTransaction(<span style="color:#ed9d13">&#34;0x9e5cd2101b4d36f2e2202c049a1ed398439a256c629178ee5fd24ef91081e273&#34;</span>)</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104201939.png" alt="" /></p>
+
+<hr />
+
+<h2 id="二-对getblock中所得区块的各个字段进行解释">二、对getBlock中所得区块的各个字段进行解释</h2>
+
+<h3 id="2-1-getblock-查看区块信息">2.1 <strong>getBlock</strong>查看区块信息：</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.blockNumber
+<span style="color:#3677a9">161</span>
+&gt; eth.getBlock(<span style="color:#3677a9">161</span>)</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104201701.png" alt="" /></p>
+
+<h3 id="2-2-getblock-字段解析">2.2 <strong>getBlock</strong>字段解析：</h3>
+
+<ul>
+<li><strong>difficulty</strong>：<strong>BigNumber</strong>类型。当前块的难度，整数。</li>
+<li>extraData： 字符串。当前块的extra data字段。</li>
+<li><strong>gasLimit</strong>：<strong>Number</strong>，当前区块允许使用的最大<strong>gas</strong>。</li>
+<li><strong>gasUsed</strong>：当前区块累计使用的总的gas。</li>
+<li><strong>hash</strong>：字符串，区块的哈希串。当这个区块处于pending将会返回null。</li>
+<li><strong>logsBloom</strong>：字符串，区块日志的布隆过滤器9。当这个区块处于pending将会返回null。</li>
+<li><strong>miner</strong>：字符串，20字节。这个区块获得奖励的矿工。</li>
+<li><strong>mixHash</strong>：一个Hash值，当与nonce组合时，证明此区块已经执行了足够的计算</li>
+<li><strong>nonce</strong>：字符串，8字节。POW生成的哈希。当这个区块处于pending将会返回null。</li>
+<li><strong>number</strong>：区块号。当这个区块处于pending将会返回null。</li>
+<li><strong>parentHash</strong>：字符串，32字节的父区块的哈希值。</li>
+<li><strong>receiptsRoot</strong>：包含此区块所列的所有交易收据的树的根节点Hash值</li>
+<li><strong>sha3Uncles</strong>：字符串，32字节。叔区块的哈希值。</li>
+<li><strong>size</strong>：Number。当前这个块的字节大小。</li>
+<li><strong>stateRoot</strong>：字符串，32字节。区块的最终状态前缀树的根。</li>
+<li><strong>timestamp：Number</strong>。区块打包时的unix时间戳。</li>
+<li><strong>totalDifficulty</strong>：<strong>BigNumber</strong>类型。区块链到当前块的总难度，整数。</li>
+<li><strong>transactions</strong>：数组。交易对象。或者是32字节的交易哈希。</li>
+<li><strong>transactionsRoot</strong>：字符串，32字节，区块的交易前缀树的根。</li>
+<li><strong>uncles</strong>：数组。叔哈希的数组。</li>
+</ul>
+
+<hr />
+
+<h2 id="三-对日志输出进行解释">三、对日志输出进行解释</h2>
+
+<h3 id="3-1-日志输出">3.1 日志输出</h3>
+
+<p>先退出console</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exit</code></pre></div>
+<p>重新进入console，但这次是进行log日志记录的</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir data0 --networkid <span style="color:#3677a9">1997</span> console <span style="color:#3677a9">2</span>&gt;&gt;eth_output.log</code></pre></div>
+<p>成功后，根目录有一个<strong>eth_output.log</strong>文件：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104174553.png" alt="Img-log1" /></p>
+
+<p>查看私有链信息，没有丢失</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; eth.accounts
+[<span style="color:#ed9d13">&#34;0x9f72a74e269dd4e7766a4bc4788562d6b1987031&#34;</span>, <span style="color:#ed9d13">&#34;0x2994d23e0dbff5f87492e0175f5e49d67ab83bec&#34;</span>]
+&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">0</span>])
+<span style="color:#3677a9">795000000000000000000</span>
+&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>])
+<span style="color:#3677a9">10000000000000000000</span></code></pre></div>
+<p>我们进行挖矿，试试看有什么区别：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; miner.start(<span style="color:#3677a9">1</span>);admin.sleepBlocks(<span style="color:#3677a9">1</span>);miner.stop();
+null
+&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">0</span>])
+<span style="color:#3677a9">800000000000000000000</span>
+&gt; eth.getBalance(eth.accounts[<span style="color:#3677a9">1</span>])
+<span style="color:#3677a9">10000000000000000000</span></code></pre></div>
+<p>这里看到挖矿的占屏的一大串信息都“没了”，只显示结果null。实际上挖矿信息并不是没有了，而是转而存储在log文件中了。</p>
+
+<p>这时候，log文件发生了改变，将刚才我们挖矿的信息（Line 23）给记录下来了：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104174652.png" alt="Img-log2" /></p>
+
+<h3 id="3-2-日志输出解释">3.2 日志输出解释</h3>
+
+<h4 id="3-2-1-日志1-line3-18">3.2.1 日志1（Line3-18）</h4>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104211904.png" alt="" /></p>
+
+<p>这是操作连接私有链结点data0的log日志</p>
+
+<p><code>line4: Initialised chain configuration</code>：初始化加载私有链的配置，配置文件为<strong>genesis.json</strong></p>
+
+<p><code>line9:Loaded most recent local full block</code>：加载最近使用的区块，因为刚进行了挖矿和交易，最近的区块号已经到了161，而因为刚开始Log记录，之前的console并没有保存到log。</p>
+
+<p><code>line18:Etherbase automatically configured</code>：自动配置以太坊ip地址，是这个私有链的address。</p>
+
+<h4 id="3-2-2-日志2-line19-32">3.2.2 日志2 (Line19-32)</h4>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104212046.png" alt="" /></p>
+
+<p>这是第一笔交易后，为了让交易被接受，进行挖矿🔨。</p>
+
+<pre><code>line21:Commit new mining work
+line22:Successfully sealed new block    
+line23:🔨 mined potential block
+</code></pre>
+
+<hr />
+
+<h2 id="四-编写简单的智能合约-在remix下进行调试-并部署在链上进行调用">四、编写简单的智能合约，在remix下进行调试，并部署在链上进行调用</h2>
+
+<h3 id="4-1-编写智能合约">4.1  编写智能合约</h3>
+
+<p>写个最基础的<strong>helloworld</strong>智能合约，用solidity语言实现 ：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">pragma solidity ^<span style="color:#3677a9">0.4.18</span>;
+contract hello {
+    string greeting;
+    
+    <span style="color:#6ab825;font-weight:bold">function</span> hello(string _greeting) <span style="color:#6ab825;font-weight:bold">public</span> {
+        greeting = _greeting;
+    }
+
+    <span style="color:#6ab825;font-weight:bold">function</span> say() constant <span style="color:#6ab825;font-weight:bold">public</span> returns (string) {
+        <span style="color:#6ab825;font-weight:bold">return</span> greeting;
+    }
+}
+</code></pre></div>
+<h3 id="4-2-编译智能合约helloworld">4.2 编译智能合约helloworld</h3>
+
+<p><a href="http://remix.ethereum.org/#optimize=true&amp;version=soljson-v0.4.21+commit.dfe3193c.js">在线remix编译器</a></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104205006.png" alt="" /></p>
+
+<p>点击右边<strong>Start to compile</strong></p>
+
+<p>点击右边<strong>Detail</strong></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104205109.png" alt="" /></p>
+
+<p>找到<strong>WEB3DEPLOY</strong> 部分，复制粘贴到<code>privatechain-&gt;helloworld.js</code>文件内：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6ab825;font-weight:bold">var</span> _greeting = <span style="color:#ed9d13">&#34;hello world!&#34;</span> ;
+<span style="color:#6ab825;font-weight:bold">var</span> helloContract = web3.eth.contract([{<span style="color:#ed9d13">&#34;constant&#34;</span>:<span style="color:#6ab825;font-weight:bold">true</span>,<span style="color:#ed9d13">&#34;inputs&#34;</span>:[],<span style="color:#ed9d13">&#34;name&#34;</span>:<span style="color:#ed9d13">&#34;say&#34;</span>,<span style="color:#ed9d13">&#34;outputs&#34;</span>:[{<span style="color:#ed9d13">&#34;name&#34;</span>:<span style="color:#ed9d13">&#34;&#34;</span>,<span style="color:#ed9d13">&#34;type&#34;</span>:<span style="color:#ed9d13">&#34;string&#34;</span>}],<span style="color:#ed9d13">&#34;payable&#34;</span>:<span style="color:#6ab825;font-weight:bold">false</span>,<span style="color:#ed9d13">&#34;stateMutability&#34;</span>:<span style="color:#ed9d13">&#34;view&#34;</span>,<span style="color:#ed9d13">&#34;type&#34;</span>:<span style="color:#ed9d13">&#34;function&#34;</span>},{<span style="color:#ed9d13">&#34;inputs&#34;</span>:[{<span style="color:#ed9d13">&#34;name&#34;</span>:<span style="color:#ed9d13">&#34;_greeting&#34;</span>,<span style="color:#ed9d13">&#34;type&#34;</span>:<span style="color:#ed9d13">&#34;string&#34;</span>}],<span style="color:#ed9d13">&#34;payable&#34;</span>:<span style="color:#6ab825;font-weight:bold">false</span>,<span style="color:#ed9d13">&#34;stateMutability&#34;</span>:<span style="color:#ed9d13">&#34;nonpayable&#34;</span>,<span style="color:#ed9d13">&#34;type&#34;</span>:<span style="color:#ed9d13">&#34;constructor&#34;</span>}]);
+<span style="color:#6ab825;font-weight:bold">var</span> hello = helloContract.<span style="color:#6ab825;font-weight:bold">new</span>(
+   _greeting,
+   {
+     from: web3.eth.accounts[<span style="color:#3677a9">0</span>], 
+     data: <span style="color:#ed9d13">&#39;0x6060604052341561000f57600080fd5b6040516102a33803806102a3833981016040528080519091019050600081805161003d929160200190610044565b50506100df565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061008557805160ff19168380011785556100b2565b828001600101855582156100b2579182015b828111156100b2578251825591602001919060010190610097565b506100be9291506100c2565b5090565b6100dc91905b808211156100be57600081556001016100c8565b90565b6101b5806100ee6000396000f3006060604052600436106100405763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663954ab4b28114610045575b600080fd5b341561005057600080fd5b6100586100cf565b60405160208082528190810183818151815260200191508051906020019080838360005b8381101561009457808201518382015260200161007c565b50505050905090810190601f1680156100c15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100d7610177565b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016d5780601f106101425761010080835404028352916020019161016d565b820191906000526020600020905b81548152906001019060200180831161015057829003601f168201915b5050505050905090565b602060405190810160405260008152905600a165627a7a723058206d6435d55697d5974b31bdd92ebdff05aabfdde6182fb0432effad5141ae97b50029&#39;</span>, 
+     gas: <span style="color:#ed9d13">&#39;470000&#39;</span>
+   }, <span style="color:#6ab825;font-weight:bold">function</span> (e, contract){
+    console.log(e, contract);
+    <span style="color:#6ab825;font-weight:bold">if</span> (<span style="color:#6ab825;font-weight:bold">typeof</span> contract.address !== <span style="color:#ed9d13">&#39;undefined&#39;</span>) {
+         console.log(<span style="color:#ed9d13">&#39;Contract mined! address: &#39;</span> + contract.address + <span style="color:#ed9d13">&#39; transactionHash: &#39;</span> + contract.transactionHash);
+    }
+ })
+</code></pre></div>
+<p>做了细微的修改：</p>
+
+<ol>
+<li><p>第一行给变量<strong>_greeting</strong>赋值</p></li>
+
+<li><p>将<strong>gas</strong>值改小不超过区块<strong>gasLimit</strong></p></li>
+</ol>
+
+<h3 id="4-3-部署智能合约">4.3 部署智能合约</h3>
+
+<p>两个注意项：</p>
+
+<ul>
+<li>没有解锁用户</li>
+<li><strong>gas</strong>值超过了区块限制最大<strong>gasLimit</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; personal.unlockAccount(eth.accounts[<span style="color:#3677a9">0</span>])
+Unlock account 0x9f72a74e269dd4e7766a4bc4788562d6b1987031
+Passphrase:
+<span style="color:#24909d">true</span>
+&gt; personal.unlockAccount(eth.accounts[<span style="color:#3677a9">1</span>])
+Unlock account 0x2994d23e0dbff5f87492e0175f5e49d67ab83bec
+Passphrase:
+<span style="color:#24909d">true</span>
+&gt; loadScript(<span style="color:#ed9d13">&#34;helloworld.js&#34;</span>)
+Error: exceeds block gas limit undefined
+<span style="color:#24909d">true</span>
+&gt; loadScript(<span style="color:#ed9d13">&#34;helloworld.js&#34;</span>)
+null [object Object]
+true</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104194309.png" alt="" /></p>
+
+<p>部署成功后，挖矿：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; miner.start(<span style="color:#3677a9">1</span>)
+null
+null [object Object]
+Contract mined! address: 0x235f7c42590a5debb1084afda2575df3192b6604 transactionHash: 0x97e5ae7933fe30e532e8b0f9fad583b440a2a7929ba636b79a10dd55b283174f
+&gt; miner.stop()
+null
+&gt; miner.stop(<span style="color:#3677a9">1</span>)</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104194425.png" alt="" /></p>
+
+<h3 id="4-4-运行智能合约">4.4 运行智能合约</h3>
+
+<p>这时候智能合约可以运行</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; hello.say()
+<span style="color:#ed9d13">&#34;hello world!&#34;</span></code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104194450.png" alt="" /></p>
+
+<p>查看智能合约</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104194834.png" alt="" /></p>
+
+<p>查看智能合约交易：（to是<strong>null</strong>，表明这是一个智能合约交易）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;eth.getTransaction(<span style="color:#ed9d13">&#34;0x97e5ae7933fe30e532e8b0f9fad583b440a2a7929ba636b79a10dd55b283174f&#34;</span>)</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104194811.png" alt="" /></p>
+
+<hr />
+
+<h2 id="五-对交易的字段进行解释">五、对交易的字段进行解释</h2>
+
+<h3 id="5-1-查看交易详情">5.1 查看交易详情</h3>
+
+<p>用<strong>eth.getTransaction()</strong>查看交易，参数是交易的<strong>Hash</strong>。</p>
+
+<p>例如我们查看刚才智能合约交易的交易详情：（注意<strong>to</strong>字段的值是<strong>null</strong>）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;eth.getTransaction(<span style="color:#ed9d13">&#34;0x97e5ae7933fe30e532e8b0f9fad583b440a2a7929ba636b79a10dd55b283174f&#34;</span>)
+{
+  blockHash: <span style="color:#ed9d13">&#34;0x6fd9365110b890389f5ecc0cf98fbd0c1543d5840eccb2f2b4c92250083a52f5&#34;</span>,
+  blockNumber: <span style="color:#3677a9">163</span>,
+  from: <span style="color:#ed9d13">&#34;0x9f72a74e269dd4e7766a4bc4788562d6b1987031&#34;</span>,
+  gas: <span style="color:#3677a9">470000</span>,
+  gasPrice: <span style="color:#3677a9">1000000000</span>,
+  hash: <span style="color:#ed9d13">&#34;0x97e5ae7933fe30e532e8b0f9fad583b440a2a7929ba636b79a10dd55b283174f&#34;</span>,
+  input: <span style="color:#ed9d13">&#34;0x6060604052341561000f57600080fd5b6040516102a33803806102a3833981016040528080519091019050600081805161003d929160200190610044565b50506100df565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061008557805160ff19168380011785556100b2565b828001600101855582156100b2579182015b828111156100b2578251825591602001919060010190610097565b506100be9291506100c2565b5090565b6100dc91905b808211156100be57600081556001016100c8565b90565b6101b5806100ee6000396000f3006060604052600436106100405763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663954ab4b28114610045575b600080fd5b341561005057600080fd5b6100586100cf565b60405160208082528190810183818151815260200191508051906020019080838360005b8381101561009457808201518382015260200161007c565b50505050905090810190601f1680156100c15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100d7610177565b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016d5780601f106101425761010080835404028352916020019161016d565b820191906000526020600020905b81548152906001019060200180831161015057829003601f168201915b5050505050905090565b602060405190810160405260008152905600a165627a7a723058206d6435d55697d5974b31bdd92ebdff05aabfdde6182fb0432effad5141ae97b500290000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000c68656c6c6f20776f726c64210000000000000000000000000000000000000000&#34;</span>,
+  nonce: <span style="color:#3677a9">1</span>,
+  r: <span style="color:#ed9d13">&#34;0x848d2088608fe0edd3f1ee2f958bd57ca7906183b044e499e04de52a0a4199a8&#34;</span>,
+  s: <span style="color:#ed9d13">&#34;0x5317428ad8c2db8261e5f33ddd2906e5f6f58ccbb64115b67760a07fddf2aa9b&#34;</span>,
+  to: null,
+  transactionIndex: <span style="color:#3677a9">0</span>,
+  v: <span style="color:#ed9d13">&#34;0x37&#34;</span>,
+  value: <span style="color:#3677a9">0</span>
+}</code></pre></div>
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181104194811.png" alt="" /></p>
+
+<h3 id="5-2-交易字段解析">5.2 交易字段解析</h3>
+
+<ul>
+<li><strong>blockHash</strong>: 交易所在区块的哈希值。当这个区块处于pending将会返回null。</li>
+<li><strong>blockNumber</strong>:交易所在区块的块号。当这个区块处于pending将会返回null。</li>
+<li><strong>from</strong>: 交易发起者的地址。在这里为accouts[0]。</li>
+<li><strong>gas</strong>:交易发起者提供的gas。</li>
+<li><strong>gasPrice</strong>:交易发起者配置的gas价格，单位是wei。</li>
+<li><strong>hash</strong>:交易的哈希值。</li>
+<li><strong>input</strong>:交易附带的数据。</li>
+<li><strong>nonce</strong>:交易的发起者在之前进行过的交易数量。</li>
+<li><strong>r</strong>:用于产生标识交易发生者的签名(ECDSA签名值)</li>
+<li><strong>s</strong>:用于产生标识交易发生者的签名(ECDSA签名值)</li>
+<li><strong>to</strong>:交易接收者的地址。当这个区块处于pending将会返回null，如果是部署智能合约的交易，这个值也是null。在这里显示为accouts[1]。</li>
+<li><strong>transactionIndex</strong>:交易在区块中的序号。当这个区块处于pending将会返回null。</li>
+<li><strong>v</strong>:用于产生标识交易发生者的签名(ECDSA签名值)</li>
+<li><strong>value</strong>:交易附带的货币量，单位为Wei。在这里即是转账的值</li>
+</ul>
+
+<hr />
+
+<h2 id="六-私有链节点的加入-选做">六、私有链节点的加入（选做）</h2>
+
+<h3 id="6-1-初始化另一个私有链节点data1">6.1 初始化另一个私有链节点data1</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --datadir data1 init genesis.json</code></pre></div>
+<h3 id="6-2-同时启动两个私有链节点">6.2 同时启动两个私有链节点</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --networkid <span style="color:#3677a9">1997</span> --nodiscover --datadir data0 --port <span style="color:#3677a9">30303</span> --rpc --rpcapi net,eth,web3,personal --rpcport <span style="color:#3677a9">8545</span> --rpcaddr localhost --verbosity <span style="color:#3677a9">6</span> console <span style="color:#3677a9">2</span>&gt;&gt;eth_output.log --ipcpath <span style="color:#ed9d13">&#34;geth0.rpc&#34;</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">geth --networkid <span style="color:#3677a9">1997</span> --nodiscover --datadir data1 --port <span style="color:#3677a9">55554</span> --rpc --rpcapi net,eth,web3,personal --rpcport <span style="color:#3677a9">8101</span> --rpcaddr localhost --verbosity <span style="color:#3677a9">6</span>  console <span style="color:#3677a9">2</span>&gt;&gt;eth_output2.log --ipcpath <span style="color:#ed9d13">&#34;geth1.rpc&#34;</span></code></pre></div>
+<h3 id="6-3-添加节点">6.3 添加节点</h3>
+
+<p>在<strong>data0</strong>节点：获取<strong>data0</strong>的<strong>enode</strong>信息</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; admin.nodeInfo.enode
+<span style="color:#ed9d13">&#34;enode://74967083bfcb45cc0215b93127b9b8b5db17c0cbfa2dd88f9b741302fb025fe91157ca79bca46f309766cd10771ef8983d042d8d36dff3bc40cc1a697df6ba34@127.0.0.1:30303?discport=0&#34;</span></code></pre></div>
+<p>在<strong>data1</strong>节点：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;admin.addPeer(<span style="color:#ed9d13">&#34;enode://74967083bfcb45cc0215b93127b9b8b5db17c0cbfa2dd88f9b741302fb025fe91157ca79bca46f309766cd10771ef8983d042d8d36dff3bc40cc1a697df6ba34@127.0.0.1:30303?discport=0&#34;</span>)
+true</code></pre></div>
+<p><strong>addPeer()</strong>函数括号内参数填查看到的<strong>data0</strong>的<strong>enode</strong>信息，返回<strong>true</strong>即可成功加入节点，加入后<strong>data1</strong>就会自动开始同步<strong>data0</strong>的所有区块。</p>
+
+<p>之后可以使用以下命令来查看节点是否添加成功：</p>
+
+<pre><code>net.peerCount
+admin.peers
+</code></pre>
+
+<p>在data1使用<code>eth.blockNumber</code>来查看区块是否同步成功。</p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
