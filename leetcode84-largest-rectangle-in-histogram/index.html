@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode84 Largest Rectangle in Histogram - SYSUcarey</title>
+<meta property="og:title" content="Leetcode84 Largest Rectangle in Histogram - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode84 Largest Rectangle in Histogram</h1>
+    
+    <span class="article-date">2018-11-11</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/description/">Leetcode84 Largest Rectangle in Histogram</a></p>
+
+<ul>
+<li><p>概述：</p>
+
+<ol>
+<li>Given <em>n</em> non-negative integers representing the histogram&rsquo;s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
+
+<br /></li>
+</ol>
+
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/histogram.png" alt="img" />
+ Above is a histogram where width of each bar is 1, given height = <code>[2,1,5,6,2,3]</code>.</p>
+
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/histogram_area.png" alt="img" />
+ The largest rectangle is shown in the shaded area, which has area = <code>10</code> unit.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code> Input: [2,1,5,6,2,3]
+ Output: 10
+</code></pre></li>
+</ul>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<p><strong>分析1：</strong></p>
+
+<ul>
+<li>这道题乍一看跟<a href="https://leetcode.com/problems/container-with-most-water/description/">Leetcode 11 container with most water</a>很像，都是求面积最大，不同的是，前者形成的长方形的高是由两端较小的数决定的，而本道题形成的长方形的高是由两端以及中间所有数的最小值决定的。</li>
+<li>但正因为高的取决不同，这道题就不能像<strong>Leetcode 11</strong>那样从两端向中间逼近，因为我们可以找出反例，我们总丢弃矮的那边向中间缩进是不正确的。</li>
+</ul>
+
+<p><strong>分析2：</strong></p>
+
+<ul>
+<li>那么或许我们可以从最矮的开始下手，将数组分成两部分。最矮的数左边和最矮的数右边，然后最大的长方形面积就必然来自以下三个部分之一：
+
+<ul>
+<li>要么来自于左半部中的最大长方形面积</li>
+<li>要么来自于右半部中的最大长方形面积</li>
+<li>要么来自高为这个最矮数，长我们取最大的长方形的面积</li>
+</ul></li>
+<li>按照这个想法我们可以用递归去实现这个算法</li>
+</ul>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<h3 id="solution"><strong>Solution</strong></h3>
+
+<ul>
+<li><code>int getMaxArea(int head, int tail, vector&lt;int&gt;&amp; heights)</code>是辅助函数，用来获取<strong>heights[head, tail]</strong>中的最大长方形的面积，这样就方便我们用这个函数进行递归实现算法。这个函数的实现就基于上面分析2中所说的，找到最小数，然后分成三部分，递归下去。</li>
+<li><code>int getMinHeight(int head, int tail, vector&lt;int&gt;&amp; heights, int&amp; index)</code>是另外一个函数，用来获取<strong>heights[head, tail]</strong>中的最小的数返回，并且获得这个最小的数的<strong>index</strong>，这个函数的实现就很简单，从<strong>head</strong>到<strong>tail</strong>遍历一遍即可。</li>
+<li>那么最后题目所要求的解就是<code>getMaxArea(0, heights.size()-1,  heights);</code></li>
+<li>算法复杂度：最好<strong>O(n·logn)</strong>，最坏<strong>O(n^2)</strong>。</li>
+</ul>
+
+<h3 id="code-c"><strong>code(c++)</strong></h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;vector&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#6ab825;font-weight:bold">namespace</span> std;
+
+<span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    <span style="color:#6ab825;font-weight:bold">int</span> largestRectangleArea(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; heights) {
+        <span style="color:#6ab825;font-weight:bold">return</span> getMaxArea(<span style="color:#3677a9">0</span>, heights.size()-<span style="color:#3677a9">1</span>, heights);
+
+    }
+    <span style="color:#6ab825;font-weight:bold">int</span> getMaxArea(<span style="color:#6ab825;font-weight:bold">int</span> head, <span style="color:#6ab825;font-weight:bold">int</span> tail, vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; heights) {
+        <span style="color:#6ab825;font-weight:bold">if</span>(tail &lt; head) <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#3677a9">0</span>;
+        <span style="color:#6ab825;font-weight:bold">if</span>(tail == head) <span style="color:#6ab825;font-weight:bold">return</span> heights[head];
+        <span style="color:#999;font-style:italic">// get the smallest height in heights[head...tail]
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">int</span> smallest_index;
+        <span style="color:#6ab825;font-weight:bold">int</span> smallest = getMinHeight(head, tail, heights, smallest_index);
+        <span style="color:#999;font-style:italic">// MaxArea may be the maximun of the following three part
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">int</span> area1 = getMaxArea(head, smallest_index-<span style="color:#3677a9">1</span>, heights);
+        <span style="color:#6ab825;font-weight:bold">int</span> area2 = getMaxArea(smallest_index+<span style="color:#3677a9">1</span>, tail, heights);
+        <span style="color:#6ab825;font-weight:bold">int</span> area3 = smallest * (tail - head + <span style="color:#3677a9">1</span>);
+        <span style="color:#6ab825;font-weight:bold">int</span> MaxArea = (area1 &gt; area2) ? area1 : area2;
+        <span style="color:#6ab825;font-weight:bold">return</span> (MaxArea &gt; area3) ? MaxArea : area3;
+    }
+
+    <span style="color:#6ab825;font-weight:bold">int</span> getMinHeight(<span style="color:#6ab825;font-weight:bold">int</span> head, <span style="color:#6ab825;font-weight:bold">int</span> tail, vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; heights, <span style="color:#6ab825;font-weight:bold">int</span>&amp; index) {
+        <span style="color:#6ab825;font-weight:bold">int</span> answer = heights[head];
+        index = head;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = head+<span style="color:#3677a9">1</span>; i &lt;= tail; i++) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(heights[i] &lt; answer) {
+                answer = heights[i];
+                index = i;          }
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> answer;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
