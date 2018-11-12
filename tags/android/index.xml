@@ -6,10 +6,26 @@
     <description>Recent content in Android on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Oct 2018 18:35:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Nov 2018 14:30:27 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>手机平台应用开发week9报告</title>
+      <link>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week9%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Mon, 12 Nov 2018 14:30:27 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E6%89%8B%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91week9%E6%8A%A5%E5%91%8A/</guid>
+      <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/11/12 完成日期 2018/11/12    一、实验题目 数据存储（一）
+二、实验目的  学习SharedPreference的基本使用。 学习Android中常见的文件操作方法。 复习Android界面编程  三、实验内容 要求  Figure 1：首次进入，呈现创建密码界面。
+ Figure 2：若密码不匹配，弹出Toast提示。
+ Figure 3：若密码为空，弹出Toast提示。
+ Figure 4：退出后第二次进入呈现输入密码界面。
+ Figure 5：若密码不正确，弹出Toast提示。
+ Figure 6：文件加载失败，弹出Toast提示。
+ Figure 7：成功保存文件，弹出Toast提示。</description>
+    </item>
     
     <item>
       <title>手机平台应用开发week8报告</title>

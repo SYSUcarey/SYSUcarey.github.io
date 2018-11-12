@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>手机平台应用开发week9报告 - SYSUcarey</title>
+<meta property="og:title" content="手机平台应用开发week9报告 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">手机平台应用开发week9报告</h1>
+    
+    <span class="article-date">2018-11-12</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="中山大学数据科学与计算机学院本科生实验报告">中山大学数据科学与计算机学院本科生实验报告</h2>
+
+<h3 id="2018年秋季学期">（2018年秋季学期）</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">课程名称</th>
+<th align="center">手机平台应用开发</th>
+<th align="center">任课老师</th>
+<th align="center">郑贵锋</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">年级</td>
+<td align="center">大三</td>
+<td align="center">专业（方向）</td>
+<td align="center">计应</td>
+</tr>
+
+<tr>
+<td align="center">学号</td>
+<td align="center">16340015</td>
+<td align="center">姓名</td>
+<td align="center">陈彬彬</td>
+</tr>
+
+<tr>
+<td align="center">电话</td>
+<td align="center">13590883387</td>
+<td align="center">Email</td>
+<td align="center">944131226@qq.com</td>
+</tr>
+
+<tr>
+<td align="center">开始日期</td>
+<td align="center">2018/11/12</td>
+<td align="center">完成日期</td>
+<td align="center">2018/11/12</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h3 id="一-实验题目">一、实验题目</h3>
+
+<p><strong>数据存储（一）</strong></p>
+
+<hr />
+
+<h3 id="二-实验目的">二、实验目的</h3>
+
+<ol>
+<li>学习<strong>SharedPreference</strong>的基本使用。</li>
+<li>学习Android中常见的文件操作方法。</li>
+<li>复习Android界面编程</li>
+</ol>
+
+<hr />
+
+<h3 id="三-实验内容">三、实验内容</h3>
+
+<h4 id="要求">要求</h4>
+
+<ul>
+<li>Figure 1：首次进入，呈现创建密码界面。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig1.jpg" alt="preview" /></li>
+<li>Figure 2：若密码不匹配，弹出Toast提示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig2.jpg" alt="preview" /></li>
+<li>Figure 3：若密码为空，弹出Toast提示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig3.jpg" alt="preview" /></li>
+<li>Figure 4：退出后第二次进入呈现输入密码界面。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig4.jpg" alt="preview" /></li>
+<li>Figure 5：若密码不正确，弹出Toast提示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig5.jpg" alt="preview" /></li>
+<li>Figure 6：文件加载失败，弹出Toast提示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig6.jpg" alt="preview" /></li>
+<li>Figure 7：成功保存文件，弹出Toast提示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig7.jpg" alt="preview" /></li>
+<li>Figure 8：成功导入文件，弹出Toast提示。<br />
+<img src="https://gitee.com/code_sysu/PersonalProject3/raw/master/manual/images/fig8.jpg" alt="preview" />
+###</li>
+</ul>
+
+<ol>
+<li>如Figure 1至Figure 8所示，本次实验演示应用包含两个Activity。</li>
+<li>首先是密码输入Activity：
+
+<ul>
+<li>若应用首次启动，则界面呈现出两个输入框，分别为新密码输入框和确认密码输入框。<br /></li>
+<li>输入框下方有两个按钮：<br />
+
+<ul>
+<li>OK按钮点击后：<br /></li>
+<li>若New Password为空，则发出Toast提示。见Figure 3。</li>
+<li>若New Password与Confirm Password不匹配，则发出Toast提示，见Figure 2。</li>
+<li>若两密码匹配，则保存此密码，并进入文件编辑Activity。</li>
+<li>CLEAR按钮点击后：清楚两输入框的内容。<br /></li>
+</ul></li>
+<li>完成创建密码后，退出应用再进入应用，则只呈现一个密码输入框，见Figure 4。
+
+<ul>
+<li>点击OK按钮后，若输入的密码与之前的密码不匹配，则弹出Toast提示，见Figure 5。</li>
+<li>点击CLEAR按钮后，清除密码输入框的内容。</li>
+</ul></li>
+<li><strong>出于演示和学习的目的，本次实验我们使用SharedPreferences来保存密码。但实际应用中不会使用这种方式来存储敏感信息，而是采用更安全的机制。见<a href="http://stackoverflow.com/questions/1925486/android-storing-username-and-password">这里</a>和<a href="http://stackoverflow.com/questions/785973/what-is-the-most-appropriate-way-to-store-user-settings-in-android-application/786588">这里</a>。</strong></li>
+</ul></li>
+<li>文件编辑Activity：
+
+<ul>
+<li>界面底部有三个按钮，高度一致，顶对齐，按钮水平均匀分布，三个按钮上方除ActionBar和StatusBar之外的全部空间由一个EditText占据（保留margin）。EditText内的文字竖直方向置顶，左对齐。</li>
+<li>在编辑区域输入任意内容，点击SAVE按钮后能保存到指定文件（文件名随意）。成功保存后，弹出Toast提示，见Figure 8。</li>
+<li>点击CLEAR按钮，能清空编辑区域的内容。</li>
+<li>点击LOAD按钮，能够从同一文件导入内容，并显示到编辑框中。若成功导入，则弹出Toast提示。见Figure 7.若读取文件过程中出现异常（如文件不存在），则弹出Toast提示。见Figure 6.</li>
+</ul></li>
+<li>特殊要求：进入文件编辑Activity后，若点击返回按钮，则直接返回Home界面，不再返回密码输入Activity。</li>
+</ol>
+
+<hr />
+
+<h4 id="验收内容">验收内容</h4>
+
+<ol>
+<li>布局显示与Figure 1 至 Figure 8一致。</li>
+<li>应用逻辑与上文描述一致。
+
+<ul>
+<li>异常情况弹出Toast提示。</li>
+<li>创建密码后重新启动应用，直接显示单个输入框输入密码。</li>
+<li>文本编辑页面：能够正常保存和读取文件。</li>
+</ul></li>
+<li>在实验报告中简要描述Internal Storage和External Storage的区别，以及它们的适用场景。</li>
+<li>代码+实验报告（先在实验课上检查，检查后再pr）</li>
+</ol>
+
+<hr />
+
+<h3 id="四-实验结果">四、实验结果</h3>
+
+<h4 id="1-实验截图">1. 实验截图</h4>
+
+<h5 id="1-创建密码界面">(1)创建密码界面</h5>
+
+<p>应用第一次启动，进入创建密码界面，两个输入框，两个按钮。其中CLEAR按钮用来清除输入框内容，OK按钮进行创建密码。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112102129.png" alt="Img_register_page" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112102506.png" alt="Img_Password_can_not_be_empty" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112102623.png" alt="Img_Password_Mismatch" /></p>
+
+<h5 id="2-文本编辑界面">(2)文本编辑界面</h5>
+
+<p>创建密码成功，进入文本编辑界面，有一个文本内容输入框，有三个按钮：OK、LOAD、CLEAR。</p>
+
+<ul>
+<li>OK按钮将输入框的文本内容保存到文件中。</li>
+<li>LOAD按钮读取文本内容导入到输入框中。(若没有文件，则读取失败)</li>
+<li>CLEAR按钮清空输入框文本内容。</li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112103049.png" alt="Img_Load_File_Failed" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112103138.png" alt="Img_success_save_file" /></p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112103238.png" alt="Img_load_file_successfully_after_clearing" /></p>
+
+<h5 id="2-重新进入应用界面">(2)重新进入应用界面</h5>
+
+<p>如果你已经创建好密码，重新进入应用是密码登陆界面，只有一个密码验证输入框，只有输入正确的密码才能进入文本编辑界面。</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181112103421.png" alt="Img_Invalid_Password" /></p>
+
+<hr />
+
+<h4 id="2-实验步骤以及关键代码">2. 实验步骤以及关键代码</h4>
+
+<h5 id="1-项目文件结构">(1)项目文件结构</h5>
+
+<p>新建项目<strong>PersonalProject3</strong>:</p>
+
+<p><code>java-&gt;com.example.chenbb.personalproject3</code> 目录下：</p>
+
+<ul>
+<li>MainActivity.java</li>
+<li>FileEditorActivity.java</li>
+</ul>
+
+<p><code>res-&gt;layout</code>目录下：</p>
+
+<ul>
+<li>activity_main.xml</li>
+<li>activity_file_editor.xml</li>
+</ul>
+
+<hr />
+
+<h5 id="2-ui界面的实现">(2)UI界面的实现</h5>
+
+<p><strong>步骤：</strong></p>
+
+<ul>
+<li>按要求添加界面的<strong>EditText</strong>和<strong>Button</strong></li>
+<li>实现文本编辑界面<strong>EditText</strong>占绝大部分面积，多行输入置顶左对齐</li>
+<li>实现文本编辑界面三个<strong>Button</strong>左中右水平分布</li>
+</ul>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject3/blob/master/manual/tutorial.md">tutorial.md</a></p>
+
+<p><a href="https://blog.csdn.net/lilu_leo/article/details/6427292">android里面EditTex多行输入及输入置顶问题</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li>密码界面最外层<strong>LinearLayout</strong>里面包着两个<strong>RelativeLayout</strong>，垂直权重<strong>weight</strong>都为1，这样实现输入框部分在垂直中线以上，按钮部分在垂直中线以下。</li>
+<li>文本编辑界面，最外层<strong>LinearLayout</strong>里面控件垂直按比重分布，垂直权重9:1，实现文本输入框部分占绝大屏幕，而三个按钮占底下一小部分。</li>
+<li>文本编辑界面，三个按钮在<strong>RelativeLayout</strong>里面设置水平居中，水平居右属性即可实现三个按钮水平左中右均等分布。</li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<ul>
+<li>实现垂直按比例分配屏幕界面。(以下例子权重weight按1:1比例分配)，例子省略了Layout、控件其他属性的显示。</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;LinearLayout</span> <span style="color:#bbb">android:orientation=</span><span style="color:#ed9d13">&#34;vertical&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;RelativeLayout</span> 
+        <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;0dp&#34;</span>
+        <span style="color:#bbb">android:layout_weight=</span><span style="color:#ed9d13">&#34;1&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;RelativeLayout</span> 
+        <span style="color:#bbb">android:layout_height=</span><span style="color:#ed9d13">&#34;0dp&#34;</span>
+        <span style="color:#bbb">android:layout_weight=</span><span style="color:#ed9d13">&#34;1&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+                    
+<span style="color:#6ab825;font-weight:bold">&lt;/LinearLayout&gt;</span></code></pre></div>
+<hr />
+
+<h5 id="3-利用sharedpreferences保存密码">(3)利用SharedPreferences保存密码</h5>
+
+<p><strong>步骤：</strong></p>
+
+<ul>
+<li><p>处理MainActivity.java中按钮的简单逻辑响应。</p></li>
+
+<li><p>处理MainActivity.java中进行保存密码信息的响应。</p></li>
+
+<li><p>处理二次进入界面，密码界面的变化和响应改变。</p></li>
+</ul>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject3/blob/master/manual/tutorial.md">tutorial.md</a></p>
+
+<p><a href="https://blog.csdn.net/li5685918/article/details/49249299"> Android 属性设置android:noHistory=&ldquo;true&rdquo; </a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li><p><strong>MainActivity.java</strong>处理按钮的简单响应</p>
+
+<ul>
+<li>CLEAR按钮清空文本框内容</li>
+<li>当文本框为空，点击OK按钮的Toast错误提示</li>
+<li>当两个文本框输入不一致，点击OK按钮的Toast错误提示</li>
+</ul></li>
+
+<li><p><strong>MainActivity.java</strong>处理按钮保存密码信息的响应，利用<strong>SharedPreferences</strong>进行<strong>xml</strong>格式的读写。在Android Studio通过<code>View-&gt;Tool Windows-&gt; Device File Explorer</code>中打开设备文件管理器，根据路径<code>/data/data/&lt;package name&gt;/shared_prefs/</code>查看保存的xml文件。</p></li>
+
+<li><p><strong>AndroidMainfest.xml</strong>中设置注册Activity的<strong>noHistory</strong>属性，实现当Activity不可见时，在activity stack中除去。（也即按返回键直接返回Home）</p></li>
+
+<li><p><strong>MainActivity.java</strong>处理<strong>OnCreate()</strong>函数，判断是否已经保存了密码信息，若还没保存，则进入新建密码界面，若已经保存了，进入密码登陆界面（也即相应修改布局显示）</p></li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<p><strong>MainActivity.java</strong>对于新建密码成功的响应处理：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// 注册成功！用SharedPreferences保存密码信息
+</span><span style="color:#999;font-style:italic"></span>Context context = MainActivity.<span style="color:#bbb">this</span>;
+SharedPreferences sharedPref = context.<span style="color:#bbb">getSharedPreferences</span>(<span style="color:#ed9d13">&#34;MY_PASSWORD&#34;</span>, Context.<span style="color:#bbb">MODE_PRIVATE</span>);
+SharedPreferences.<span style="color:#bbb">Editor</span> editor = sharedPref.<span style="color:#bbb">edit</span>();
+editor.<span style="color:#bbb">putString</span>(<span style="color:#ed9d13">&#34;password&#34;</span>, editText_confirm_password.<span style="color:#bbb">getText</span>().<span style="color:#bbb">toString</span>());
+editor.<span style="color:#bbb">commit</span>();
+<span style="color:#999;font-style:italic">// 跳转到FileEditorActivity
+</span><span style="color:#999;font-style:italic"></span>Intent intent = <span style="color:#6ab825;font-weight:bold">new</span> Intent(MainActivity.<span style="color:#bbb">this</span>, FileEditorActivity.<span style="color:#bbb">class</span>);
+startActivity(intent);</code></pre></div>
+<p><strong>MainActivity.java</strong>中<strong>OnCreate()</strong>函数进行对界面模式的判断：（注册or登陆）</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// 确认显示模式：第一次加载为注册模式，保存密码之后就登陆模式
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">final</span> <span style="color:#6ab825;font-weight:bold">boolean</span> register_mode = <span style="color:#6ab825;font-weight:bold">false</span>;
+<span style="color:#6ab825;font-weight:bold">final</span> <span style="color:#6ab825;font-weight:bold">boolean</span> login_mode = <span style="color:#6ab825;font-weight:bold">true</span>;
+SharedPreferences sp = MainActivity.<span style="color:#bbb">this</span>.<span style="color:#bbb">getSharedPreferences</span>(<span style="color:#ed9d13">&#34;MY_PASSWORD&#34;</span>, Context.<span style="color:#bbb">MODE_PRIVATE</span>);
+<span style="color:#6ab825;font-weight:bold">final</span> String p = sp.<span style="color:#bbb">getString</span>(<span style="color:#ed9d13">&#34;password&#34;</span>, <span style="color:#ed9d13">&#34;&#34;</span>);
+<span style="color:#6ab825;font-weight:bold">final</span> <span style="color:#6ab825;font-weight:bold">boolean</span> page_mode = (p.<span style="color:#bbb">equals</span>(<span style="color:#ed9d13">&#34;&#34;</span>)) ? register_mode : login_mode;
+
+<span style="color:#999;font-style:italic">// 如果是登陆模式，UI进行改变
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">if</span>(page_mode == login_mode) {
+    editText_new_password.<span style="color:#bbb">setVisibility</span>(View.<span style="color:#bbb">INVISIBLE</span>);
+    editText_confirm_password.<span style="color:#bbb">setHint</span>(<span style="color:#ed9d13">&#34;Password&#34;</span>);
+}</code></pre></div>
+<hr />
+
+<h5 id="4-文本读写操作实现">(4)文本读写操作实现</h5>
+
+<p><strong>步骤：</strong></p>
+
+<ul>
+<li>按照界面逻辑，处理简单的按钮响应。</li>
+<li>按照界面逻辑，利用<strong>FileInputStream</strong>和<strong>FileOutputStream</strong>进行文本读写。</li>
+</ul>
+
+<p><strong>参考：</strong></p>
+
+<p><a href="https://gitee.com/SYSUcarey/PersonalProject3/blob/master/manual/tutorial.md">tutorial.md</a></p>
+
+<p><a href="https://blog.csdn.net/weixin_41967600/article/details/82494310">Android中byte数组与Sting的互相转换</a></p>
+
+<p><strong>具体内容：</strong></p>
+
+<ul>
+<li><strong>FileEditorActivity.java</strong>实现按钮的简单响应
+
+<ul>
+<li>CLEAR按钮清空文本框</li>
+</ul></li>
+<li><strong>FileEditorActivity.java</strong>实现点击OK按钮后保存信息，利用<strong>FileOutputStream</strong>将文本框内容写入文件中。</li>
+<li><strong>FileEditorActivity.java</strong>实现LOAD按钮的保存信息，利用<strong>FileInputStream</strong>将读取文件内容，并在文本框显示。若文本不存在，则<strong>Toast</strong>提示错误。</li>
+</ul>
+
+<p><strong>关键代码：</strong></p>
+
+<ul>
+<li>利用<strong>FileOutputStream</strong>将文本框内容写入文件：</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// 将输入框的信息保存至文件中
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">try</span> (FileOutputStream fileOutputStream = openFileOutput(<span style="color:#ed9d13">&#34;FILE_CONTENT&#34;</span>, Context.<span style="color:#bbb">MODE_PRIVATE</span>)) {
+    String str = editText_file_content.<span style="color:#bbb">getText</span>().<span style="color:#bbb">toString</span>();
+    fileOutputStream.<span style="color:#bbb">write</span>(str.<span style="color:#bbb">getBytes</span>());
+    Toast.<span style="color:#bbb">makeText</span>(FileEditorActivity.<span style="color:#bbb">this</span>, <span style="color:#ed9d13">&#34;Save Successfully.&#34;</span>, Toast.<span style="color:#bbb">LENGTH_SHORT</span>).<span style="color:#bbb">show</span>();
+} <span style="color:#6ab825;font-weight:bold">catch</span> (IOException ex) {
+    Toast.<span style="color:#bbb">makeText</span>(FileEditorActivity.<span style="color:#bbb">this</span>, <span style="color:#ed9d13">&#34;Fail to save file.&#34;</span>, Toast.<span style="color:#bbb">LENGTH_SHORT</span>).<span style="color:#bbb">show</span>();
+}</code></pre></div>
+<ul>
+<li>利用<strong>FileInputStream</strong>将文件文本内容显示在文本框：</li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#999;font-style:italic">// 将文件文本内容显示到文本框中
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">try</span> (FileInputStream fileInputStream = openFileInput(<span style="color:#ed9d13">&#34;FILE_CONTENT&#34;</span>)) {
+    <span style="color:#6ab825;font-weight:bold">byte</span>[] contents = <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#6ab825;font-weight:bold">byte</span>[fileInputStream.<span style="color:#bbb">available</span>()];
+    fileInputStream.<span style="color:#bbb">read</span>(contents);
+    String str = <span style="color:#6ab825;font-weight:bold">new</span> String(contents, <span style="color:#ed9d13">&#34;UTF-8&#34;</span>);
+    editText_file_content.<span style="color:#bbb">setText</span>(str);
+    Toast.<span style="color:#bbb">makeText</span>(FileEditorActivity.<span style="color:#bbb">this</span>, <span style="color:#ed9d13">&#34;Load Successfully.&#34;</span>, Toast.<span style="color:#bbb">LENGTH_SHORT</span>).<span style="color:#bbb">show</span>();
+} <span style="color:#6ab825;font-weight:bold">catch</span> (IOException ex) {
+    Toast.<span style="color:#bbb">makeText</span>(FileEditorActivity.<span style="color:#bbb">this</span>, <span style="color:#ed9d13">&#34;Fail to load file.&#34;</span>, Toast.<span style="color:#bbb">LENGTH_SHORT</span>).<span style="color:#bbb">show</span>();
+}</code></pre></div>
+<hr />
+
+<h4 id="3-实验遇到的困难以及解决思路">3. 实验遇到的困难以及解决思路</h4>
+
+<p>1.editText多行输入置顶左对齐</p>
+
+<p>解决方案：<strong>xml</strong>文件里面设置属性：<code>android:gravity=&quot;top&quot;</code></p>
+
+<p>参考博客：<a href="https://blog.csdn.net/lilu_leo/article/details/6427292">android里面EditTex多行输入及输入置顶问题</a></p>
+
+<p>2.跳转至<strong>FileEditorActivity</strong>闪退</p>
+
+<p>解决方案：<strong>AndroidMainfest.xml</strong>中注册<strong>FileEditorActivity</strong></p>
+
+<p>3.当 Activity 不可⻅时，如何将其从 activity stack 中除去（按返回键直接返回Home）？</p>
+
+<p>解决方案：<strong>AndroidManifest.xml</strong> 中设置 <strong>noHistory</strong> 属性。</p>
+
+<p>参考博客：<a href="https://blog.csdn.net/li5685918/article/details/49249299"> Android 属性设置android:noHistory=&ldquo;true&rdquo; </a></p>
+
+<p>4.Android读取文件后得到的byte[]如何转换成String</p>
+
+<p>解决方案：<code>new String(byte_data, charsetName)</code></p>
+
+<p>参考博客：<a href="https://blog.csdn.net/weixin_41967600/article/details/82494310">Android中byte数组与Sting的互相转换</a></p>
+
+<hr />
+
+<h3 id="五-实验思考及感想">五、实验思考及感想</h3>
+
+<ul>
+<li>week9的内容比较简单，<a href="https://gitee.com/SYSUcarey/PersonalProject3/blob/master/manual/tutorial.md">tutorial.md</a> 给出了这一周新内容的使用方法，已经十分详尽，需要查的内容不多。</li>
+<li>至于布局，给出提示根据LinearLayout里的权重weight来进行比例布局，这个我在之前几周的时候已经使用过了，所以并不陌生，也很快就完成了。</li>
+<li>继续努力吧，听说下一次作业week11很多内容，要尽早开始做了。</li>
+</ul>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/android">Android</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/android">Android</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
