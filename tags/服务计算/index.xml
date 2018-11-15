@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务计算 on SYSUcarey</title>
+    <link>https://sysucarey.github.io/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97/</link>
+    <description>Recent content in 服务计算 on SYSUcarey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Nov 2018 20:30:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://sysucarey.github.io/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[服务计算] 开发web服务程序cloudgo</title>
+      <link>https://sysucarey.github.io/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97-%E5%BC%80%E5%8F%91web%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8Fcloudgo/</link>
+      <pubDate>Thu, 15 Nov 2018 20:30:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97-%E5%BC%80%E5%8F%91web%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8Fcloudgo/</guid>
+      <description>Table of Contents  项目概述 作业要求 相关知识 运行环境 使用框架说明 运行说明  下载 运行 效果  curl 测试 ab压力测试  安装apache2-utils 测试 参数解释  命令参数 结果参数    Created by gh-md-toc
+项目概述 开发简单 web 服务程序 cloudgo，了解 web 服务器工作原理。
+项目地址：https://github.com/SYSUcarey/cloudgo
+作业要求  编程 web 服务程序 类似 cloudgo 应用。
+ 要求有详细的注释 是否使用框架、选哪个框架自己决定 请在 README.md 说明你决策的依据  使用 curl 测试，将测试结果写入 README.md
+ 使用 ab 测试，将测试结果写入 README.md。并解释重要参数。
+  相关知识 课件：
+http://blog.csdn.net/pmlpml/article/details/78404838
+https://blog.csdn.net/pmlpml/article/details/78539261</description>
+    </item>
+    
+  </channel>
+</rss>

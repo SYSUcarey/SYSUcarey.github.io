@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>[服务计算] 开发web服务程序cloudgo - SYSUcarey</title>
+<meta property="og:title" content="[服务计算] 开发web服务程序cloudgo - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">[服务计算] 开发web服务程序cloudgo</h1>
+    
+    <span class="article-date">2018-11-15</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0">项目概述</a></li>
+<li><a href="#%E4%BD%9C%E4%B8%9A%E8%A6%81%E6%B1%82">作业要求</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">相关知识</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83">运行环境</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6%E8%AF%B4%E6%98%8E">使用框架说明</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E8%AF%B4%E6%98%8E">运行说明</a>
+
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD">下载</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C">运行</a></li>
+<li><a href="#%E6%95%88%E6%9E%9C">效果</a></li>
+</ul></li>
+<li><a href="#curl-%E6%B5%8B%E8%AF%95">curl 测试</a></li>
+<li><a href="#ab%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95">ab压力测试</a>
+
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85apache2-utils">安装apache2-utils</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A">参数解释</a>
+
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0">命令参数</a></li>
+<li><a href="#%E7%BB%93%E6%9E%9C%E5%8F%82%E6%95%B0">结果参数</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Created by <a href="https://github.com/ekalinin/github-markdown-toc.go">gh-md-toc</a></p>
+
+<hr />
+
+<h1 id="项目概述">项目概述</h1>
+
+<p>开发简单 web 服务程序 cloudgo，了解 web 服务器工作原理。</p>
+
+<p>项目地址：<a href="https://github.com/SYSUcarey/cloudgo">https://github.com/SYSUcarey/cloudgo</a></p>
+
+<hr />
+
+<h1 id="作业要求">作业要求</h1>
+
+<ol>
+<li><p>编程 web 服务程序 类似 cloudgo 应用。</p>
+
+<ul>
+<li>要求有详细的注释</li>
+<li>是否使用框架、选哪个框架自己决定 请在 README.md 说明你决策的依据</li>
+</ul></li>
+
+<li><p>使用 curl 测试，将测试结果写入 README.md</p></li>
+
+<li><p>使用 ab 测试，将测试结果写入 README.md。并解释重要参数。</p></li>
+</ol>
+
+<hr />
+
+<h1 id="相关知识">相关知识</h1>
+
+<p>课件：</p>
+
+<p><a href="http://blog.csdn.net/pmlpml/article/details/78404838">http://blog.csdn.net/pmlpml/article/details/78404838</a></p>
+
+<p><a href="https://blog.csdn.net/pmlpml/article/details/78539261">https://blog.csdn.net/pmlpml/article/details/78539261</a></p>
+
+<hr />
+
+<h1 id="运行环境">运行环境</h1>
+
+<ul>
+<li>Unbuntu 18.04</li>
+<li>Golang</li>
+</ul>
+
+<hr />
+
+<h1 id="使用框架说明">使用框架说明</h1>
+
+<ul>
+<li>net/http</li>
+</ul>
+
+<blockquote>
+<p>Go语言里面提供了一个完善的net/http包，通过http包可以很方便的搭建起来一个可以运行的Web服务。同时使用这个包能很简单地对Web的路由，静态文件，模版，cookie等数据进行设置和操作。</p>
+
+<p>参考：</p>
+
+<p><a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/03.2.md">1.Go用net/http搭建一个Web服务器</a></p>
+
+<p><a href="https://studygolang.com/articles/9467">2.Go net/http包</a></p>
+</blockquote>
+
+<ul>
+<li>negroni库</li>
+</ul>
+
+<blockquote>
+<p>Negroni中间件库，是一个非常经典的库，非常小，但是功能强大，因为他定义了中间件的框架和风格，让我们可以基于它开发出我们自己的中间件，并且可以集成到Negroni中。</p>
+
+<p>Negroni还兼容原生的http.Handler,你完全可以把自己的http.Handler加入到Negroni的中间件链中，Negroni会自动调用他们处理我们的HTTP Request的。</p>
+
+<p>参考：</p>
+
+<p><a href="https://godoc.org/gopkg.in/codegangsta/negroni.v0">1. GoDoc | negroni</a></p>
+
+<p><a href="http://www.flysnow.org/2017/08/20/go-classic-libs-negroni-one.html">2. 飞雪无情的解析博客</a></p>
+</blockquote>
+
+<h1 id="运行说明">运行说明</h1>
+
+<h2 id="下载">下载</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get -v github.com/SYSUcarey/cloudgo</code></pre></div>
+<h2 id="运行">运行</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 编译项目
+</span><span style="color:#999;font-style:italic"></span>$ go install github.com/SYSUcarey/cloudgo
+<span style="color:#999;font-style:italic"># 运行项目
+</span><span style="color:#999;font-style:italic"></span>$ cloudgo -p <span style="color:#3677a9">9090</span></code></pre></div>
+<p>或者进入项目根目录：<code>$GOPATH/src/github.com/SYSUcarey/clouodgo</code></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go run main.go -p <span style="color:#3677a9">9090</span></code></pre></div>
+<h2 id="效果">效果</h2>
+
+<p>打开浏览器</p>
+
+<p>1.</p>
+
+<p>访问地址：</p>
+
+<pre><code>http://localhost:9090
+</code></pre>
+
+<p>服务器终端显示:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bash 显示
+</span><span style="color:#999;font-style:italic"></span>[negroni] <span style="color:#3677a9">2018</span>-11-15T20:00:29+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">76</span>.299µs | localhost:9090 | GET /
+[negroni] <span style="color:#3677a9">2018</span>-11-15T20:02:18+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">22</span>.475µs | localhost:9090 | GET /favicon.ico</code></pre></div>
+<p>浏览器截图：</p>
+
+<p><img src="assets/2018-11-15-20-08-12.png" alt="2018-11-15-20-08-12" /></p>
+
+<p>2.</p>
+
+<p>访问地址：</p>
+
+<pre><code>http://localhost:9090/login
+</code></pre>
+
+<p>浏览器截图：</p>
+
+<p><img src="assets/2018-11-15-20-11-19.png" alt="2018-11-15-20-11-19" /></p>
+
+<p>服务器终端显示:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bash 显示
+</span><span style="color:#999;font-style:italic"></span>method: GET
+<span style="color:#3677a9">2018</span>/11/15 <span style="color:#3677a9">20</span>:21:00 &lt;nil&gt;
+[negroni] <span style="color:#3677a9">2018</span>-11-15T20:21:00+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">221</span>.272µs | localhost:9090 | GET /login
+[negroni] <span style="color:#3677a9">2018</span>-11-15T20:21:00+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">27</span>.092µs | localhost:9090 | GET /favicon.ico</code></pre></div>
+<p>3.</p>
+
+<p>填写用户名:SYSUcarey，密码:SYSUcarey</p>
+
+<p>点击登陆按钮</p>
+
+<p><img src="assets/2018-11-15-20-13-32.png" alt="2018-11-15-20-13-32" /></p>
+
+<p><img src="assets/2018-11-15-20-14-28.png" alt="2018-11-15-20-14-28" /></p>
+
+<p>服务器终端显示:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bash 显示
+</span><span style="color:#999;font-style:italic"></span>[negroni] <span style="color:#3677a9">2018</span>-11-15T20:11:01+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">254</span>.965µs | localhost:9090 | GET /login
+[negroni] <span style="color:#3677a9">2018</span>-11-15T20:11:03+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">31</span>.219µs | localhost:9090 | GET /favicon.ico
+method: POST
+[negroni] <span style="color:#3677a9">2018</span>-11-15T20:14:07+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">134</span>.198µs | localhost:9090 | POST /login
+[negroni] <span style="color:#3677a9">2018</span>-11-15T20:14:07+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">34</span>.33µs | localhost:9090 | GET /favicon.ico</code></pre></div>
+<hr />
+
+<h1 id="curl-测试">curl 测试</h1>
+
+<p>新开终端：</p>
+
+<p>1.</p>
+
+<p>测试指令:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -v http://localhost:8080</code></pre></div>
+<p>测试结果:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">* Rebuilt URL to: http://localhost:9090/
+*   Trying <span style="color:#3677a9">127</span>.0.0.1...
+* TCP_NODELAY <span style="color:#24909d">set</span>
+* Connected to localhost (<span style="color:#3677a9">127</span>.0.0.1) port <span style="color:#3677a9">9090</span> (<span style="color:#999;font-style:italic">#0)
+</span><span style="color:#999;font-style:italic"></span>&gt; GET / HTTP/1.1
+&gt; Host: localhost:9090
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 <span style="color:#3677a9">200</span> OK
+&lt; Date: Thu, <span style="color:#3677a9">15</span> Nov <span style="color:#3677a9">2018</span> <span style="color:#3677a9">12</span>:23:28 GMT
+&lt; Content-Length: <span style="color:#3677a9">26</span>
+&lt; Content-Type: text/plain; <span style="color:#40ffff">charset</span>=utf-8
+&lt; 
+Welcome to the home page!
+* Connection #0 to host localhost left intact</code></pre></div>
+<p>服务器终端输出:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bash 显示
+</span><span style="color:#999;font-style:italic"></span>[negroni] <span style="color:#3677a9">2018</span>-11-15T20:29:24+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">15</span>.266µs | localhost:9090 | GET /</code></pre></div>
+<p>2.</p>
+
+<p>测试指令：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -v http://localhost:8080</code></pre></div>
+<p>测试结果：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">* Rebuilt URL to: http://localhost:9090/
+*   Trying <span style="color:#3677a9">127</span>.0.0.1...
+* TCP_NODELAY <span style="color:#24909d">set</span>
+* Connected to localhost (<span style="color:#3677a9">127</span>.0.0.1) port <span style="color:#3677a9">9090</span> (<span style="color:#999;font-style:italic">#0)
+</span><span style="color:#999;font-style:italic"></span>&gt; GET / HTTP/1.1
+&gt; Host: localhost:9090
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 <span style="color:#3677a9">200</span> OK
+&lt; Date: Thu, <span style="color:#3677a9">15</span> Nov <span style="color:#3677a9">2018</span> <span style="color:#3677a9">12</span>:23:28 GMT
+&lt; Content-Length: <span style="color:#3677a9">26</span>
+&lt; Content-Type: text/plain; <span style="color:#40ffff">charset</span>=utf-8
+&lt; 
+Welcome to the home page!
+* Connection #0 to host localhost left intact</code></pre></div>
+<p>服务器终端输出：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bash 显示
+</span><span style="color:#999;font-style:italic"></span>[negroni] <span style="color:#3677a9">2018</span>-11-15T20:26:43+08:00 | <span style="color:#3677a9">200</span> |      <span style="color:#3677a9">194</span>.769µs | localhost:9090 | GET /login</code></pre></div>
+<hr />
+
+<h1 id="ab压力测试">ab压力测试</h1>
+
+<h2 id="安装apache2-utils">安装apache2-utils</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install apache2-utils</code></pre></div>
+<h2 id="测试">测试</h2>
+
+<p>1.</p>
+
+<p>测试指令：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ab -n <span style="color:#3677a9">1000</span> -c <span style="color:#3677a9">100</span> http://localhost:9090/</code></pre></div>
+<p>测试结果：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">This is ApacheBench, Version <span style="color:#3677a9">2</span>.3 &lt;<span style="color:#40ffff">$Revision</span>: <span style="color:#3677a9">1807734</span> $&gt;
+Copyright <span style="color:#3677a9">1996</span> Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed <span style="color:#3677a9">100</span> requests
+Completed <span style="color:#3677a9">200</span> requests
+Completed <span style="color:#3677a9">300</span> requests
+Completed <span style="color:#3677a9">400</span> requests
+Completed <span style="color:#3677a9">500</span> requests
+Completed <span style="color:#3677a9">600</span> requests
+Completed <span style="color:#3677a9">700</span> requests
+Completed <span style="color:#3677a9">800</span> requests
+Completed <span style="color:#3677a9">900</span> requests
+Completed <span style="color:#3677a9">1000</span> requests
+Finished <span style="color:#3677a9">1000</span> requests
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            <span style="color:#3677a9">9090</span>
+
+Document Path:          /
+Document Length:        <span style="color:#3677a9">26</span> bytes
+
+Concurrency Level:      <span style="color:#3677a9">100</span>
+Time taken <span style="color:#6ab825;font-weight:bold">for</span> tests:   <span style="color:#3677a9">0</span>.055 seconds
+Complete requests:      <span style="color:#3677a9">1000</span>
+Failed requests:        <span style="color:#3677a9">0</span>
+Total transferred:      <span style="color:#3677a9">143000</span> bytes
+HTML transferred:       <span style="color:#3677a9">26000</span> bytes
+Requests per second:    <span style="color:#3677a9">18199</span>.36 [<span style="color:#999;font-style:italic">#/sec] (mean)
+</span><span style="color:#999;font-style:italic"></span>Time per request:       <span style="color:#3677a9">5</span>.495 [ms] (mean)
+Time per request:       <span style="color:#3677a9">0</span>.055 [ms] (mean, across all concurrent requests)
+Transfer rate:          <span style="color:#3677a9">2541</span>.51 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        <span style="color:#3677a9">0</span>    <span style="color:#3677a9">1</span>   <span style="color:#3677a9">1</span>.8      <span style="color:#3677a9">1</span>       <span style="color:#3677a9">9</span>
+Processing:     <span style="color:#3677a9">0</span>    <span style="color:#3677a9">4</span>   <span style="color:#3677a9">1</span>.9      <span style="color:#3677a9">3</span>      <span style="color:#3677a9">10</span>
+Waiting:        <span style="color:#3677a9">0</span>    <span style="color:#3677a9">3</span>   <span style="color:#3677a9">1</span>.7      <span style="color:#3677a9">3</span>       <span style="color:#3677a9">8</span>
+Total:          <span style="color:#3677a9">1</span>    <span style="color:#3677a9">5</span>   <span style="color:#3677a9">2</span>.9      <span style="color:#3677a9">4</span>      <span style="color:#3677a9">15</span>
+
+Percentage of the requests served within a certain <span style="color:#24909d">time</span> (ms)
+  <span style="color:#3677a9">50</span>%      <span style="color:#3677a9">4</span>
+  <span style="color:#3677a9">66</span>%      <span style="color:#3677a9">5</span>
+  <span style="color:#3677a9">75</span>%      <span style="color:#3677a9">5</span>
+  <span style="color:#3677a9">80</span>%      <span style="color:#3677a9">6</span>
+  <span style="color:#3677a9">90</span>%     <span style="color:#3677a9">11</span>
+  <span style="color:#3677a9">95</span>%     <span style="color:#3677a9">13</span>
+  <span style="color:#3677a9">98</span>%     <span style="color:#3677a9">14</span>
+  <span style="color:#3677a9">99</span>%     <span style="color:#3677a9">14</span>
+ <span style="color:#3677a9">100</span>%     <span style="color:#3677a9">15</span> (longest request)</code></pre></div>
+<p>2.</p>
+
+<p>测试指令：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ab -n <span style="color:#3677a9">1000</span> -c <span style="color:#3677a9">100</span> http://localhost:9090/login</code></pre></div>
+<p>测试结果：</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">This is ApacheBench, Version <span style="color:#3677a9">2</span>.3 &lt;<span style="color:#40ffff">$Revision</span>: <span style="color:#3677a9">1807734</span> $&gt;
+Copyright <span style="color:#3677a9">1996</span> Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed <span style="color:#3677a9">100</span> requests
+Completed <span style="color:#3677a9">200</span> requests
+Completed <span style="color:#3677a9">300</span> requests
+Completed <span style="color:#3677a9">400</span> requests
+Completed <span style="color:#3677a9">500</span> requests
+Completed <span style="color:#3677a9">600</span> requests
+Completed <span style="color:#3677a9">700</span> requests
+Completed <span style="color:#3677a9">800</span> requests
+Completed <span style="color:#3677a9">900</span> requests
+Completed <span style="color:#3677a9">1000</span> requests
+Finished <span style="color:#3677a9">1000</span> requests
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            <span style="color:#3677a9">9090</span>
+
+Document Path:          /login
+Document Length:        <span style="color:#3677a9">253</span> bytes
+
+Concurrency Level:      <span style="color:#3677a9">100</span>
+Time taken <span style="color:#6ab825;font-weight:bold">for</span> tests:   <span style="color:#3677a9">0</span>.073 seconds
+Complete requests:      <span style="color:#3677a9">1000</span>
+Failed requests:        <span style="color:#3677a9">0</span>
+Total transferred:      <span style="color:#3677a9">370000</span> bytes
+HTML transferred:       <span style="color:#3677a9">253000</span> bytes
+Requests per second:    <span style="color:#3677a9">13725</span>.33 [<span style="color:#999;font-style:italic">#/sec] (mean)
+</span><span style="color:#999;font-style:italic"></span>Time per request:       <span style="color:#3677a9">7</span>.286 [ms] (mean)
+Time per request:       <span style="color:#3677a9">0</span>.073 [ms] (mean, across all concurrent requests)
+Transfer rate:          <span style="color:#3677a9">4959</span>.35 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        <span style="color:#3677a9">0</span>    <span style="color:#3677a9">1</span>   <span style="color:#3677a9">0</span>.5      <span style="color:#3677a9">0</span>       <span style="color:#3677a9">3</span>
+Processing:     <span style="color:#3677a9">0</span>    <span style="color:#3677a9">6</span>   <span style="color:#3677a9">3</span>.3      <span style="color:#3677a9">6</span>      <span style="color:#3677a9">18</span>
+Waiting:        <span style="color:#3677a9">0</span>    <span style="color:#3677a9">6</span>   <span style="color:#3677a9">3</span>.4      <span style="color:#3677a9">6</span>      <span style="color:#3677a9">15</span>
+Total:          <span style="color:#3677a9">0</span>    <span style="color:#3677a9">7</span>   <span style="color:#3677a9">3</span>.2      <span style="color:#3677a9">7</span>      <span style="color:#3677a9">19</span>
+WARNING: The median and mean <span style="color:#6ab825;font-weight:bold">for</span> the initial connection <span style="color:#24909d">time</span> are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain <span style="color:#24909d">time</span> (ms)
+  <span style="color:#3677a9">50</span>%      <span style="color:#3677a9">7</span>
+  <span style="color:#3677a9">66</span>%      <span style="color:#3677a9">9</span>
+  <span style="color:#3677a9">75</span>%      <span style="color:#3677a9">9</span>
+  <span style="color:#3677a9">80</span>%     <span style="color:#3677a9">10</span>
+  <span style="color:#3677a9">90</span>%     <span style="color:#3677a9">12</span>
+  <span style="color:#3677a9">95</span>%     <span style="color:#3677a9">13</span>
+  <span style="color:#3677a9">98</span>%     <span style="color:#3677a9">13</span>
+  <span style="color:#3677a9">99</span>%     <span style="color:#3677a9">14</span>
+ <span style="color:#3677a9">100</span>%     <span style="color:#3677a9">19</span> (longest request)</code></pre></div>
+<h2 id="参数解释">参数解释</h2>
+
+<h4 id="命令参数">命令参数</h4>
+
+<blockquote>
+<p>-n 执行的请求数量</p>
+
+<p>-c 并发请求个数</p>
+
+<p>-t 测试所进行的最大秒数</p>
+
+<p>-p 包含了需要POST的数据的文件</p>
+
+<p>-T POST数据所使用的Content-type头信息</p>
+
+<p>-k 启用HTTP KeepAlive功能，即在一个HTTP会话中执行多个请求，默认时，不启用KeepAlive功能</p>
+</blockquote>
+
+<h4 id="结果参数">结果参数</h4>
+
+<blockquote>
+<p>Server Software:      服务器软件版本</p>
+
+<p>Server Hostname:      请求的URL</p>
+
+<p>Server Port:                  请求的端口号</p>
+
+<p>Document Path:            请求的服务器的路径</p>
+
+<p>Document Length:          页面长度   单位是字节</p>
+
+<p>Concurrency Level:                并发数</p>
+
+<p>Time taken for tests:         一共使用了的时间</p>
+
+<p>Complete requests:            总共请求的次数</p>
+
+<p>Failed requests:              失败的请求次数</p>
+
+<p>Total transferred:        总共传输的字节数  http头信息</p>
+
+<p>HTML transferred:         实际页面传递的字节数</p>
+
+<p>Requests per second:      每秒多少个请求</p>
+
+<p>Time per request:         平均每个用户等待多长时间</p>
+
+<p>Time per request:         服务器平均用多长时间处理</p>
+
+<p>Transfer rate:            传输速率</p>
+
+<p>Connection Times:         传输时间统计</p>
+
+<p>Percentage of the requests served within a certain time:<br />
+确定时间内服务请求占总数的百分比</p>
+</blockquote>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97">服务计算</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97">服务计算</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
