@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode 54 Spiral Matrix - SYSUcarey</title>
+<meta property="og:title" content="Leetcode 54 Spiral Matrix - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode 54 Spiral Matrix</h1>
+    
+    <span class="article-date">2018-11-18</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+<li><a href="#%E6%80%9D%E8%80%83">思考</a></li>
+<li><a href="#%E8%A7%A3%E6%B3%95">解法</a>
+
+<ul>
+<li><a href="#solution"><strong>Solution</strong></a></li>
+<li><a href="#code(c++)"><strong>code(c++)</strong></a></li>
+</ul></li>
+</ul>
+
+<p>Created by <a href="https://github.com/ekalinin/github-markdown-toc.go">gh-md-toc</a></p>
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/spiral-matrix/description/">Leetcode 54 Spiral Matrix</a></p>
+
+<ul>
+<li>难度：</li>
+</ul>
+
+<p><strong>Difficulty: Medium</strong></p>
+
+<p><strong>Acceptance: 28.7%</strong></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given a matrix of <em>m</em> x <em>n</em> elements (<em>m</em> rows, <em>n</em> columns), return all elements of the matrix in spiral order.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>  Input:
+  [
+   [ 1, 2, 3 ],
+   [ 4, 5, 6 ],
+   [ 7, 8, 9 ]
+  ]
+  Output: [1,2,3,6,9,8,7,4,5]
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>  Input:
+  [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9,10,11,12]
+  ]
+  Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+</code></pre>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<p><strong>分析1：</strong></p>
+
+<ul>
+<li>这道题让我们从外到内，顺时针遍历一个二维数组，就像螺旋一样从外走到里，直到剩下单行或者单列（因为这可以不是一个正方形，螺旋到最后不一定是一个点）。</li>
+<li>那么我们可以考虑一层一层地去遍历，先把最外面那一层的数字给遍历掉，去掉这些数字后，我们发现剩下的是一个更小的长方形，我们可以一样的方法去解决这个更小的长方形。</li>
+<li>那么对于一个m*n的数组矩阵，如果以左上角作为起点的话，遍历矩阵的最外层时，我们可以容易地发现：
+
+<ul>
+<li>先是向右遍历n-1步，然后向下遍历m-1步，然后向左遍历n-1步，然后向上遍历m-2步，回到下一层起点的左边。</li>
+<li>如果m=1或者n=1的话，就相当于只有一行或一列，这样就只存在一次向右或向下的遍历，遍历n步或m步。</li>
+</ul></li>
+<li>为了更好地进行下一层的遍历，我们不如将起点设置为左上角的左边一格，那样每次遍历完最外层相当于又回到了下一次遍历的起点。这样的话，就是向右遍历n步，向下m-1步，向左n-1步，向上遍历m-2步。</li>
+</ul>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<h3 id="solution"><strong>Solution</strong></h3>
+
+<ul>
+<li>根据分析1中的思路，获取矩阵的 row 和 col，设置起点 (x,y) = (0, -1)</li>
+<li>当 <code>row &gt; 0 &amp;&amp; col &gt; 0</code>时，我们进行循环最外层的遍历：
+
+<ul>
+<li>从起点往右移动 col 步；</li>
+<li>往下移动 row -1 步（如果 row = 1，只有一行，就相当于没移动）</li>
+<li>如果 row &gt; 1，多于一行，往左移动 col - 1 步</li>
+<li>如果 col &gt; 1，多于一列，往上移动 row-2 步</li>
+</ul></li>
+<li>遍历完最外层的循环，<code>row -= 2，col -= 2</code>。矩阵的宽高变化了，进行下一层循环。</li>
+<li>根据上述的算法，算法复杂度为<strong>O(m·n)</strong>。</li>
+</ul>
+
+<h3 id="code-c"><strong>code(c++)</strong></h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;vector&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#6ab825;font-weight:bold">namespace</span> std;
+
+<span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt; spiralOrder(vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt;&amp; matrix) {
+        vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt; answer;
+        <span style="color:#999;font-style:italic">// empty array
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">int</span> row = matrix.size();
+        <span style="color:#6ab825;font-weight:bold">if</span>(row == <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">return</span> answer;
+        <span style="color:#6ab825;font-weight:bold">int</span> col = matrix[<span style="color:#3677a9">0</span>].size();
+        <span style="color:#6ab825;font-weight:bold">if</span>(col == <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">return</span> answer;
+
+        <span style="color:#999;font-style:italic">// (x,y) is on the left side of the start point
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">int</span> x = <span style="color:#3677a9">0</span>, y = -<span style="color:#3677a9">1</span>;
+        <span style="color:#6ab825;font-weight:bold">while</span>(row &gt; <span style="color:#3677a9">0</span> &amp;&amp; col &gt; <span style="color:#3677a9">0</span>) {
+            <span style="color:#999;font-style:italic">// move right col times
+</span><span style="color:#999;font-style:italic"></span>            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">1</span>; i &lt;= col; i++) {
+                y++;
+                answer.push_back(matrix[x][y]);
+            }
+            
+            <span style="color:#999;font-style:italic">// move down (row-1) times
+</span><span style="color:#999;font-style:italic"></span>            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">1</span>; i &lt;= row-<span style="color:#3677a9">1</span>; i++) {
+                x++;
+                answer.push_back(matrix[x][y]);
+            }
+
+            <span style="color:#999;font-style:italic">// move left (col-1) times if row &gt; 1
+</span><span style="color:#999;font-style:italic"></span>            <span style="color:#6ab825;font-weight:bold">if</span>(row &gt; <span style="color:#3677a9">1</span>) {
+                <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">1</span>; i &lt;= col-<span style="color:#3677a9">1</span>; i++) {
+                    y--;
+                    answer.push_back(matrix[x][y]);
+                }
+            }
+
+            <span style="color:#999;font-style:italic">//move up (row-2) times if col &gt; 1
+</span><span style="color:#999;font-style:italic"></span>            <span style="color:#6ab825;font-weight:bold">if</span>(col &gt; <span style="color:#3677a9">1</span>) {
+                <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">1</span>; i &lt;= row-<span style="color:#3677a9">2</span>; i++) {
+                    x--;
+                    answer.push_back(matrix[x][y]);
+                }
+            }
+            row -= <span style="color:#3677a9">2</span>;
+            col -= <span style="color:#3677a9">2</span>;
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> answer;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

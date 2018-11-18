@@ -6,9 +6,26 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Nov 2018 20:30:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 22:50:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Leetcode 54 Spiral Matrix</title>
+      <link>https://sysucarey.github.io/leetcode-54-spiral-matrix/</link>
+      <pubDate>Sun, 18 Nov 2018 22:50:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode-54-spiral-matrix/</guid>
+      <description>Table of Contents  题目 思考 解法  Solution code(c++)   Created by gh-md-toc
+题目  链接：  Leetcode 54 Spiral Matrix
+ 难度：  Difficulty: Medium
+Acceptance: 28.7%
+ 概述：  Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+Example 1:
+ Input: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ] Output: [1,2,3,6,9,8,7,4,5]  Example 2:</description>
+    </item>
     
     
     
@@ -149,21 +166,6 @@ geth --datadir data0 --networkid 1997 console –datadir选项指定使用data0�
 You need to find the shortest such subarray and output its length.
 Example 1:
  Input: [2, 6, 4, 8, 10, 9, 15] Output: 5 Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Leetcode31 Next Permutation</title>
-      <link>https://sysucarey.github.io/leetcode31-next-permutation/</link>
-      <pubDate>Thu, 25 Oct 2018 20:30:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode31-next-permutation/</guid>
-      <description>题目  链接：  Leetcode31 Next Permutation
- 概述：  Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
-If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
-The replacement must be in-place and use only constant extra memory.
-Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</description>
     </item>
     
     

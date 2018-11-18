@@ -6,10 +6,25 @@
     <description>Recent content in Leetcode on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Nov 2018 20:30:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 22:50:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 54 Spiral Matrix</title>
+      <link>https://sysucarey.github.io/leetcode-54-spiral-matrix/</link>
+      <pubDate>Sun, 18 Nov 2018 22:50:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode-54-spiral-matrix/</guid>
+      <description>Table of Contents  题目 思考 解法  Solution code(c++)   Created by gh-md-toc
+题目  链接：  Leetcode 54 Spiral Matrix
+ 难度：  Difficulty: Medium
+Acceptance: 28.7%
+ 概述：  Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+Example 1:
+ Input: [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ] Output: [1,2,3,6,9,8,7,4,5]  Example 2:</description>
+    </item>
     
     <item>
       <title>Leetcode84 Largest Rectangle in Histogram</title>
@@ -131,18 +146,6 @@ Note:
 The solution set must not contain duplicate triplets.
 Example:
  Given array nums = [-1, 0, 1, 2, -1, -4], A solution set is: [ [-1, 0, 1], [-1, -1, 2] ]  思考分析 分析一：</description>
-    </item>
-    
-    <item>
-      <title>Leetcode11: Container With Most Water</title>
-      <link>https://sysucarey.github.io/leetcode11-container-with-most-water/</link>
-      <pubDate>Sun, 23 Sep 2018 22:50:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode11-container-with-most-water/</guid>
-      <description>题目论述  链接：Leetcode11: Container With Most Water
- 概述：
-  Given n non-negative integers a1, a2, &amp;hellip;, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
-Note: You may not slant the container and n is at least 2.</description>
     </item>
     
   </channel>
