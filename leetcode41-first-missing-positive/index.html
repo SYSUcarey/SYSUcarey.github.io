@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode41 First Missing Positive - SYSUcarey</title>
+<meta property="og:title" content="Leetcode41 First Missing Positive - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode41 First Missing Positive</h1>
+    
+    <span class="article-date">2018-11-25</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+<li><a href="#%E6%80%9D%E8%80%83">思考</a></li>
+<li><a href="#%E8%A7%A3%E6%B3%95">解法</a>
+
+<ul>
+<li><a href="#solution"><strong>Solution</strong></a></li>
+<li><a href="#code-c"><strong>code c++</strong></a></li>
+</ul></li>
+</ul>
+
+<p>Created by <a href="https://github.com/ekalinin/github-markdown-toc.go">gh-md-toc</a></p>
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/first-missing-positive/description/">Leetcode41 First Missing Positive</a></p>
+
+<ul>
+<li>难度：</li>
+</ul>
+
+<p><strong>Difficulty: Hard</strong></p>
+
+<p><strong>Acceptance: 28.7%</strong></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given an unsorted integer array, find the smallest missing positive integer.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>  Input: [1,2,0]
+  Output: 3
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>  Input: [3,4,-1,1]
+  Output: 2
+</code></pre>
+
+<p><strong>Example 3:</strong></p>
+
+<pre><code>  Input: [7,8,9,11,12]
+  Output: 1
+</code></pre>
+
+<p><strong>Note:</strong></p>
+
+<p>Your algorithm should run in <em>O</em>(<em>n</em>) time and uses constant extra space.</p>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<p><strong>分析1：</strong></p>
+
+<ul>
+<li>这道题描述很简单，但其实细想起来并不简单。特别是对于时间复杂度 O(n) 和空间复杂度 O(1) 的限制，使得这道题的难度更高吧。</li>
+<li>因为时间复杂度的限制，要基于比较对数组排序是不可能的了。不处理数组直接用变量去记录最小正数也不行，例如说数组<code>[2，3，4，1]</code>，只记录最小可用正数的话，一开始是记录1，这样遍历下去到第四个数1时，就会会导致不知道下一个正数是多少。但如果记录下别的信息，但显然困扰到我们的始终会是不知道下一个可用的最小正数是多少。如果非得强行记录下所有信息，显然又超过了 O(1) 的空间复杂度。这样想下去估计是行不通的。</li>
+<li>我们注意到这样一个事实，对于一个长度为n的数组，这道题的答案只有可能是 <code>[1,n+1]</code>，毕竟求的是最小的正数，若数组恰好是<code>{1,2,3,···,n}</code>，那么最小正数就肯定是n+1；若不是，那么最小正数必定是<code>{1，2，3，···，n}</code>在数组中没有出现的最小的数。那么或许我们可以改变思路，不是遍历数组，而是遍历从1到n，判断这个数是否出现在数组中即可。</li>
+<li>那么问题又来了，判断数是否在数组中也需要 O(n) 的复杂度，这样时间复杂度就又超了，因此我们不能直接进行遍历。</li>
+<li>我们可以参考一下桶排序，我们生成n个桶，桶号1~n，规定桶k只能放数字k，k=1,2,3,···,n。先遍历数组，将对应的数字放进对应的桶，非正数或者大于n的就不用处理了。这样遍历完后，我们再从桶1遍历到桶n，如果桶k是空的，代表着k没有出现在数组中，那么k就是最小正数。如果桶都是满的，说明数组恰好是<code>{1,2,3,···,n}</code>，最小正数为n+1。这样问题迎刃而解。</li>
+<li>而受限于空间复杂度 O(1) 的限制，我们不用真的去生成n个桶，我们直接把数组当作n个桶，交换数组中的数即可。</li>
+</ul>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<h3 id="solution"><strong>Solution</strong></h3>
+
+<ul>
+<li><p>根据分析1中的思路，获得数组的长度size。</p></li>
+
+<li><p>从头到尾遍历数组，FOR i FROM 0 TO size-1，如果：</p>
+
+<ul>
+<li>数字非正数，也即<code>nums[i]&lt;0</code></li>
+<li>数字超过size，也即<code>nums[i]&gt;size</code></li>
+<li>数字正好就在对应(桶内)位置上，也即 <code>nums[i]==i+1</code></li>
+<li>要替换的(桶)位置上已经有一个对应数字了，也即<code>nums[i]==nums[nums[i]-1]</code>。(这是为了避免输入数组为<code>[1,1]</code>进入死循环的情况)</li>
+</ul>
+
+<p>那么，直接跳过这一次循环</p></li>
+
+<li><p>否则，我们将<code>nums[i]</code>和<code>nums[nums[i]-1]</code>替换。继续从 i 这个位置遍历数组。</p></li>
+
+<li><p>遍历完数组后，再次遍历 FOR i FROM 0 TO size-1，如果对应(桶内)位置上是对应的数字，也即<code>nums[i]==i+1</code>，那么就继续遍历。若不是对应数字，也即<code>nums[i]!=i+1</code>，那么直接返回桶号，也即 i+1 。若所有位置都是对应数字，那么返回 size+1 。</p></li>
+
+<li><p>根据上述的算法，算法时间复杂度为<strong>O(n)</strong>，空间复杂度 <strong>O(1)</strong> 。</p></li>
+</ul>
+
+<h3 id="code-c"><strong>code c++</strong></h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;vector&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;algorithm&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#6ab825;font-weight:bold">namespace</span> std;
+
+<span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    <span style="color:#6ab825;font-weight:bold">int</span> firstMissingPositive(vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&amp; nums) {
+        <span style="color:#6ab825;font-weight:bold">int</span> size = nums.size();
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; size; i++) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(nums[i] &lt;= <span style="color:#3677a9">0</span> || nums[i] &gt; size || nums[i] == i+<span style="color:#3677a9">1</span> || nums[i] == nums[nums[i]-<span style="color:#3677a9">1</span>]) <span style="color:#6ab825;font-weight:bold">continue</span>;
+            swap(nums[i], nums[nums[i]-<span style="color:#3677a9">1</span>]);
+            i--;
+        }
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; size; i++) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(nums[i] != i+<span style="color:#3677a9">1</span>) <span style="color:#6ab825;font-weight:bold">return</span> i+<span style="color:#3677a9">1</span>;
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> size+<span style="color:#3677a9">1</span>;
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

@@ -6,9 +6,28 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Nov 2018 22:50:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 11:50:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Leetcode41 First Missing Positive</title>
+      <link>https://sysucarey.github.io/leetcode41-first-missing-positive/</link>
+      <pubDate>Sun, 25 Nov 2018 11:50:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode41-first-missing-positive/</guid>
+      <description>Table of Contents  题目 思考 解法  Solution code c++   Created by gh-md-toc
+题目  链接：  Leetcode41 First Missing Positive
+ 难度：  Difficulty: Hard
+Acceptance: 28.7%
+ 概述：  Given an unsorted integer array, find the smallest missing positive integer.
+Example 1:
+ Input: [1,2,0] Output: 3  Example 2:
+ Input: [3,4,-1,1] Output: 2  Example 3:
+ Input: [7,8,9,11,12] Output: 1  Note:</description>
+    </item>
     
     
     
@@ -151,21 +170,6 @@ geth --datadir data0 --networkid 1997 console –datadir选项指定使用data0�
       <guid>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</guid>
       <description> [TOC]
 1.Git出现Fatal: TaskCanceledException encountered.的解决方法  设置全局配置helper为manager：  git config –global credential.helper manager  </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Leetcode581 Shortest Unsorted Continuous Subarray</title>
-      <link>https://sysucarey.github.io/leetcode581-shortest-unsorted-continuous-subarray/</link>
-      <pubDate>Fri, 26 Oct 2018 14:49:15 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode581-shortest-unsorted-continuous-subarray/</guid>
-      <description>题目  链接：  Leetcode581 Shortest Unsorted Continuous Subarray
- 概述：  Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.
-You need to find the shortest such subarray and output its length.
-Example 1:
- Input: [2, 6, 4, 8, 10, 9, 15] Output: 5 Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</description>
     </item>
     
     
