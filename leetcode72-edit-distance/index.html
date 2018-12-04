@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode72 Edit Distance - SYSUcarey</title>
+<meta property="og:title" content="Leetcode72 Edit Distance - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode72 Edit Distance</h1>
+    
+    <span class="article-date">2018-12-02</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ul>
+<li><p><a href="#%E9%A2%98%E7%9B%AE">题目</a></p></li>
+
+<li><p><a href="#%E6%80%9D%E8%80%83">思考</a></p></li>
+
+<li><p><a href="#%E8%A7%A3%E6%B3%95">解法</a></p></li>
+</ul>
+
+<p>Created by <a href="https://github.com/ekalinin/github-markdown-toc.go">gh-md-toc</a></p>
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/edit-distance/description/">Leetcode72 Edit Distance</a></p>
+
+<ul>
+<li>难度：</li>
+</ul>
+
+<p><strong>Difficulty: Hard</strong></p>
+
+<p><strong>Acceptance: 35.1%</strong></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given two words <em>word1</em> and <em>word2</em>, find the minimum number of operations required to convert <em>word1</em> to <em>word2</em>.</p>
+
+<p>You have the following 3 operations permitted on a word:</p>
+
+<ol>
+<li>Insert a character</li>
+<li>Delete a character</li>
+<li>Replace a character</li>
+</ol>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>  Input: word1 = &quot;horse&quot;, word2 = &quot;ros&quot;
+  Output: 3
+  Explanation: 
+  horse -&gt; rorse (replace 'h' with 'r')
+  rorse -&gt; rose (remove 'r')
+  rose -&gt; ros (remove 'e')
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>  Input: word1 = &quot;intention&quot;, word2 = &quot;execution&quot;
+  Output: 5
+  Explanation: 
+  intention -&gt; inention (remove 't')
+  inention -&gt; enention (replace 'i' with 'e')
+  enention -&gt; exention (replace 'n' with 'x')
+  exention -&gt; exection (replace 'n' with 'c')
+  exection -&gt; execution (insert 'u')
+</code></pre>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<ul>
+<li><p>这道题因为是在分组动态规划下找的，所以相当于作弊给了自己一个提示，首先我们要设计动态规划下的状态，然后再考虑状态转移方程。</p></li>
+
+<li><p>参考课堂上讲的几道与字符串处理动态规划相关的习题的解决思路，对字符串状态的定义，<code>d[i][j]</code> 应该表示为将 <code>word1</code> 长度为 <code>i</code> 的前缀子串 个字符转换成 <code>word2</code> 长度为 <code>j</code> 的前缀子串所需要的最小操作数。那么状态总共有 <code>(m+1)·(n+1)</code>个，其中 <code>m, n</code> 是两个输入字符串的长度，我们需要的解为 <code>d[m][n]</code> 。</p></li>
+
+<li><p>接下来考虑动态规划的状态转移方程，我们得从题目中给出的三种字符串操作方法入手进行分析：</p>
+
+<ul>
+<li><code>replace</code> 替换操作：</li>
+</ul>
+
+<p>考虑<code>d[i][j]</code> 和 <code>d[i-1][j-1]</code> 的关系，如果：</p>
+
+<ul>
+<li><code>str1[i-1] == str2[j-1]</code> 也即最后一个字符相等，不用操作就可以将 <code>d[i-1][j-1]</code> 状态转换成 <code>d[i][j]</code>状态。</li>
+
+<li><p><code>str1[i-1] != str2[j-1]</code>也即最后一个字符不相等，需要一个替换操作就可以将 <code>d[i-1][j-1]</code>状态转换成<code>d[i][j]</code>状态。</p></li>
+
+<li><p><code>insert</code> 添加操作：</p></li>
+</ul>
+
+<p>考虑 <code>d[i][j]</code> 和 <code>d[i][j-1]</code> 的关系，显然我们只用一个添加操作，在最后添加 <code>str2[j-1]</code> 字符就可以将 <code>d[i][j-1]</code> 状态转换成 <code>d[i][j]</code> 状态。</p>
+
+<ul>
+<li><code>remove</code> 删除操作：</li>
+</ul>
+
+<p>考虑 <code>d[i][j]</code> 和 <code>d[i-1][j]</code> 的关系。显然，我们可以一开始将 <code>str1[i-1]</code> 给删除，那么 <code>str1</code> 就只有 <code>i-1</code> 的长度，这时候我们就可以把状态 <code>d[i][j]</code> 的求解转换成状态 <code>d[i-1][j]</code>。</p></li>
+
+<li><p>状态转移方程：</p></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20181204081620.png" alt="" /></p>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<p>c++ Solution 4ms beats 100%</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    <span style="color:#6ab825;font-weight:bold">int</span> minDistance(string word1, string word2) {
+        <span style="color:#6ab825;font-weight:bold">int</span> size1 = word1.size();
+        <span style="color:#6ab825;font-weight:bold">int</span> size2 = word2.size();
+        <span style="color:#6ab825;font-weight:bold">if</span>(size1 &lt;= <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">return</span> size2;
+        <span style="color:#6ab825;font-weight:bold">if</span>(size2 &lt;= <span style="color:#3677a9">0</span>) <span style="color:#6ab825;font-weight:bold">return</span> size1;
+        <span style="color:#6ab825;font-weight:bold">int</span> d[size1+<span style="color:#3677a9">1</span>][size2+<span style="color:#3677a9">1</span>];
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt;= size1; i++) {
+            d[i][<span style="color:#3677a9">0</span>] = i;
+        }
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> j = <span style="color:#3677a9">0</span>; j &lt;= size2; j++) {
+            d[<span style="color:#3677a9">0</span>][j] = j;
+        }
+        <span style="color:#6ab825;font-weight:bold">int</span> min1, min2, min3;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">1</span>; i &lt;= size1; i++) {
+            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> j = <span style="color:#3677a9">1</span>; j &lt;= size2; j++) {
+                <span style="color:#999;font-style:italic">// replace operation
+</span><span style="color:#999;font-style:italic"></span>                <span style="color:#6ab825;font-weight:bold">if</span>(word1[i-<span style="color:#3677a9">1</span>] == word2[j-<span style="color:#3677a9">1</span>]) min1 = d[i-<span style="color:#3677a9">1</span>][j-<span style="color:#3677a9">1</span>];
+                <span style="color:#6ab825;font-weight:bold">else</span> min1 = d[i-<span style="color:#3677a9">1</span>][j-<span style="color:#3677a9">1</span>] + <span style="color:#3677a9">1</span>;
+                <span style="color:#999;font-style:italic">// insert operation
+</span><span style="color:#999;font-style:italic"></span>                min2 = d[i][j-<span style="color:#3677a9">1</span>] + <span style="color:#3677a9">1</span>;
+                <span style="color:#999;font-style:italic">// remove operation
+</span><span style="color:#999;font-style:italic"></span>                min3 = d[i-<span style="color:#3677a9">1</span>][j] + <span style="color:#3677a9">1</span>;
+                d[i][j] = min(min1, min2);
+                d[i][j] = min(d[i][j], min3);
+            }
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> d[size1][size2];
+    }
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

@@ -6,9 +6,29 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Nov 2018 11:50:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 23:50:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Leetcode72 Edit Distance</title>
+      <link>https://sysucarey.github.io/leetcode72-edit-distance/</link>
+      <pubDate>Sun, 02 Dec 2018 23:50:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode72-edit-distance/</guid>
+      <description>Table of Contents  题目
+ 思考
+ 解法
+  Created by gh-md-toc
+题目  链接：  Leetcode72 Edit Distance
+ 难度：  Difficulty: Hard
+Acceptance: 35.1%
+ 概述：  Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.
+You have the following 3 operations permitted on a word:
+ Insert a character Delete a character Replace a character  Example 1:</description>
+    </item>
     
     
     
@@ -158,18 +178,6 @@ geth --datadir data0 --networkid 1997 console –datadir选项指定使用data0�
       <description>中山大学数据科学与计算机学院本科生实验报告 （2018年秋季学期）    课程名称 手机平台应用开发 任课老师 郑贵锋     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/10/30 完成日期 2018/10/30    一、实验题目 AppWidget 使用
 二、实验目的  复习 Broadcast 编程基础。 复习动态注册 Broadcast 和静态注册 Broadcast 。 掌握 AppWidget 编程基础。  三、实现内容 在第七周任务的基础上，实现静态广播、动态广播两种改变widget内容的方法。
 要求  widget初始情况如下：   点击widget可以启动应用，并在widget随机推荐一个食品。   点击widget跳转到所推荐食品的详情界面。   点击收藏图标，widget相应更新。   点击widget跳转到收藏列表。   实现方式要求:启动时的widget更新通过静态广播实现，点击收藏图标时的widget更新通过动态广播实现。  验收内容  布局显示是否正常。 静态广播：启动应用Widget是否有随机推荐食品。 动态广播：点击收藏图标后，Widget是否提示食品已加入收藏列表。 点击widget是否正确跳到对应的界面。 代码+实验报告（先在实验课上检查，检查后再pr）  四、实验结果 1.</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Git报错处理总结</title>
-      <link>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Fri, 26 Oct 2018 15:00:00 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/git%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</guid>
-      <description> [TOC]
-1.Git出现Fatal: TaskCanceledException encountered.的解决方法  设置全局配置helper为manager：  git config –global credential.helper manager  </description>
     </item>
     
     
