@@ -6,10 +6,28 @@
     <description>Recent content in Leetcode on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Dec 2018 23:50:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Dec 2018 16:00:53 +0800</lastBuildDate>
     
 	<atom:link href="https://sysucarey.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode943 Find the Shortest Superstring</title>
+      <link>https://sysucarey.github.io/leetcode943-find-the-shortest-superstring/</link>
+      <pubDate>Sun, 09 Dec 2018 16:00:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/leetcode943-find-the-shortest-superstring/</guid>
+      <description>Table of Contents  题目
+ 思考
+ 解法
+  Created by gh-md-toc
+题目  链接：  Leetcode943 Find the Shortest Superstring
+ 难度：  Difficulty: Hard
+Acceptance: 29.1%
+ 概述：  Given an array A of strings, find any smallest string that contains each string in A as a substring.
+We may assume that no string in A is substring of another string in A.
+Example 1:</description>
+    </item>
     
     <item>
       <title>Leetcode72 Edit Distance</title>
@@ -140,18 +158,6 @@ Example 1:
  Input: [[1,4],[4,5]] Output: [[1,5]] Explanation: Intervals [1,4] and [4,5] are considerred overlapping.  思考 分析一：
  合并区间的操作在我们思考中是比较简单的，首先的第一步应该是排序操作，将区间的最小值为Key进行从小到大排序。然后就是从数组第一个区间开始判断到最后一个区间。具体对于自定义结构体的sort数组操作，类内和类外的区别等细节，参考博客。 如果前一个区间的最大值比后一个区间的最小值小，那么没有区间合并操作；如果前一个区间的最大值比后一个区间的最小值大，但比最大值小，那么区间合并成[前一个区间的最小值，后一个区间的最大值]；如果前一个区间的最大值比后一个区间的最大值都大，相当于后一个区间没有用，直接删去。 这样我们就可以得到Solution1，排序复杂度为O(nlogn)，一个for循环，O(n)。一开始我以为算法复杂度是O(nlogn)，但后来我发现错了，因为在数组中删去一个元素erase操作的复杂度为O(n)，所以总复杂度应该是O(n^2)，这样我们非但没有降低到我们想要的复杂度，而且还调用了很多erase操作，还有一个sort操作，还有数组的克隆操作，这样还是蛮慢的，可以预见到算法还有优化的空间。  分析二：
  我们考虑优化分析一，造成Solution1中复杂度升到O(n^2)的原因在于for循环中进行了删除元素的操作。那么我们考虑是否可以先判断完，再添加进answer数组，而不是一开始先复制后删除。 基于这样的考虑，我们可以先把intervals数组排序，然后先比较完是否需要进行合并区间，如果是需要合并的话，因为intervals已经基于区间start值排序了，那么也就是说要添加的新区间的start一定比answer中最后一个元素区间的start值要大，那么我们只需要修改answer中最后一个元素区间的end值；不需要合并的话，就直接把新区间添加进answer数组中即可。 这样我们就可以得到Solution2，复杂度为O(nlogn)。  解法 Solution1：</description>
-    </item>
-    
-    <item>
-      <title>Leetcode74 Search a 2D Matrix</title>
-      <link>https://sysucarey.github.io/leetcode74-search-a-2d-matrix/</link>
-      <pubDate>Thu, 04 Oct 2018 21:22:32 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/leetcode74-search-a-2d-matrix/</guid>
-      <description>题目论述  链接：  Leetcode74 Search a 2D Matrix
- 概述：  Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
- Integers in each row are sorted from left to right. The first integer of each row is greater than the last integer of the previous row.  Example 1:
- Input: matrix = [ [1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50] ] target = 3 Output: true  Example 2:</description>
     </item>
     
   </channel>

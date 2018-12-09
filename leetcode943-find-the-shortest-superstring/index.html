@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Leetcode943 Find the Shortest Superstring - SYSUcarey</title>
+<meta property="og:title" content="Leetcode943 Find the Shortest Superstring - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Leetcode943 Find the Shortest Superstring</h1>
+    
+    <span class="article-date">2018-12-09</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ul>
+<li><p><a href="#%E9%A2%98%E7%9B%AE">题目</a></p></li>
+
+<li><p><a href="#%E6%80%9D%E8%80%83">思考</a></p></li>
+
+<li><p><a href="#%E8%A7%A3%E6%B3%95">解法</a></p></li>
+</ul>
+
+<p>Created by <a href="https://github.com/ekalinin/github-markdown-toc.go">gh-md-toc</a></p>
+
+<hr />
+
+<h2 id="题目">题目</h2>
+
+<ul>
+<li>链接：</li>
+</ul>
+
+<p><a href="https://leetcode.com/problems/find-the-shortest-superstring/description/">Leetcode943 Find the Shortest Superstring</a></p>
+
+<ul>
+<li>难度：</li>
+</ul>
+
+<p><strong>Difficulty: Hard</strong></p>
+
+<p><strong>Acceptance: 29.1%</strong></p>
+
+<ul>
+<li>概述：</li>
+</ul>
+
+<p>Given an array A of strings, find any smallest string that contains each string in <code>A</code> as a substring.</p>
+
+<p>We may assume that no string in <code>A</code> is substring of another string in <code>A</code>.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre><code>  Input: [&quot;alex&quot;,&quot;loves&quot;,&quot;leetcode&quot;]
+  Output: &quot;alexlovesleetcode&quot;
+  Explanation: All permutations of &quot;alex&quot;,&quot;loves&quot;,&quot;leetcode&quot; would also be accepted.
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>  Input: [&quot;catg&quot;,&quot;ctaagt&quot;,&quot;gcta&quot;,&quot;ttca&quot;,&quot;atgcatc&quot;]
+  Output: &quot;gctaagttcatgcatc&quot;
+</code></pre>
+
+<p><strong>Note:</strong></p>
+
+<ol>
+<li><code>1 &lt;= A.length &lt;= 12</code></li>
+<li><code>1 &lt;= A[i].length &lt;= 20</code></li>
+</ol>
+
+<hr />
+
+<h2 id="思考">思考</h2>
+
+<ul>
+<li><p>这道题感觉是一个变相的TSP问题，不过最后不用回到开始的起点，只需要我们遍历完所有的点求最短路。</p></li>
+
+<li><p>那么 A 中的每一个字符串就相当于图中的一个点，i -&gt; j 之间的距离就是将字符串word[j] 添加到 word[i] 后增加的长度。那么这道题绘制的图是一个有向完全图，不限制起点和终点求解一个TSP问题，将图中所有的点遍历使得走的距离最短的路径就是解。</p></li>
+
+<li><p>我们首先求出任意两点，点 i 到 点 j 的距离。例如说 <code>gcta</code> -&gt; <code>ctaagt</code> ，我们计算 <code>gcta</code> 的字符串尾 和 <code>ctaagt</code> 的字符串头最大有多少个重叠的元素，这里<code>cta</code> 是重叠的最长串。那么最大重叠长度为3，也就是说定义的距离 <code>gcta</code> -&gt; <code>ctaagt</code> 为 <code>len(&quot;ctaagt&quot;)-3 = 6-3 = 3</code> 。注意的是点 i 到 点 j 的距离一般是不相同的，这是一个有向图。另外由于每个点只到一次，点 i 到其自身的距离我们不定义，为了后面循环遍历方便，我们设置为21，大于任意一个字符串的长度。</p></li>
+
+<li><p>接着我们用 dp 算法去解决这个 TSP 问题。因为还要记录路径，我们定义两个数组。</p></li>
+</ul>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; dp(<span style="color:#3677a9">1</span> &lt;&lt; n, vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;(n, <span style="color:#3677a9">20</span>*<span style="color:#3677a9">12</span>+<span style="color:#3677a9">1</span>));
+  vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; praent(<span style="color:#3677a9">1</span> &lt;&lt; n, vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;(n, -<span style="color:#3677a9">1</span>));
+</code></pre></div>
+<p>dp数组表示动态规划里的状态， <code>dp[s][i]</code> ，表示遍历完 s 中所有节点的，且以 i 节点作为结束的最短路径长度，其中 s 是一个 32-bit 二进制表示数，用来表示节点集合。例如说 <code>dp[1031][2]</code> ，<code>s = 1031 = 1024+4+2+1 = 0x10000000111</code>，表示节点集合 <code>{0，1，2，10}</code>。<code>dp[1031][2]</code> 则表示遍历完节点集合 <code>{0, 1, 2, 10}</code>且以节点2结束的最短路径的长度。因为 int 有 32位，除去符号位还有31位，而题目中规定了<code>1 &lt;= A.length &lt;= 12</code>，因此是足够表示的。</p>
+
+<p>parent数组表示对应最短路径下的父节点号。例如说 <code>dp[1031][2]</code> ，表示遍历完节点集合 <code>{0, 1, 2, 10}</code>且以节点 2 结束的最短路径中节点 2 的父节点号。初始标记为-1，没有父亲节点。</p>
+
+<ul>
+<li><p>对dp状态初始化，显然如果我们遍历的节点集合只有一个，那么长度就是这个节点字符串的长度。也即是：<code>dp[2^i][i]=A[i].length()</code></p></li>
+
+<li><p>那么状态转移方程：</p></li>
+</ul>
+
+<pre><code>  dp[s][i] = min{dp[s-2^j][j] + dist[j][i]}
+</code></pre>
+
+<ul>
+<li><p>算法的时间复杂度：<strong>O(n^2 · 2^n)</strong></p></li>
+
+<li><p>算法的空间复杂度：<strong>O(n · 2^n)</strong></p></li>
+</ul>
+
+<hr />
+
+<h2 id="解法">解法</h2>
+
+<p>c++ Solution 20ms beats 92%</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;vector&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;iostream&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;algorithm&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#6ab825;font-weight:bold">namespace</span> std;
+
+<span style="color:#6ab825;font-weight:bold">class</span><span style="color:#a61717;background-color:#e3d2d2"> </span><span style="color:#447fcf;text-decoration:underline">Solution</span> {
+<span style="color:#6ab825;font-weight:bold">public</span>:
+    string shortestSuperstring(vector&lt;string&gt;&amp; A) {
+        <span style="color:#6ab825;font-weight:bold">int</span> n = A.size();
+        <span style="color:#6ab825;font-weight:bold">int</span> dist[n][n];
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; n; i++) {
+            dist[i][i] = <span style="color:#3677a9">20</span>+<span style="color:#3677a9">1</span>;
+        }
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; n; i++) {
+            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> j = i+<span style="color:#3677a9">1</span>; j &lt; n; j++) {
+                dist[i][j] = cost(A[i], A[j]);
+                dist[j][i] = cost(A[j], A[i]);
+            }
+        }
+        
+        vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; dp(<span style="color:#3677a9">1</span> &lt;&lt; n, vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;(n, <span style="color:#3677a9">20</span>*<span style="color:#3677a9">12</span>+<span style="color:#3677a9">1</span>));
+        vector&lt;vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;&gt; praent(<span style="color:#3677a9">1</span> &lt;&lt; n, vector&lt;<span style="color:#6ab825;font-weight:bold">int</span>&gt;(n, -<span style="color:#3677a9">1</span>));
+
+        <span style="color:#999;font-style:italic">// init
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; n; i++) 
+            dp[<span style="color:#3677a9">1</span> &lt;&lt; i][i] = A[i].length();
+
+        <span style="color:#999;font-style:italic">// dp
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> s = <span style="color:#3677a9">1</span>; s &lt; (<span style="color:#3677a9">1</span> &lt;&lt; n); s++) {
+            <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; n; i++) {
+                <span style="color:#6ab825;font-weight:bold">if</span>(!(s &amp; (<span style="color:#3677a9">1</span>&lt;&lt;i))) <span style="color:#6ab825;font-weight:bold">continue</span>;
+                <span style="color:#6ab825;font-weight:bold">int</span> prev = s - (<span style="color:#3677a9">1</span>&lt;&lt;i);
+                <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> j = <span style="color:#3677a9">0</span>; j &lt; n; j++) {
+                    <span style="color:#6ab825;font-weight:bold">if</span>(dp[prev][j] + dist[j][i] &lt; dp[s][i]) {
+                        dp[s][i] = dp[prev][j] + dist[j][i];
+                        praent[s][i] = j;
+                    }
+                }
+            }
+        }
+
+        <span style="color:#999;font-style:italic">// find path
+</span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">auto</span> it = min_element(dp.back().begin(), dp.back().end());
+        <span style="color:#6ab825;font-weight:bold">int</span> cur = it - dp.back().begin();
+        <span style="color:#6ab825;font-weight:bold">int</span> s = (<span style="color:#3677a9">1</span> &lt;&lt; n) - <span style="color:#3677a9">1</span>;
+        string ans;
+        <span style="color:#6ab825;font-weight:bold">while</span>(s) {
+            <span style="color:#6ab825;font-weight:bold">int</span> prev = praent[s][cur];
+            <span style="color:#6ab825;font-weight:bold">if</span>(prev &lt; <span style="color:#3677a9">0</span>) ans = A[cur] + ans;
+            <span style="color:#6ab825;font-weight:bold">else</span> ans = A[cur].substr(A[cur].length()-dist[prev][cur]) + ans;
+            s &amp;= ~(<span style="color:#3677a9">1</span> &lt;&lt; cur);
+            cur =prev;
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> ans;
+    }   
+
+<span style="color:#6ab825;font-weight:bold">private</span>:
+    <span style="color:#6ab825;font-weight:bold">int</span> cost(<span style="color:#6ab825;font-weight:bold">const</span> string&amp; str1, <span style="color:#6ab825;font-weight:bold">const</span> string&amp; str2) {
+        <span style="color:#6ab825;font-weight:bold">int</span> a = str1.length(), b = str2.length();
+        <span style="color:#6ab825;font-weight:bold">int</span> _cost = b;
+        <span style="color:#6ab825;font-weight:bold">for</span>(<span style="color:#6ab825;font-weight:bold">int</span> k = <span style="color:#3677a9">1</span>; k &lt;= min(a, b); k++) {
+            <span style="color:#6ab825;font-weight:bold">if</span>(str1.substr(a - k) == str2.substr(<span style="color:#3677a9">0</span>, k)) {
+                _cost = b - k;
+            }
+        }
+        <span style="color:#6ab825;font-weight:bold">return</span> _cost;
+    }
+
+};
+</code></pre></div>
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/leetcode">Leetcode</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/leetcode">Leetcode</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
