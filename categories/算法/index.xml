@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on SYSUcarey</title>
+    <link>https://sysucarey.github.io/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on SYSUcarey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Dec 2018 20:40:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://sysucarey.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[算法设计] Capacitated Facility Location Problem</title>
+      <link>https://sysucarey.github.io/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1cflp/</link>
+      <pubDate>Sun, 23 Dec 2018 20:40:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1cflp/</guid>
+      <description>中山大学算法设计大作业实验报告 （2018年秋季学期）    课程名称 算法设计与分析 任课老师 张子臻     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/12/20 完成日期 2018/12/23    Table of Contents  中山大学算法设计大作业实验报告  （2018年秋季学期） 一、实验题目 二、问题描述 三、问题解析 四、项目结构 五、贪心算法  1.算法思路 2.代码实现 3.求解结果  3.1 程序运行结果 3.2 结果表   六、模拟退火算法(SA)  1.算法思路 2.代码实现 3.求解结果  3.1 程序运行结果 3.</description>
+    </item>
+    
+  </channel>
+</rss>

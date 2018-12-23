@@ -6,9 +6,20 @@
     <description>Recent content on SYSUcarey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Dec 2018 16:00:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 20:40:53 +0800</lastBuildDate>
     
         <atom:link href="https://sysucarey.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>[算法设计] Capacitated Facility Location Problem</title>
+      <link>https://sysucarey.github.io/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1cflp/</link>
+      <pubDate>Sun, 23 Dec 2018 20:40:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1cflp/</guid>
+      <description>中山大学算法设计大作业实验报告 （2018年秋季学期）    课程名称 算法设计与分析 任课老师 张子臻     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/12/20 完成日期 2018/12/23    Table of Contents  中山大学算法设计大作业实验报告  （2018年秋季学期） 一、实验题目 二、问题描述 三、问题解析 四、项目结构 五、贪心算法  1.算法思路 2.代码实现 3.求解结果  3.1 程序运行结果 3.2 结果表   六、模拟退火算法(SA)  1.算法思路 2.代码实现 3.求解结果  3.1 程序运行结果 3.</description>
+    </item>
     
     
     
@@ -170,21 +181,6 @@ Example:
 进入privatechain目录，打开终端，输入命令：
 geth --datadir data0 init genesis.json 1.4 启动私有链结点 终端输入命令：
 geth --datadir data0 --networkid 1997 console –datadir选项指定使用data0作为数据目录，–networkid选项后面跟一个数字，这里是1997，表示指定这个私有链的网络id为1997。</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>DES加解密算法实现</title>
-      <link>https://sysucarey.github.io/des%E5%8A%A0%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/</link>
-      <pubDate>Sun, 04 Nov 2018 12:33:53 +0800</pubDate>
-      
-      <guid>https://sysucarey.github.io/des%E5%8A%A0%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/</guid>
-      <description>DES算法程序设计和实现实验报告 （2018年秋季学期）    课程名称 Web安全技术 任课老师 蔡国扬     年级 大三 专业（方向） 计应   学号 16340015 姓名 陈彬彬   电话 13590883387 Email 944131226@qq.com   开始日期 2018/11/3 完成日期 2018/11/3    [TOC]
-一、算法原理概述 1.1 关于算法 DES是一种使用64位密钥的块加密算法,它以64位为分组长度，64位一组的明文作为算法的输入，通过一系列涉及密钥的复杂的换位、置换操作，输出同样64位长度的密文。
-1.2 关于密钥 DES 采用64位密钥，但由于每8位中的最后1位用于奇偶校验，实际有效密钥长度为56位。密钥可以是任意的56位的数，且可随时改变。其中极少量的数被认为是弱密钥，但能容易地避开它们。所有的保密性依赖于密钥。
-二、总体结构 2.1 算法输入输出 算法输入：
- 64位明文分组：$M = m_1m2···m{64} , m_i \epsilon{0, 1}, i = 1, ··· ,64$ 64位密钥K(有效56位)：$$K = k_1k2 ··· k{64} , k_i \epsilon{0, 1}, i = 1, ··· ,64$$  算法输出：</description>
     </item>
     
     

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sysucarey.github.io/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1cflp/</loc>
+    <lastmod>2018-12-23T20:40:53+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sysucarey.github.io/leetcode943-find-the-shortest-superstring/</loc>
     <lastmod>2018-12-09T16:00:53+08:00</lastmod>
   </url>
@@ -263,13 +268,13 @@
   
   <url>
     <loc>https://sysucarey.github.io/post/</loc>
-    <lastmod>2018-12-09T16:00:53+08:00</lastmod>
+    <lastmod>2018-12-23T20:40:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sysucarey.github.io/</loc>
-    <lastmod>2018-12-09T16:00:53+08:00</lastmod>
+    <lastmod>2018-12-23T20:40:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -318,6 +323,18 @@
   <url>
     <loc>https://sysucarey.github.io/tags/%E6%9C%8D%E5%8A%A1%E8%AE%A1%E7%AE%97/</loc>
     <lastmod>2018-11-15T20:30:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-12-23T20:40:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sysucarey.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-12-23T20:40:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
