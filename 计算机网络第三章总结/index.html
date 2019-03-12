@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>[计算机网络第三章总结]传输层 - SYSUcarey</title>
+<meta property="og:title" content="[计算机网络第三章总结]传输层 - SYSUcarey">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://sysucarey.github.io/css/main.css" media="all">
+<link rel="stylesheet" href="https://sysucarey.github.io/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://sysucarey.github.io/" class="nav-logo">
+    <img src="https://sysucarey.github.io/images/logo.png" 
+         width="50" 
+         height="50" 
+         alt="Logo">
+  </a>
+  <ul>
+    <a>SYSUcarey</a>
+  </ul>
+  <ul class="nav-links">
+    
+    <li><a href="/categories">Categories</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">[计算机网络第三章总结]传输层</h1>
+    
+    <span class="article-date">2018-10-02</span>
+    
+
+    <div class="article-content">
+      
+
+<h1 id="计算机网络自顶向下第三章总结">计算机网络自顶向下第三章总结</h1>
+
+<p>[TOC]</p>
+
+<hr />
+
+<h2 id="3-1概述和运输层服务">3.1概述和运输层服务</h2>
+
+<ul>
+<li>网络层提供了<strong>主机之间</strong>的<strong>逻辑通信</strong>，而运输层协议为运行在不同主机上的<strong>应用进程</strong>之间提供了<strong>逻辑通信</strong>。</li>
+
+<li><p>在发送端，传输层将从发送应用程序进程接收到的报文转换成传输层分组，这些分组就被称为传输层报文段(segment)</p></li>
+
+<li><p>因特网有两种运输层协议<strong>TCP</strong>和<strong>UDP</strong>。</p></li>
+
+<li><p>TCP是可靠的，面向连接的服务，具有拥塞控制，流量控制；</p></li>
+
+<li><p>UDP是一种不可靠、无连接的服务。</p></li>
+
+<li><p>TCP和UDP服务都没有定时保证和带宽保证。</p></li>
+
+<li><p>IP协议的服务模型为<strong>尽力而为交互服务</strong> ，是不可靠服务。</p></li>
+</ul>
+
+<hr />
+
+<h2 id="3-2多路复用和多路分解">3.2多路复用和多路分解</h2>
+
+<ul>
+<li>传输层的多路复用和多路分解，也就是将由网络层提供的主机到主机交付服务延申到运行在主机上应用程序提供进程到进程的交付服务。</li>
+<li>将传输层报文段中的数据交付到正确的套接字的工作称为<strong>多路分解</strong> 。</li>
+<li>从不同的套接字中收集数据块，并为每个数据块封装首部信息，然后传递到网络的工作称为<strong>多路复用</strong> 。</li>
+<li>UDP套接字由一个二元组来全面标识，包含一个目的IP地址和一个目的端口号。</li>
+<li>TCP套接字由一个四元组来标识，包含源IP地址、源端口号、目的IP地址、目的端口号。</li>
+</ul>
+
+<hr />
+
+<h2 id="3-3无连接传输-udp">3.3无连接传输：UDP</h2>
+
+<ul>
+<li><p>DNS是一个通常使用UDP的应用层协议的例子。还有RIP路由选择表更新也选择UDP，SNMP承载网络管理数据也选择UDP。</p></li>
+
+<li><p>很多应用更适合用UDP的原因：</p>
+
+<ul>
+<li>关于何时、发送什么数据的应用层控制会更精细</li>
+<li>无需连接建立</li>
+<li>无连接状态</li>
+<li>分组首部开销小 (UDP8字节，TCP20字节)</li>
+</ul></li>
+
+<li><p>使用UDP的应用不代表他们的传输是不可靠的，他们往往可以通过应用自身建立可靠性机制来实现可靠传输，而不用受制于TCP的拥塞控制机制。</p></li>
+
+<li><p>UDP报文格式：</p></li>
+</ul>
+
+<p>UDP首段只有四个字段，每个字段2个字节。</p>
+
+<p>源端口号、目的端口号、长度、校验和</p>
+
+<p>长度字段指明<strong>包括首部在内</strong> 的整个UDP报文段的字节长度。</p>
+
+<p>校验和用来校验检查该报文段在整个传输过程中是否出现了差错。</p>
+
+<ul>
+<li>UDP校验和</li>
+</ul>
+
+<p>校验和16-bit计算过程：</p>
+
+<ul>
+<li>其余3个16-bit字<strong>回卷</strong> 相加</li>
+<li>对结果反码运算得出校验和的16-bit字</li>
+</ul>
+
+<p>检查校验和：</p>
+
+<ul>
+<li><p>将校验和与其他三个字段共4个16-bit字回卷相加，结果为1111111111111111则认定为没有差错，否则认定为出现差错。</p></li>
+
+<li><p>UDP提供差错检测，但它对差错恢复无能为力。</p></li>
+</ul>
+
+<hr />
+
+<h2 id="3-4可靠数据传输原理">3.4可靠数据传输原理</h2>
+
+<ul>
+<li><strong>rdt 1.0</strong></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172128.png" alt="PIC_rdt_1.0" /></p>
+
+<ul>
+<li>基于一个完全可靠信道的协议</li>
+
+<li><p>接收端不需要提供反馈给发送端</p></li>
+
+<li><p><strong>rdt 2.0</strong></p></li>
+</ul>
+
+<p>发送方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172156.png" alt="PIC_rdt_2.0_sender" /></p>
+
+<p>接收方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172234.png" alt="PIC_rdt_2.0_receiver" /></p>
+
+<ul>
+<li><p>解决比特差错问题(暂未考虑分组丢失，分组乱序等问题)</p></li>
+
+<li><p>具体步骤：</p>
+
+<ul>
+<li>差错检测</li>
+<li>接收方反馈(ACK和NAK)</li>
+<li>重传</li>
+</ul></li>
+
+<li><p>rdt 2.0是停等协议</p></li>
+
+<li><p>rdt 2.0的致命缺陷：没考虑ACK或NAK分组受损的可能性。</p></li>
+
+<li><p>解决缺陷的方法:</p>
+
+<p>为每一个分组添加一个字段——序列号，当ACK或NAK分组受损时直接重传数据分组，发送方可以通过序列号识别重传分组。</p></li>
+
+<li><p>对于简单的停等协议，这个序列号字段只用一比特就足够了，这就是rdt 2.0的修订版——rdt 2.1协议。</p></li>
+
+<li><p><strong>rdt 2.1</strong></p></li>
+</ul>
+
+<p>发送方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172345.png" alt="PIC_rdt_2.1_sender" /></p>
+
+<p>接收方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172420.png" alt="PIC_rdt_2.1_receiver" /></p>
+
+<ul>
+<li>rdt 2.1解决了rdt 2.0中确认分组出错的缺陷</li>
+<li>实际上我们甚至不需要使用到NAK。如果接收方不使用NAK，而是对上次正确接收的分组发送一个ACK，也能实现同NAK一样的效果。只要发送方接收到同一个分组的两次ACK，那么也就知道了接收方没有正确接收被确认两次的分组后面的数据分组。</li>
+
+<li><p>那么我们不使用NAK，而是改为使用冗余ACK，那么就是rdt 2.2协议。</p></li>
+
+<li><p><strong>rdt 2.2</strong></p></li>
+</ul>
+
+<p>发送方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172502.png" alt="PIC_rdt_2.2_sender" /></p>
+
+<p>接收方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172526.png" alt="PIC_rdt_2.2_receiver" /></p>
+
+<ul>
+<li>在isAck()中添加参数0或1来标识序列号。</li>
+
+<li><p>rdt 2.2不再使用NAK</p></li>
+
+<li><p><strong>rdt 3.0</strong></p></li>
+</ul>
+
+<p>发送方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172555.png" alt="PIC_rdt_3.0_sender" /></p>
+
+<ul>
+<li>基于具有比特差错的丢包信道</li>
+<li>在rdt 2.x的基础上解决了分组丢包的问题</li>
+<li>实现基于时间的重传机制(超时重传)，用到一个倒计数计时器。
+
+<ul>
+<li>每次发送一个分组，便启动定时器</li>
+<li>响应定时器中断(定时器到点，超时重传)</li>
+<li>终止定时器 (正确接收ACK时终止定时器)</li>
+</ul></li>
+
+<li><p>rdt 3.0解决了分组丢失的问题，但它仍然是一个停等协议，性能差，因为分组序列号在0与1之间交替，因此也被叫做比特交替协议。</p></li>
+
+<li><p>流水线可靠数据传输协议</p>
+
+<ul>
+<li>rdt 3.0依然是个停等协议，效率低</li>
+<li>定义利用率为发送比特到信道的时间与整个分组发送接收时间之比，那么停等协议的利用率将是非常低下的。</li>
+<li>解决停等协议的方法：使用流水线技术传输，允许发送方发送多个分组而无需等待确认。</li>
+<li>但流水线传输会带来新的影响：</li>
+<li>必须增大序列号范围，不再是0，1切换的比特交替。</li>
+<li>发送方和接收方两端都必须能够缓存多个分组。</li>
+<li>如何解决流水线传输中发生的比特损坏、分组丢失、分组乱序等问题</li>
+<li>解决流水线问题的两种基本方法为：GBN和SR</li>
+</ul></li>
+
+<li><p>GBN——回退N步</p>
+
+<ul>
+<li><p>GBN协议也被称作滑动窗口协议，在发送方维护一个窗口</p></li>
+
+<li><p>滑动窗口</p></li>
+
+<li><p>base：基序号</p></li>
+
+<li><p>nextseqnum：下一个待发分组序列号</p></li>
+
+<li><p>N：窗口长度</p></li>
+
+<li><p>滑动窗口被分成了四部分：</p></li>
+
+<li><p>0~base-1 : 已确认</p></li>
+
+<li><p>base~nextseqnum-1: 已发送未确认</p></li>
+
+<li><p>nextseqnum~base+N-1:  未发送可使用</p></li>
+
+<li><p>base+N-1之后：未发送，暂不可用</p></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172638.png" alt="PIC_GBN_windows" /></p>
+
+<ul>
+<li>FSM</li>
+</ul>
+
+<p>发送方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172705.png" alt="PIC_GBN_SENDER_FSM" /></p>
+
+<p>接收方：</p>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172727.png" alt="PIC_GBN_RECEIVER_FSM" /></p>
+
+<ul>
+<li>接收方采用累计确认的方式。</li>
+</ul>
+
+<p>即对分组n的确认代表之前的所有分组都已经正确接收了。</p>
+
+<p>这样，接受方会丢弃所有的失序分组。</p>
+
+<p>优点是：接收方缓存简单</p>
+
+<p>缺点是：往往需要更多的重传，存在浪费</p></li>
+
+<li><p>SR——选择重传</p>
+
+<ul>
+<li>发送方对每个分组都维护一个逻辑定时器</li>
+<li>发送方的窗口中可以接收后续的ACK，但只有接收到base序号的ACK，窗口才会往后移。</li>
+<li>接收方确认一个正确接收的分组，而不管它是否按序。(也即不再采用累计确认)</li>
+<li>失序的分组会被接收方缓存直到所有丢失分组皆被接收才按序递交给上层。</li>
+<li>即使接收到了已经确认过的分组，接收方也必须要产生一个ACK，避免发送方陷入重传的循环，同时发送方窗口也无法往后滑动。(因为你之前的ACK可能丢失了)</li>
+<li>考虑如果SR接收方窗口太大，序号范围会重回到，0，1，2···，这样可能会出现，接收方不知道收到的分组是上一批的重传分组，还是新的数据分组。(因为它们序列号一样)。解决方案是：必须保证窗口长度小于或等于序号空间的一半，这样就不会出些序列号一样的情况。</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2 id="3-5面向连接的tcp传输">3.5面向连接的TCP传输</h2>
+
+<ul>
+<li><p>TCP是面向连接的，是全双工服务。</p></li>
+
+<li><p>发起连接的进程称为客户进程，另一个进程被称为服务器进程。</p></li>
+
+<li><p>MSS最大报文段长度。MTU最大传输单元。</p></li>
+
+<li><p>TCP连接的组成包括：一台主机上的缓存、变量和与进程连接的套接字，以及另一台主机上的缓存、变量与套接字。</p></li>
+
+<li><p>TCP建立与断开连接时的三次握手与四次握手。</p></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172759.png" alt="PIC_TCP" /></p>
+
+<ul>
+<li><p>TCP报文格式</p>
+
+<ul>
+<li>首部字段+数据字段共20字节</li>
+<li>16bit源端口号+16bit目的端口号+32bit序列号+32bit确认号+4bit首部长度+6bit选项字段+六个1bit标志位+16bit接收窗口字段+16bit校验和+16bit紧急数据指针</li>
+<li>标志字段：CRG+ACK+PSH+RST+SYN+FIN</li>
+</ul></li>
+
+<li><p>TCP序列号是建立在传送的字节流之上，而不是传送报文段的序列之上。因此一个报文段的序列号是该报文段首字节的字节流编号。</p></li>
+
+<li><p>TCP确认号是接收方进程期望从发送方进程收到的下一字节的序号。</p></li>
+
+<li><p>TCP接收方面对失序报文段并没有明确规定规则，可以丢弃也可以缓存。</p></li>
+
+<li><p>超时间隔时间的设置：</p></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172823.png" alt="PIC_TIMEOUT_INTERVAL" /></p>
+
+<ul>
+<li>往返时间估计 EstimatedRTT</li>
+<li>RTT偏差估计 DevRTT</li>
+
+<li><p>超时间隔设置 TimeoutInterval</p></li>
+
+<li><p>TCP在IP不可靠的尽力而为服务之上创建一种可靠数据传输服务，保证数据流是无损坏的、无间隔的、非冗余的和按序的。</p></li>
+
+<li><p>TCP采用累计确认。</p></li>
+
+<li><p>超时间隔重传：</p></li>
+</ul>
+
+<p>TCP每次重传时都会将下一次的超时间隔设为先前值得两倍。</p>
+
+<p>但当遇到另外两个事件(收到上层应用数据或者收到ACK)，又会重新将超时间隔设为推算值TimeoutInterval</p>
+
+<ul>
+<li>快速重传：</li>
+</ul>
+
+<p>TCP发送方接收到3个冗余ACK，就作为一种指示，认为这个已被确认过3次得报文段之后的那个报文段已经丢失，于是执行快速重传，不必等到定时器到期。</p>
+
+<ul>
+<li><p>TCP的一种修改是改成选择确认[RFC 2018]。风格将更类似SR。</p></li>
+
+<li><p>流量控制：</p>
+
+<ul>
+<li>receiver controls sender, so sender won’t overflow receiver’s buffer by transmitting too much, too fast</li>
+<li>接收方通过维持一个接收窗口来控制发送方发送报文段的速率，从而消除发送方使接收方缓存溢出的可能性</li>
+<li>LastByteSent - LastByteAcked &lt;= rwnd</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2 id="3-6拥塞控制原理">3.6拥塞控制原理</h2>
+
+<ul>
+<li>拥塞网络的代价
+
+<ul>
+<li>发送速率高，对链路充分利用时，同时造成的流量强度越大，对于每个发送方来说，时延将会越来越大。</li>
+<li>发送方有时必须执行重传以补偿因为缓存溢出而丢弃的分组。</li>
+<li>发送方在遇到大时延时，有时进行了不必要的重传，路由器一部分带宽用来做不必要的分组副本的转发。</li>
+<li>当一个分组沿一条路径被丢弃时，每个上游路由器用于转发该分组到丢弃该分组使用的传输容量最终被浪费掉。</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2 id="tcp拥塞控制">TCP拥塞控制</h2>
+
+<ul>
+<li><p>TCP使用端到端拥塞控制。方法是让每一个发送方根据所感知到的网络拥塞程度来控制其能向连接发送流量的速率。</p></li>
+
+<li><p>TCP拥塞控制算法：慢启动+拥塞避免+快速恢复(前两者强制，后者推荐)</p></li>
+
+<li><p>慢启动</p>
+
+<ul>
+<li>TCP连接建立开始时，cwnd先设置为1个MSS启动</li>
+<li>每当传输的报文段首次被确认就增加1个MSS</li>
+<li>指数增长速度提升发送速率</li>
+<li>发生超时事件时，ssthresh降为当前cwnd一半，然后cwnd置1，继续慢启动状态。</li>
+<li>发生3个冗余ACK时，ssthresh = cwnd/2，cwnd = ssthresh + 3，进入快速恢复状态。</li>
+<li>到慢启动到达ssthresh时，进入拥塞避免状态(线性增)</li>
+</ul></li>
+
+<li><p>拥塞避免</p>
+
+<ul>
+<li>每个RTT值将cwnd的值增加1个MSS即每个ACK：cwnd  += MSS * (MSS/cwnd)</li>
+<li>发生超时，ssthresh = cwnd/2，cwnd=1</li>
+<li>发生3个冗余ACK，ssthresh = cwnd/2，cwnd = ssthresh + 3，进入快速恢复状态。</li>
+</ul></li>
+
+<li><p>快速恢复</p>
+
+<ul>
+<li>引发丢失报文段的重传</li>
+<li>每当再收到一个冗余ACK，cwnd++，传输新的报文段(如果发送窗口还可以发送的话)</li>
+<li>当收到这个丢失报文的ACK，cwnd = ssthresh，进入拥塞避免</li>
+</ul></li>
+
+<li><p>简单来说就是：</p>
+
+<ul>
+<li>慢启动指数形式增，拥塞避免线性增</li>
+<li>超时阈值减半窗口为1，慢启动状态重新来</li>
+<li>冗余ACK丢包阈值为一半，窗口减半加三线性增</li>
+</ul></li>
+
+<li><p>一条连接的平均吞吐量：</p></li>
+</ul>
+
+<p><img src="https://chenbb-1257745007.cos.ap-guangzhou.myqcloud.com/blog/20190312172849.png" alt="PIC_TCP_THROUGHPUT" /></p>
+
+<ul>
+<li>TCP拥塞控制的公平性</li>
+</ul>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+                  
+      <hr>
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">计算机网络</a>
+      </li>
+      
+    
+      
+      <li>
+        <i class="fa fa-tags"></i><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">计算机网络</a>
+      </li>
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://sysucarey.github.io/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/SYSUcarey"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://sysucarey.github.io/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

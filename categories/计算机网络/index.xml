@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机网络 on SYSUcarey</title>
+    <link>https://sysucarey.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 计算机网络 on SYSUcarey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Oct 2018 23:20:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://sysucarey.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[计算机网络第三章总结]传输层</title>
+      <link>https://sysucarey.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 02 Oct 2018 23:20:50 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%80%BB%E7%BB%93/</guid>
+      <description>计算机网络自顶向下第三章总结 [TOC]
+3.1概述和运输层服务  网络层提供了主机之间的逻辑通信，而运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信。 在发送端，传输层将从发送应用程序进程接收到的报文转换成传输层分组，这些分组就被称为传输层报文段(segment)
+ 因特网有两种运输层协议TCP和UDP。
+ TCP是可靠的，面向连接的服务，具有拥塞控制，流量控制；
+ UDP是一种不可靠、无连接的服务。
+ TCP和UDP服务都没有定时保证和带宽保证。
+ IP协议的服务模型为尽力而为交互服务 ，是不可靠服务。
+  3.2多路复用和多路分解  传输层的多路复用和多路分解，也就是将由网络层提供的主机到主机交付服务延申到运行在主机上应用程序提供进程到进程的交付服务。 将传输层报文段中的数据交付到正确的套接字的工作称为多路分解 。 从不同的套接字中收集数据块，并为每个数据块封装首部信息，然后传递到网络的工作称为多路复用 。 UDP套接字由一个二元组来全面标识，包含一个目的IP地址和一个目的端口号。 TCP套接字由一个四元组来标识，包含源IP地址、源端口号、目的IP地址、目的端口号。  3.3无连接传输：UDP  DNS是一个通常使用UDP的应用层协议的例子。还有RIP路由选择表更新也选择UDP，SNMP承载网络管理数据也选择UDP。
+ 很多应用更适合用UDP的原因：
+ 关于何时、发送什么数据的应用层控制会更精细 无需连接建立 无连接状态 分组首部开销小 (UDP8字节，TCP20字节)  使用UDP的应用不代表他们的传输是不可靠的，他们往往可以通过应用自身建立可靠性机制来实现可靠传输，而不用受制于TCP的拥塞控制机制。
+ UDP报文格式：
+  UDP首段只有四个字段，每个字段2个字节。
+源端口号、目的端口号、长度、校验和
+长度字段指明包括首部在内 的整个UDP报文段的字节长度。
+校验和用来校验检查该报文段在整个传输过程中是否出现了差错。
+ UDP校验和  校验和16-bit计算过程：
+ 其余3个16-bit字回卷 相加 对结果反码运算得出校验和的16-bit字  检查校验和：
+ 将校验和与其他三个字段共4个16-bit字回卷相加，结果为1111111111111111则认定为没有差错，否则认定为出现差错。
+ UDP提供差错检测，但它对差错恢复无能为力。
+  3.4可靠数据传输原理  rdt 1.</description>
+    </item>
+    
+  </channel>
+</rss>
