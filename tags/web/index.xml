@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on SYSUcarey</title>
+    <link>https://sysucarey.github.io/tags/web/</link>
+    <description>Recent content in Web on SYSUcarey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Mar 2019 16:00:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://sysucarey.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VUE配置安装</title>
+      <link>https://sysucarey.github.io/vue%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 01 Mar 2019 16:00:53 +0800</pubDate>
+      
+      <guid>https://sysucarey.github.io/vue%E9%85%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid>
+      <description>VUE配置安装 环境  Windows10  流程步骤  nodejs下载安装  官网下载网址：https://nodejs.org/en/
+下载完成双击安装程序，NEXT傻瓜式安装。
+我下载的是10.15.1的版本，安装完成好像自动帮你配置环境而且还自带npm了。
+检验安装：
+$ node -v $ npm -v  使用npm淘宝镜像（可以不用）  由于有些npm有些资源被屏蔽或者是国外资源的原因，经常会导致用npm安装依赖包的时候失败，因此要么FQ要么就使用国内镜像cnpm。 （若后续步骤下载卡住了，可以适用cnpm代替npm下载）
+3. **vue-cli安装** ```bash $ npm install -g vue-cli  webpack安装  $ npm install -g webpack  创建第一个VUE项目  $ vue init webpack my-first-vue-demo 会跳出一些项目选择项，适用回车和No就好了。  项目新建完成后，按提示：
+$ cd my-first-vue-demo $ npm run dev 运行VUE项目：
+项目运行成功后，浏览器会自动打开localhost:8080（如果浏览器没有自动打开，可以手动输入）。运行成功后，会看到如下所示的界面。此时，项目创建完成。
+遇到的问题  webpack安装卡住了(用时太久)  解决方案：
+使用淘宝镜像下载
+$ cnpm install -g webpack  npm ERR!</description>
+    </item>
+    
+  </channel>
+</rss>
